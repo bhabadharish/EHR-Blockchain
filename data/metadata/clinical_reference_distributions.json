@@ -1,0 +1,1559 @@
+{
+  "gender_dist": {
+    "female": 0.46464646464646464,
+    "male": 0.5353535353535354
+  },
+  "birth_year_stats": {
+    "min": 1914,
+    "max": 2021,
+    "mean": 1980.6262626262626,
+    "std": 24.737239689306058
+  },
+  "top_conditions": [
+    {
+      "code": "160903007",
+      "display": "Full-time employment (finding)",
+      "count": 1113
+    },
+    {
+      "code": "73595000",
+      "display": "Stress (finding)",
+      "count": 362
+    },
+    {
+      "code": "160904001",
+      "display": "Part-time employment (finding)",
+      "count": 154
+    },
+    {
+      "code": "423315002",
+      "display": "Limited social contact (finding)",
+      "count": 104
+    },
+    {
+      "code": "422650009",
+      "display": "Social isolation (finding)",
+      "count": 103
+    },
+    {
+      "code": "444814009",
+      "display": "Viral sinusitis (disorder)",
+      "count": 100
+    },
+    {
+      "code": "741062008",
+      "display": "Not in labor force (finding)",
+      "count": 73
+    },
+    {
+      "code": "706893006",
+      "display": "Victim of intimate partner abuse (finding)",
+      "count": 72
+    },
+    {
+      "code": "195662009",
+      "display": "Acute viral pharyngitis (disorder)",
+      "count": 63
+    },
+    {
+      "code": "72892002",
+      "display": "Normal pregnancy",
+      "count": 54
+    },
+    {
+      "code": "10509002",
+      "display": "Acute bronchitis (disorder)",
+      "count": 52
+    },
+    {
+      "code": "224299000",
+      "display": "Received higher education (finding)",
+      "count": 50
+    },
+    {
+      "code": "424393004",
+      "display": "Reports of violence in the environment (finding)",
+      "count": 45
+    },
+    {
+      "code": "162864005",
+      "display": "Body mass index 30+ - obesity (finding)",
+      "count": 35
+    },
+    {
+      "code": "160968000",
+      "display": "Risk activity involvement (finding)",
+      "count": 29
+    },
+    {
+      "code": "65363002",
+      "display": "Otitis media",
+      "count": 28
+    },
+    {
+      "code": "15777000",
+      "display": "Prediabetes",
+      "count": 27
+    },
+    {
+      "code": "271737000",
+      "display": "Anemia (disorder)",
+      "count": 26
+    },
+    {
+      "code": "266948004",
+      "display": "Has a criminal record (finding)",
+      "count": 20
+    },
+    {
+      "code": "59621000",
+      "display": "Hypertension",
+      "count": 19
+    },
+    {
+      "code": "5251000175109",
+      "display": "Received certificate of high school equivalency (finding)",
+      "count": 16
+    },
+    {
+      "code": "40055000",
+      "display": "Chronic sinusitis (disorder)",
+      "count": 15
+    },
+    {
+      "code": "43878008",
+      "display": "Streptococcal sore throat (disorder)",
+      "count": 14
+    },
+    {
+      "code": "19169002",
+      "display": "Miscarriage in first trimester",
+      "count": 14
+    },
+    {
+      "code": "278860009",
+      "display": "Chronic low back pain (finding)",
+      "count": 13
+    },
+    {
+      "code": "10939881000119104",
+      "display": "Unhealthy alcohol drinking behavior (finding)",
+      "count": 13
+    },
+    {
+      "code": "105531004",
+      "display": "Housing unsatisfactory (finding)",
+      "count": 13
+    },
+    {
+      "code": "55822004",
+      "display": "Hyperlipidemia",
+      "count": 10
+    },
+    {
+      "code": "840544004",
+      "display": "Suspected COVID-19",
+      "count": 9
+    },
+    {
+      "code": "224295006",
+      "display": "Only received primary school education (finding)",
+      "count": 9
+    }
+  ],
+  "top_medications": [
+    {
+      "code": "314076",
+      "display": "lisinopril 10 MG Oral Tablet",
+      "count": 731
+    },
+    {
+      "code": "310798",
+      "display": "Hydrochlorothiazide 25 MG Oral Tablet",
+      "count": 486
+    },
+    {
+      "code": "308136",
+      "display": "amLODIPine 2.5 MG Oral Tablet",
+      "count": 387
+    },
+    {
+      "code": "106892",
+      "display": "insulin human, isophane 70 UNT/ML / Regular Insulin, Human 30 UNT/ML Injectable Suspension [Humulin]",
+      "count": 279
+    },
+    {
+      "code": "855332",
+      "display": "Warfarin Sodium 5 MG Oral Tablet",
+      "count": 231
+    },
+    {
+      "code": "197604",
+      "display": "Digoxin 0.125 MG Oral Tablet",
+      "count": 231
+    },
+    {
+      "code": "897718",
+      "display": "Verapamil Hydrochloride 40 MG",
+      "count": 221
+    },
+    {
+      "code": "314231",
+      "display": "Simvastatin 10 MG Oral Tablet",
+      "count": 156
+    },
+    {
+      "code": "860975",
+      "display": "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet",
+      "count": 102
+    },
+    {
+      "code": "206905",
+      "display": "Ibuprofen 400 MG Oral Tablet [Ibu]",
+      "count": 74
+    },
+    {
+      "code": "895994",
+      "display": "120 ACTUAT Fluticasone propionate 0.044 MG/ACTUAT Metered Dose Inhaler",
+      "count": 73
+    },
+    {
+      "code": "2123111",
+      "display": "NDA020503 200 ACTUAT Albuterol 0.09 MG/ACTUAT Metered Dose Inhaler",
+      "count": 73
+    },
+    {
+      "code": "209387",
+      "display": "Acetaminophen 325 MG Oral Tablet [Tylenol]",
+      "count": 66
+    },
+    {
+      "code": "313782",
+      "display": "Acetaminophen 325 MG Oral Tablet",
+      "count": 46
+    },
+    {
+      "code": "856987",
+      "display": "Acetaminophen 300 MG / Hydrocodone Bitartrate 5 MG Oral Tablet",
+      "count": 45
+    },
+    {
+      "code": "896209",
+      "display": "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+      "count": 37
+    },
+    {
+      "code": "309362",
+      "display": "Clopidogrel 75 MG Oral Tablet",
+      "count": 25
+    },
+    {
+      "code": "1049504",
+      "display": "Abuse-Deterrent 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin]",
+      "count": 24
+    },
+    {
+      "code": "312961",
+      "display": "Simvastatin 20 MG Oral Tablet",
+      "count": 22
+    },
+    {
+      "code": "197361",
+      "display": "Amlodipine 5 MG Oral Tablet",
+      "count": 22
+    },
+    {
+      "code": "705129",
+      "display": "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+      "count": 22
+    },
+    {
+      "code": "1049625",
+      "display": "Acetaminophen 325 MG / Oxycodone Hydrochloride 10 MG Oral Tablet [Percocet]",
+      "count": 21
+    },
+    {
+      "code": "562251",
+      "display": "Amoxicillin 250 MG / Clavulanate 125 MG Oral Tablet",
+      "count": 20
+    },
+    {
+      "code": "245134",
+      "display": "72 HR Fentanyl 0.025 MG/HR Transdermal System",
+      "count": 19
+    },
+    {
+      "code": "849574",
+      "display": "Naproxen sodium 220 MG Oral Tablet",
+      "count": 18
+    },
+    {
+      "code": "308192",
+      "display": "Amoxicillin 500 MG Oral Tablet",
+      "count": 15
+    },
+    {
+      "code": "198405",
+      "display": "Ibuprofen 100 MG Oral Tablet",
+      "count": 15
+    },
+    {
+      "code": "1043400",
+      "display": "Acetaminophen 21.7 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution",
+      "count": 15
+    },
+    {
+      "code": "1000126",
+      "display": "1 ML medroxyPROGESTERone acetate 150 MG/ML Injection",
+      "count": 15
+    },
+    {
+      "code": "313820",
+      "display": "Acetaminophen 160 MG Chewable Tablet",
+      "count": 14
+    }
+  ],
+  "top_procedures": [
+    {
+      "code": "710824005",
+      "display": "Assessment of health and social care needs (procedure)",
+      "count": 698
+    },
+    {
+      "code": "171207006",
+      "display": "Depression screening (procedure)",
+      "count": 653
+    },
+    {
+      "code": "454711000124102",
+      "display": "Depression screening using Patient Health Questionnaire Two-Item score (procedure)",
+      "count": 533
+    },
+    {
+      "code": "428211000124100",
+      "display": "Assessment of substance use (procedure)",
+      "count": 486
+    },
+    {
+      "code": "430193006",
+      "display": "Medication Reconciliation (procedure)",
+      "count": 477
+    },
+    {
+      "code": "710841007",
+      "display": "Assessment of anxiety (procedure)",
+      "count": 381
+    },
+    {
+      "code": "274804006",
+      "display": "Evaluation of uterine fundal height",
+      "count": 295
+    },
+    {
+      "code": "225158009",
+      "display": "Auscultation of the fetal heart",
+      "count": 295
+    },
+    {
+      "code": "180256009",
+      "display": "Subcutaneous immunotherapy",
+      "count": 290
+    },
+    {
+      "code": "180325003",
+      "display": "Electrical cardioversion",
+      "count": 265
+    },
+    {
+      "code": "763302001",
+      "display": "Assessment using Alcohol Use Disorders Identification Test - Consumption (procedure)",
+      "count": 217
+    },
+    {
+      "code": "76601001",
+      "display": "Intramuscular injection",
+      "count": 216
+    },
+    {
+      "code": "713106006",
+      "display": "Screening for drug abuse (procedure)",
+      "count": 212
+    },
+    {
+      "code": "866148006",
+      "display": "Screening for domestic abuse (procedure)",
+      "count": 209
+    },
+    {
+      "code": "762993000",
+      "display": "Assessment using Morse Fall Scale (procedure)",
+      "count": 123
+    },
+    {
+      "code": "715252007",
+      "display": "Depression screening using Patient Health Questionnaire Nine Item score (procedure)",
+      "count": 104
+    },
+    {
+      "code": "703423002",
+      "display": "Combined chemotherapy and radiation therapy (procedure)",
+      "count": 102
+    },
+    {
+      "code": "398171003",
+      "display": "Hearing examination (procedure)",
+      "count": 90
+    },
+    {
+      "code": "16335031000119103",
+      "display": "High resolution computed tomography of chest without contrast (procedure)",
+      "count": 90
+    },
+    {
+      "code": "5880005",
+      "display": "Physical examination following birth",
+      "count": 82
+    },
+    {
+      "code": "104091002",
+      "display": "Hemoglobin / Hematocrit / Platelet count",
+      "count": 65
+    },
+    {
+      "code": "18286008",
+      "display": "Catheter ablation of tissue of heart",
+      "count": 63
+    },
+    {
+      "code": "868187001",
+      "display": "Assessment using Car, Relax, Alone, Forget, Friends, Trouble Screening Test (procedure)",
+      "count": 57
+    },
+    {
+      "code": "252160004",
+      "display": "Standard pregnancy test",
+      "count": 51
+    },
+    {
+      "code": "169230002",
+      "display": "Ultrasound scan for fetal viability",
+      "count": 51
+    },
+    {
+      "code": "386516004",
+      "display": "Anticipatory guidance (procedure)",
+      "count": 43
+    },
+    {
+      "code": "229064008",
+      "display": "Movement therapy (regime/therapy)",
+      "count": 40
+    },
+    {
+      "code": "44608003",
+      "display": "Blood typing, RH typing",
+      "count": 33
+    },
+    {
+      "code": "47758006",
+      "display": "Hepatitis B Surface Antigen Measurement",
+      "count": 33
+    },
+    {
+      "code": "31676001",
+      "display": "Human immunodeficiency virus antigen test",
+      "count": 33
+    }
+  ],
+  "observations": {
+    "8302-2": {
+      "display": "Body Height",
+      "unit": "cm",
+      "mean": 151.53963355834136,
+      "std": 36.09693903606157,
+      "min": 47.6,
+      "max": 198.7,
+      "p25": 150.2,
+      "p50": 162.8,
+      "p75": 175.5
+    },
+    "72514-3": {
+      "display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
+      "unit": "{score}",
+      "mean": 2.5763713080168777,
+      "std": 2.056858117033635,
+      "min": 0.0,
+      "max": 10.0,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 3.0
+    },
+    "29463-7": {
+      "display": "Body Weight",
+      "unit": "kg",
+      "mean": 64.92219074598678,
+      "std": 30.4269624809053,
+      "min": 3.4,
+      "max": 111.5,
+      "p25": 44.05,
+      "p50": 75.5,
+      "p75": 89.35
+    },
+    "77606-2": {
+      "display": "Weight-for-length Per age and sex",
+      "unit": "%",
+      "mean": 62.49879500000001,
+      "std": 27.69654910624517,
+      "min": 0.0024621,
+      "max": 99.155,
+      "p25": 44.822,
+      "p50": 69.662,
+      "p75": 83.063
+    },
+    "9843-4": {
+      "display": "Head Occipital-frontal circumference",
+      "unit": "cm",
+      "mean": 45.19564417177915,
+      "std": 4.515951962881689,
+      "min": 30.97,
+      "max": 52.82,
+      "p25": 42.489999999999995,
+      "p50": 46.46,
+      "p75": 48.34
+    },
+    "8867-4": {
+      "display": "Heart rate",
+      "unit": "/min",
+      "mean": 81.36836732766761,
+      "std": 14.924842489717593,
+      "min": 50.326,
+      "max": 198.26,
+      "p25": 70.0,
+      "p50": 81.0,
+      "p75": 91.0
+    },
+    "9279-1": {
+      "display": "Respiratory rate",
+      "unit": "/min",
+      "mean": 14.208475920679884,
+      "std": 2.3358778769916575,
+      "min": 12.0,
+      "max": 39.619,
+      "p25": 13.0,
+      "p50": 14.0,
+      "p75": 15.0
+    },
+    "6690-2": {
+      "display": "Leukocytes [#/volume] in Blood by Automated count",
+      "unit": "10*3/uL",
+      "mean": 5.461634983050847,
+      "std": 2.6888080907004475,
+      "min": 0.61973,
+      "max": 10.469,
+      "p25": 3.6386000000000003,
+      "p50": 4.8645,
+      "p75": 7.754250000000001
+    },
+    "789-8": {
+      "display": "Erythrocytes [#/volume] in Blood by Automated count",
+      "unit": "10*6/uL",
+      "mean": 4.696166101694915,
+      "std": 0.45217227960604267,
+      "min": 3.9001,
+      "max": 5.4991,
+      "p25": 4.30725,
+      "p50": 4.6873,
+      "p75": 5.0709
+    },
+    "718-7": {
+      "display": "Hemoglobin [Mass/volume] in Blood",
+      "unit": "g/dL",
+      "mean": 14.397923569023572,
+      "std": 1.9608859780137904,
+      "min": 6.3471,
+      "max": 17.482,
+      "p25": 12.877,
+      "p50": 14.501,
+      "p75": 16.003
+    },
+    "4544-3": {
+      "display": "Hematocrit [Volume Fraction] of Blood by Automated count",
+      "unit": "%",
+      "mean": 41.62100694444444,
+      "std": 4.706506531294569,
+      "min": 25.43,
+      "max": 49.889,
+      "p25": 37.99975,
+      "p50": 41.695,
+      "p75": 45.279250000000005
+    },
+    "787-2": {
+      "display": "MCV [Entitic volume] by Automated count",
+      "unit": "fL",
+      "mean": 87.63800677966101,
+      "std": 4.354414403792321,
+      "min": 79.069,
+      "max": 95.216,
+      "p25": 83.8315,
+      "p50": 87.799,
+      "p75": 91.40299999999999
+    },
+    "785-6": {
+      "display": "MCH [Entitic mass] by Automated count",
+      "unit": "pg",
+      "mean": 29.816023728813555,
+      "std": 1.715006842733691,
+      "min": 27.016,
+      "max": 32.986,
+      "p25": 28.3005,
+      "p50": 29.849,
+      "p75": 31.221
+    },
+    "786-4": {
+      "display": "MCHC [Mass/volume] by Automated count",
+      "unit": "g/dL",
+      "mean": 34.50844406779661,
+      "std": 0.8628763621534166,
+      "min": 31.798,
+      "max": 35.978,
+      "p25": 33.8275,
+      "p50": 34.56,
+      "p75": 35.2375
+    },
+    "21000-5": {
+      "display": "Erythrocyte distribution width [Entitic volume] by Automated count",
+      "unit": "fL",
+      "mean": 42.56004964539007,
+      "std": 2.0117003263928486,
+      "min": 39.007,
+      "max": 45.986,
+      "p25": 40.84325,
+      "p50": 42.488,
+      "p75": 44.381
+    },
+    "777-3": {
+      "display": "Platelets [#/volume] in Blood by Automated count",
+      "unit": "10*3/uL",
+      "mean": 304.59014915254244,
+      "std": 93.12187582363957,
+      "min": 99.054,
+      "max": 448.55,
+      "p25": 230.91,
+      "p50": 311.62,
+      "p75": 385.97
+    },
+    "32207-3": {
+      "display": "Platelet distribution width [Entitic volume] in Blood by Automated count",
+      "unit": "fL",
+      "mean": 345.75078014184396,
+      "std": 108.28785823224194,
+      "min": 154.26,
+      "max": 519.76,
+      "p25": 248.6525,
+      "p50": 352.90999999999997,
+      "p75": 434.62750000000005
+    },
+    "32623-1": {
+      "display": "Platelet mean volume [Entitic volume] in Blood by Automated count",
+      "unit": "fL",
+      "mean": 10.722130496453902,
+      "std": 0.8031280011070245,
+      "min": 9.4361,
+      "max": 12.299,
+      "p25": 10.07075,
+      "p50": 10.6815,
+      "p75": 11.36075
+    },
+    "6206-7": {
+      "display": "Peanut IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.2159462142857143,
+      "std": 0.07347840586980892,
+      "min": 0.097097,
+      "max": 0.3139,
+      "p25": 0.14092,
+      "p50": 0.23607499999999998,
+      "p75": 0.2778625
+    },
+    "6273-7": {
+      "display": "Walnut IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.1883508857142857,
+      "std": 0.11009673400747477,
+      "min": 0.0086684,
+      "max": 0.34228,
+      "p25": 0.11154499999999999,
+      "p50": 0.192625,
+      "p75": 0.2865375
+    },
+    "6082-2": {
+      "display": "Codfish IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.165848,
+      "std": 0.08564276285411228,
+      "min": 0.037719,
+      "max": 0.33705,
+      "p25": 0.10993499999999999,
+      "p50": 0.16313,
+      "p75": 0.2114275
+    },
+    "6246-3": {
+      "display": "Shrimp IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.20848275,
+      "std": 0.10350828259418768,
+      "min": 0.0077485,
+      "max": 0.34696,
+      "p25": 0.1239,
+      "p50": 0.21623,
+      "p75": 0.286385
+    },
+    "6276-0": {
+      "display": "Wheat IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.15291200000000002,
+      "std": 0.08864502452236916,
+      "min": 0.015645,
+      "max": 0.26689,
+      "p25": 0.059558,
+      "p50": 0.18213000000000001,
+      "p75": 0.2266675
+    },
+    "6106-9": {
+      "display": "Egg white IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.21617758571428572,
+      "std": 0.10659947301237908,
+      "min": 0.0050622,
+      "max": 0.33776,
+      "p25": 0.1220275,
+      "p50": 0.259125,
+      "p75": 0.3033825
+    },
+    "6248-9": {
+      "display": "Soybean IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.12631271428571428,
+      "std": 0.08746111203225333,
+      "min": 0.015984,
+      "max": 0.30846,
+      "p25": 0.045686,
+      "p50": 0.11473,
+      "p75": 0.191945
+    },
+    "7258-7": {
+      "display": "Cow milk IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.16799828571428568,
+      "std": 0.057319024001545905,
+      "min": 0.069296,
+      "max": 0.2586,
+      "p25": 0.135365,
+      "p50": 0.16681,
+      "p75": 0.2103175
+    },
+    "6189-5": {
+      "display": "White oak IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.15414735714285716,
+      "std": 0.09282639774532055,
+      "min": 0.034814,
+      "max": 0.29498,
+      "p25": 0.082941,
+      "p50": 0.12157,
+      "p75": 0.2527325
+    },
+    "6085-5": {
+      "display": "Common Ragweed IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.20050622857142858,
+      "std": 0.11794418581912516,
+      "min": 0.0084192,
+      "max": 0.34664,
+      "p25": 0.08645975,
+      "p50": 0.223685,
+      "p75": 0.30093749999999997
+    },
+    "6833-8": {
+      "display": "Cat dander IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.1587782142857143,
+      "std": 0.10184754744727784,
+      "min": 0.049667,
+      "max": 0.3156,
+      "p25": 0.064253,
+      "p50": 0.105475,
+      "p75": 0.2554625
+    },
+    "6095-4": {
+      "display": "American house dust mite IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.17424482142857145,
+      "std": 0.10358181890377549,
+      "min": 0.0099145,
+      "max": 0.32668,
+      "p25": 0.081793,
+      "p50": 0.158585,
+      "p75": 0.27471
+    },
+    "6075-6": {
+      "display": "Cladosporium herbarum IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.13288392857142856,
+      "std": 0.07390137174008561,
+      "min": 0.024005,
+      "max": 0.30698,
+      "p25": 0.08780175000000001,
+      "p50": 0.12809,
+      "p75": 0.1607325
+    },
+    "6844-5": {
+      "display": "Honey bee IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.20270135714285714,
+      "std": 0.07313271006250716,
+      "min": 0.061619,
+      "max": 0.31435,
+      "p25": 0.1603375,
+      "p50": 0.20261,
+      "p75": 0.2650825
+    },
+    "6158-0": {
+      "display": "Latex IgE Ab in Serum",
+      "unit": "kU/L",
+      "mean": 0.17367335714285712,
+      "std": 0.09689633754438454,
+      "min": 0.01118,
+      "max": 0.32325,
+      "p25": 0.09550825,
+      "p50": 0.17374,
+      "p75": 0.254875
+    },
+    "39156-5": {
+      "display": "Body Mass Index",
+      "unit": "kg/m2",
+      "mean": 26.243181818181814,
+      "std": 5.0768125210478825,
+      "min": 14.23,
+      "max": 42.49,
+      "p25": 23.7425,
+      "p50": 27.685000000000002,
+      "p75": 29.74
+    },
+    "59576-9": {
+      "display": "Body mass index (BMI) [Percentile] Per age and gender",
+      "unit": "%",
+      "mean": 66.15684139534885,
+      "std": 27.312220751470775,
+      "min": 0.70938,
+      "max": 99.991,
+      "p25": 42.44625,
+      "p50": 75.657,
+      "p75": 90.044
+    },
+    "59460-6": {
+      "display": "Fall risk total [Morse Fall Scale]",
+      "unit": "{#}",
+      "mean": 44.38211382113821,
+      "std": 35.94474538420064,
+      "min": 0.0,
+      "max": 125.0,
+      "p25": 18.0,
+      "p50": 33.0,
+      "p75": 64.5
+    },
+    "8310-5": {
+      "display": "Body temperature",
+      "unit": "Cel",
+      "mean": 38.06285148514852,
+      "std": 1.1211719768642614,
+      "min": 36.583,
+      "max": 41.981,
+      "p25": 37.321,
+      "p50": 37.695,
+      "p75": 38.47
+    },
+    "2708-6": {
+      "display": "Oxygen saturation in Arterial blood",
+      "unit": "%",
+      "mean": 81.9577142857143,
+      "std": 3.9784326315876744,
+      "min": 75.08,
+      "max": 88.57,
+      "p25": 79.07499999999999,
+      "p50": 82.51,
+      "p75": 85.88499999999999
+    },
+    "89204-2": {
+      "display": "Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]",
+      "unit": "{score}",
+      "mean": 3.1267605633802815,
+      "std": 4.314827293933434,
+      "min": 0.0,
+      "max": 25.0,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 3.0
+    },
+    "19926-5": {
+      "display": "FEV1/FVC",
+      "unit": "%",
+      "mean": 20.36825,
+      "std": 5.733665714081466,
+      "min": 10.037,
+      "max": 28.279,
+      "p25": 16.195,
+      "p50": 22.3015,
+      "p75": 24.574
+    },
+    "2339-0": {
+      "display": "Glucose",
+      "unit": "mg/dL",
+      "mean": 91.25259717314488,
+      "std": 16.703296900720876,
+      "min": 64.04,
+      "max": 159.33,
+      "p25": 77.295,
+      "p50": 89.88499999999999,
+      "p75": 103.16499999999999
+    },
+    "6299-2": {
+      "display": "Urea Nitrogen",
+      "unit": "mg/dL",
+      "mean": 13.183127208480565,
+      "std": 3.5546040330639554,
+      "min": 7.0,
+      "max": 19.98,
+      "p25": 10.1325,
+      "p50": 13.135,
+      "p75": 16.0275
+    },
+    "38483-4": {
+      "display": "Creatinine",
+      "unit": "mg/dL",
+      "mean": 2.1495296819787986,
+      "std": 1.057316856607985,
+      "min": 0.36,
+      "max": 5.3,
+      "p25": 1.1925,
+      "p50": 2.085,
+      "p75": 3.00265
+    },
+    "49765-1": {
+      "display": "Calcium",
+      "unit": "mg/dL",
+      "mean": 9.389487632508834,
+      "std": 0.48019053825253283,
+      "min": 8.5,
+      "max": 10.2,
+      "p25": 8.98,
+      "p50": 9.41,
+      "p75": 9.81
+    },
+    "2947-0": {
+      "display": "Sodium",
+      "unit": "mmol/L",
+      "mean": 140.12312720848058,
+      "std": 2.327723058597876,
+      "min": 136.01,
+      "max": 143.93,
+      "p25": 138.0225,
+      "p50": 140.36,
+      "p75": 142.06
+    },
+    "6298-4": {
+      "display": "Potassium",
+      "unit": "mmol/L",
+      "mean": 4.439770318021202,
+      "std": 0.43056678510245977,
+      "min": 3.7,
+      "max": 5.2,
+      "p25": 4.08,
+      "p50": 4.43,
+      "p75": 4.8
+    },
+    "2069-3": {
+      "display": "Chloride",
+      "unit": "mmol/L",
+      "mean": 106.0975265017668,
+      "std": 2.891184767329527,
+      "min": 101.04,
+      "max": 110.95,
+      "p25": 103.505,
+      "p50": 106.09,
+      "p75": 108.605
+    },
+    "20565-8": {
+      "display": "Carbon Dioxide",
+      "unit": "mmol/L",
+      "mean": 24.32333922261484,
+      "std": 2.5703791737683668,
+      "min": 20.03,
+      "max": 29.0,
+      "p25": 22.11,
+      "p50": 24.22,
+      "p75": 26.544999999999998
+    },
+    "4548-4": {
+      "display": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "unit": "%",
+      "mean": 5.0931331592689295,
+      "std": 1.1539796508118894,
+      "min": 3.07,
+      "max": 7.05,
+      "p25": 3.84,
+      "p50": 5.83,
+      "p75": 6.1
+    },
+    "55758-7": {
+      "display": "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]",
+      "unit": "{score}",
+      "mean": 1.24953095684803,
+      "std": 1.140925846627734,
+      "min": 0.0,
+      "max": 6.0,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 2.0
+    },
+    "44261-6": {
+      "display": "Patient Health Questionnaire 9 item (PHQ-9) total score [Reported]",
+      "unit": "{score}",
+      "mean": 11.848484848484848,
+      "std": 7.118568174558072,
+      "min": 3.0,
+      "max": 26.0,
+      "p25": 4.0,
+      "p50": 12.0,
+      "p75": 16.0
+    },
+    "70274-6": {
+      "display": "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]",
+      "unit": "{score}",
+      "mean": 3.4015748031496065,
+      "std": 3.2930209567063757,
+      "min": 0.0,
+      "max": 20.0,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 4.0
+    },
+    "82667-7": {
+      "display": "Total score [DAST-10]",
+      "unit": "{score}",
+      "mean": 1.1367924528301887,
+      "std": 1.2151423141824274,
+      "min": 0.0,
+      "max": 10.0,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 2.0
+    },
+    "2093-3": {
+      "display": "Total Cholesterol",
+      "unit": "mg/dL",
+      "mean": 194.65355704697987,
+      "std": 24.436914371329948,
+      "min": 150.39,
+      "max": 297.96,
+      "p25": 173.685,
+      "p50": 192.83,
+      "p75": 212.535
+    },
+    "2571-8": {
+      "display": "Triglycerides",
+      "unit": "mg/dL",
+      "mean": 149.18948545861298,
+      "std": 33.17893070104209,
+      "min": 100.14,
+      "max": 472.38,
+      "p25": 125.16999999999999,
+      "p50": 145.9,
+      "p75": 170.385
+    },
+    "18262-6": {
+      "display": "Low Density Lipoprotein Cholesterol",
+      "unit": "mg/dL",
+      "mean": 108.3251409395973,
+      "std": 27.13990372779052,
+      "min": 59.02,
+      "max": 173.23,
+      "p25": 85.78,
+      "p50": 108.37,
+      "p75": 132.405
+    },
+    "2085-9": {
+      "display": "High Density Lipoprotein Cholesterol",
+      "unit": "mg/dL",
+      "mean": 59.911892617449666,
+      "std": 12.113169228674971,
+      "min": 25.915,
+      "max": 79.956,
+      "p25": 50.635,
+      "p50": 60.36,
+      "p75": 69.88499999999999
+    },
+    "76504-0": {
+      "display": "Total score [HARK]",
+      "unit": "{score}",
+      "mean": 0.06698564593301436,
+      "std": 0.39773401800230435,
+      "min": 0.0,
+      "max": 3.0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0
+    },
+    "75626-2": {
+      "display": "Total score [AUDIT-C]",
+      "unit": "{score}",
+      "mean": 1.5622119815668203,
+      "std": 1.6895042468798664,
+      "min": 0.0,
+      "max": 12.0,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 2.0
+    },
+    "33914-3": {
+      "display": "Glomerular filtration rate/1.73 sq M.predicted",
+      "unit": "mL/min",
+      "mean": 48.77175163551402,
+      "std": 34.01946592230953,
+      "min": 4.4912,
+      "max": 158.37,
+      "p25": 20.36575,
+      "p50": 39.075,
+      "p75": 75.65124999999999
+    },
+    "2885-2": {
+      "display": "Protein [Mass/volume] in Serum or Plasma",
+      "unit": "g/dL",
+      "mean": 64.7679391089109,
+      "std": 16.748713054739614,
+      "min": 5.7129,
+      "max": 79.929,
+      "p25": 63.48375,
+      "p50": 68.14949999999999,
+      "p75": 72.83625
+    },
+    "1751-7": {
+      "display": "Albumin [Mass/volume] in Serum or Plasma",
+      "unit": "g/dL",
+      "mean": 4.524103465346534,
+      "std": 0.5789670573554621,
+      "min": 3.5121,
+      "max": 5.4928,
+      "p25": 4.0355,
+      "p50": 4.54485,
+      "p75": 4.986525
+    },
+    "10834-0": {
+      "display": "Globulin [Mass/volume] in Serum by calculation",
+      "unit": "g/L",
+      "mean": 2.7067915343915345,
+      "std": 0.4113310768020674,
+      "min": 2.0022,
+      "max": 3.4915,
+      "p25": 2.3408,
+      "p50": 2.7056,
+      "p75": 3.0224
+    },
+    "1975-2": {
+      "display": "Bilirubin.total [Mass/volume] in Serum or Plasma",
+      "unit": "mg/dL",
+      "mean": 1.2820869651741293,
+      "std": 2.5487647857653433,
+      "min": 0.10022,
+      "max": 14.579,
+      "p25": 0.35731,
+      "p50": 0.67435,
+      "p75": 0.99588
+    },
+    "6768-6": {
+      "display": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "unit": "U/L",
+      "mean": 79.2030297029703,
+      "std": 33.99337259489496,
+      "min": 20.668,
+      "max": 139.89,
+      "p25": 50.07525,
+      "p50": 79.083,
+      "p75": 108.2675
+    },
+    "1742-6": {
+      "display": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "unit": "U/L",
+      "mean": 38.65813564356436,
+      "std": 16.638112326859822,
+      "min": 2.3863,
+      "max": 194.41,
+      "p25": 28.46275,
+      "p50": 36.957499999999996,
+      "p75": 48.8305
+    },
+    "1920-8": {
+      "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "unit": "U/L",
+      "mean": 23.67555792079208,
+      "std": 12.461435484645492,
+      "min": 2.4539,
+      "max": 125.38,
+      "p25": 14.34525,
+      "p50": 22.927500000000002,
+      "p75": 32.23225
+    },
+    "14959-1": {
+      "display": "Microalbumin Creatinine Ratio",
+      "unit": "mg/g",
+      "mean": 59.91764444444444,
+      "std": 81.90550620078551,
+      "min": 0.01,
+      "max": 290.62,
+      "p25": 12.49,
+      "p50": 22.47,
+      "p75": 57.0
+    },
+    "38208-5": {
+      "display": "Pain severity - Reported",
+      "unit": "{score}",
+      "mean": 5.302084375,
+      "std": 2.693842486650038,
+      "min": 1.0303,
+      "max": 9.9882,
+      "p25": 2.838,
+      "p50": 5.12655,
+      "p75": 7.680925
+    },
+    "788-0": {
+      "display": "Erythrocyte distribution width [Ratio] by Automated count",
+      "unit": "%",
+      "mean": 13.975461538461538,
+      "std": 0.9201598201804706,
+      "min": 12.305,
+      "max": 15.283,
+      "p25": 13.032,
+      "p50": 14.384,
+      "p75": 14.469
+    },
+    "770-8": {
+      "display": "Neutrophils/100 leukocytes in Blood by Automated count",
+      "unit": "%",
+      "mean": 31.196,
+      "std": 10.211872720590403,
+      "min": 12.9,
+      "max": 42.366,
+      "p25": 25.935,
+      "p50": 36.586,
+      "p75": 38.301
+    },
+    "736-9": {
+      "display": "Lymphocytes/100 leukocytes in Blood by Automated count",
+      "unit": "%",
+      "mean": 8.803792307692307,
+      "std": 3.532379138650266,
+      "min": 5.1939,
+      "max": 17.246,
+      "p25": 6.1747,
+      "p50": 7.4424,
+      "p75": 9.954
+    },
+    "5905-5": {
+      "display": "Monocytes/100 leukocytes in Blood by Automated count",
+      "unit": "%",
+      "mean": 10.860046153846154,
+      "std": 1.95813594782832,
+      "min": 8.1622,
+      "max": 14.263,
+      "p25": 9.1796,
+      "p50": 11.179,
+      "p75": 12.489
+    },
+    "713-8": {
+      "display": "Eosinophils/100 leukocytes in Blood by Automated count",
+      "unit": "%",
+      "mean": 4.3715769230769235,
+      "std": 0.7652809852534771,
+      "min": 3.1824,
+      "max": 5.7396,
+      "p25": 3.7938,
+      "p50": 4.5401,
+      "p75": 4.8146
+    },
+    "706-2": {
+      "display": "Basophils/100 leukocytes in Blood by Automated count",
+      "unit": "%",
+      "mean": 3.1460692307692306,
+      "std": 0.4006120325099035,
+      "min": 2.5224,
+      "max": 3.9055,
+      "p25": 2.8465,
+      "p50": 3.1356,
+      "p75": 3.3854
+    },
+    "751-8": {
+      "display": "Neutrophils [#/volume] in Blood by Automated count",
+      "unit": "10*3/uL",
+      "mean": 2.8788769230769233,
+      "std": 0.8286386250989735,
+      "min": 1.5487,
+      "max": 3.7661,
+      "p25": 2.0072,
+      "p50": 3.2735,
+      "p75": 3.5549
+    },
+    "731-0": {
+      "display": "Lymphocytes [#/volume] in Blood by Automated count",
+      "unit": "10*3/uL",
+      "mean": 1.0143276923076925,
+      "std": 0.07371071492445691,
+      "min": 0.90191,
+      "max": 1.138,
+      "p25": 0.93943,
+      "p50": 1.0462,
+      "p75": 1.0635
+    },
+    "742-7": {
+      "display": "Monocytes [#/volume] in Blood by Automated count",
+      "unit": "10*3/uL",
+      "mean": 0.9580053846153846,
+      "std": 0.230743661155217,
+      "min": 0.63186,
+      "max": 1.3132,
+      "p25": 0.82279,
+      "p50": 0.9263,
+      "p75": 1.1675
+    },
+    "711-2": {
+      "display": "Eosinophils [#/volume] in Blood by Automated count",
+      "unit": "10*3/uL",
+      "mean": 0.3681407692307692,
+      "std": 0.1222906289548693,
+      "min": 0.20022,
+      "max": 0.58296,
+      "p25": 0.2219,
+      "p50": 0.38717,
+      "p75": 0.44829
+    },
+    "704-7": {
+      "display": "Basophils [#/volume] in Blood by Automated count",
+      "unit": "10*3/uL",
+      "mean": 0.32350769230769233,
+      "std": 0.04828545300188901,
+      "min": 0.2454,
+      "max": 0.3944,
+      "p25": 0.30727,
+      "p50": 0.32105,
+      "p75": 0.34949
+    },
+    "2345-7": {
+      "display": "Glucose [Mass/volume] in Serum or Plasma",
+      "unit": "mg/dL",
+      "mean": 94.50928571428574,
+      "std": 3.34063395242305,
+      "min": 91.44,
+      "max": 98.34,
+      "p25": 91.44,
+      "p50": 92.225,
+      "p75": 98.34
+    },
+    "3094-0": {
+      "display": "Urea nitrogen [Mass/volume] in Serum or Plasma",
+      "unit": "mg/dL",
+      "mean": 12.490714285714287,
+      "std": 2.0252952669592026,
+      "min": 10.75,
+      "max": 18.53,
+      "p25": 10.75,
+      "p50": 13.12,
+      "p75": 13.12
+    },
+    "2160-0": {
+      "display": "Creatinine [Mass/volume] in Serum or Plasma",
+      "unit": "mg/dL",
+      "mean": 2.603414285714286,
+      "std": 0.5334404905317701,
+      "min": 0.72,
+      "max": 2.9159,
+      "p25": 2.667725,
+      "p50": 2.7131499999999997,
+      "p75": 2.8101
+    },
+    "17861-6": {
+      "display": "Calcium [Mass/volume] in Serum or Plasma",
+      "unit": "mg/dL",
+      "mean": 8.927857142857142,
+      "std": 0.23881189762861385,
+      "min": 8.75,
+      "max": 9.7,
+      "p25": 8.75,
+      "p50": 8.97,
+      "p75": 8.97
+    },
+    "2951-2": {
+      "display": "Sodium [Moles/volume] in Serum or Plasma",
+      "unit": "mmol/L",
+      "mean": 141.3271428571429,
+      "std": 1.7366734563174313,
+      "min": 136.0,
+      "max": 142.76,
+      "p25": 140.86,
+      "p50": 140.86,
+      "p75": 142.76
+    },
+    "2823-3": {
+      "display": "Potassium [Moles/volume] in Serum or Plasma",
+      "unit": "mmol/L",
+      "mean": 3.865714285714286,
+      "std": 0.187071960398524,
+      "min": 3.7,
+      "max": 4.41,
+      "p25": 3.7,
+      "p50": 3.93,
+      "p75": 3.93
+    },
+    "2075-0": {
+      "display": "Chloride [Moles/volume] in Serum or Plasma",
+      "unit": "mmol/L",
+      "mean": 103.56714285714285,
+      "std": 1.4634617891025579,
+      "min": 102.51,
+      "max": 108.13,
+      "p25": 102.51,
+      "p50": 103.275,
+      "p75": 104.04
+    },
+    "2028-9": {
+      "display": "Carbon dioxide, total [Moles/volume] in Serum or Plasma",
+      "unit": "mmol/L",
+      "mean": 27.635714285714283,
+      "std": 1.1028321610790124,
+      "min": 23.66,
+      "max": 27.96,
+      "p25": 27.92,
+      "p50": 27.94,
+      "p75": 27.96
+    },
+    "2744-1": {
+      "display": "pH of Arterial blood",
+      "unit": "[pH]",
+      "mean": 7.027846153846154,
+      "std": 0.1427136110989398,
+      "min": 6.8122,
+      "max": 7.2823,
+      "p25": 6.943,
+      "p50": 7.0392,
+      "p75": 7.1241
+    },
+    "2019-8": {
+      "display": "Carbon dioxide [Partial pressure] in Arterial blood",
+      "unit": "mm[Hg]",
+      "mean": 39.605384615384615,
+      "std": 2.58905354071452,
+      "min": 35.647,
+      "max": 44.67,
+      "p25": 37.804,
+      "p50": 38.707,
+      "p75": 41.064
+    },
+    "2703-7": {
+      "display": "Oxygen [Partial pressure] in Arterial blood",
+      "unit": "mm[Hg]",
+      "mean": 46.53907692307693,
+      "std": 6.036147924240559,
+      "min": 37.39,
+      "max": 59.429,
+      "p25": 43.26,
+      "p50": 46.596,
+      "p75": 48.969
+    },
+    "1960-4": {
+      "display": "Bicarbonate [Moles/volume] in Arterial blood",
+      "unit": "mmol/L",
+      "mean": 24.792846153846156,
+      "std": 1.5097339473284612,
+      "min": 22.032,
+      "max": 26.925,
+      "p25": 23.559,
+      "p50": 25.194,
+      "p75": 25.75
+    },
+    "19994-3": {
+      "display": "Oxygen/Inspired gas setting [Volume Fraction] Ventilator",
+      "unit": "%",
+      "mean": 63.71684615384615,
+      "std": 17.39140188911288,
+      "min": 30.902,
+      "max": 88.423,
+      "p25": 53.516,
+      "p50": 64.926,
+      "p75": 73.752
+    },
+    "5792-7": {
+      "display": "Glucose [Mass/volume] in Urine by Test strip",
+      "unit": "mg/dL",
+      "mean": 1.539595425531915,
+      "std": 0.5898662020731678,
+      "min": 0.53104,
+      "max": 2.4836,
+      "p25": 0.9837475,
+      "p50": 1.54295,
+      "p75": 2.088375
+    },
+    "20505-4": {
+      "display": "Bilirubin.total [Mass/volume] in Urine by Test strip",
+      "unit": "mg/dL",
+      "mean": 0.8248751063829788,
+      "std": 0.3788303034137622,
+      "min": 0.20472,
+      "max": 1.4952,
+      "p25": 0.5071275,
+      "p50": 0.7937350000000001,
+      "p75": 1.181125
+    },
+    "5797-6": {
+      "display": "Ketones [Mass/volume] in Urine by Test strip",
+      "unit": "mg/dL",
+      "mean": 10.82133115957447,
+      "std": 5.990742532010904,
+      "min": 0.082829,
+      "max": 19.999,
+      "p25": 4.877025,
+      "p50": 11.1445,
+      "p75": 15.743500000000001
+    },
+    "5811-5": {
+      "display": "Specific gravity of Urine by Test strip",
+      "unit": "{nominal}",
+      "mean": 1.019345744680851,
+      "std": 0.010779982087515386,
+      "min": 1.0015,
+      "max": 1.039,
+      "p25": 1.010675,
+      "p50": 1.0178500000000001,
+      "p75": 1.029075
+    },
+    "5803-2": {
+      "display": "pH of Urine by Test strip",
+      "unit": "pH",
+      "mean": 6.001454255319149,
+      "std": 0.5845256592414737,
+      "min": 5.0094,
+      "max": 6.9881,
+      "p25": 5.54385,
+      "p50": 5.9649,
+      "p75": 6.501875
+    },
+    "5804-0": {
+      "display": "Protein [Mass/volume] in Urine by Test strip",
+      "unit": "mg/dL",
+      "mean": 339.9063829787234,
+      "std": 60.44644898939718,
+      "min": 112.99,
+      "max": 447.59,
+      "p25": 297.34999999999997,
+      "p50": 339.475,
+      "p75": 383.7625
+    }
+  }
+}

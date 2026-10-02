@@ -1,0 +1,31 @@
+name: blockchain-ehr-pqc
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy>=1.24
+  - pandas>=2.0
+  - scipy>=1.10
+  - scikit-learn>=1.3
+  - joblib>=1.3
+  - pyyaml>=6.0
+  - psutil>=5.9
+  - pytest>=7.4
+  - pytest-cov>=4.1
+  - pip:
+      - torch>=2.0.0
+      - torchvision>=0.15.0
+      - cryptography>=41.0.0
+      - pycryptodome>=3.18.0
+      - pqcrypto>=1.0.0
+      - kyber-py>=1.2.0
+      - dilithium-py>=1.4.0
+      - fastapi>=0.100.0
+      - uvicorn>=0.22.0
+      - pydantic>=2.0.0
+      - streamlit>=1.25.0
+      - plotly>=5.15.0
+      - shap>=0.42.0

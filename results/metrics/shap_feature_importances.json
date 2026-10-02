@@ -1,0 +1,202 @@
+[
+  {
+    "feature": "udp.stream",
+    "mean_abs_shap": 0.029199276546111208
+  },
+  {
+    "feature": "http.request.method",
+    "mean_abs_shap": 0.028673561921712505
+  },
+  {
+    "feature": "icmp.seq_le",
+    "mean_abs_shap": 0.028597941860047472
+  },
+  {
+    "feature": "http.referer",
+    "mean_abs_shap": 0.027886653612169868
+  },
+  {
+    "feature": "http.request.version",
+    "mean_abs_shap": 0.027323028057738088
+  },
+  {
+    "feature": "tcp.flags",
+    "mean_abs_shap": 0.02034605181605077
+  },
+  {
+    "feature": "tcp.dstport",
+    "mean_abs_shap": 0.01970665365765454
+  },
+  {
+    "feature": "tcp.ack_raw",
+    "mean_abs_shap": 0.019491431658512384
+  },
+  {
+    "feature": "tcp.ack",
+    "mean_abs_shap": 0.01883496469028563
+  },
+  {
+    "feature": "icmp.checksum",
+    "mean_abs_shap": 0.018578597327770917
+  },
+  {
+    "feature": "dns.qry.name.len",
+    "mean_abs_shap": 0.01403003885422866
+  },
+  {
+    "feature": "tcp.checksum",
+    "mean_abs_shap": 0.013432619647760111
+  },
+  {
+    "feature": "tcp.flags.ack",
+    "mean_abs_shap": 0.008422176371739566
+  },
+  {
+    "feature": "tcp.len",
+    "mean_abs_shap": 0.008153508802538088
+  },
+  {
+    "feature": "tcp.connection.rst",
+    "mean_abs_shap": 0.007800016000490298
+  },
+  {
+    "feature": "mqtt.conack.flags",
+    "mean_abs_shap": 0.0071280749785672
+  },
+  {
+    "feature": "mqtt.protoname",
+    "mean_abs_shap": 0.006590353924990978
+  },
+  {
+    "feature": "mqtt.msg",
+    "mean_abs_shap": 0.006587449469429188
+  },
+  {
+    "feature": "tcp.seq",
+    "mean_abs_shap": 0.005871808987431765
+  },
+  {
+    "feature": "mqtt.topic",
+    "mean_abs_shap": 0.005428444079806616
+  },
+  {
+    "feature": "tcp.connection.syn",
+    "mean_abs_shap": 0.004129710343984219
+  },
+  {
+    "feature": "udp.time_delta",
+    "mean_abs_shap": 0.0008705713552549007
+  },
+  {
+    "feature": "udp.port",
+    "mean_abs_shap": 0.0006127171743216807
+  },
+  {
+    "feature": "dns.qry.name",
+    "mean_abs_shap": 0.0005785940952929247
+  },
+  {
+    "feature": "mqtt.len",
+    "mean_abs_shap": 0.000539578008062968
+  },
+  {
+    "feature": "mqtt.hdrflags",
+    "mean_abs_shap": 0.0005115294788123221
+  },
+  {
+    "feature": "mqtt.msgtype",
+    "mean_abs_shap": 0.0005036398449995215
+  },
+  {
+    "feature": "icmp.transmit_timestamp",
+    "mean_abs_shap": 0.0004070552966788917
+  },
+  {
+    "feature": "dns.qry.qu",
+    "mean_abs_shap": 0.0003429254105768069
+  },
+  {
+    "feature": "http.content_length",
+    "mean_abs_shap": 0.0001559208386751801
+  },
+  {
+    "feature": "tcp.connection.fin",
+    "mean_abs_shap": 0.00015018288688266798
+  },
+  {
+    "feature": "mqtt.topic_len",
+    "mean_abs_shap": 0.0001263759035144718
+  },
+  {
+    "feature": "http.response",
+    "mean_abs_shap": 0.00012173822305623248
+  },
+  {
+    "feature": "tcp.connection.synack",
+    "mean_abs_shap": 8.707892884429845e-05
+  },
+  {
+    "feature": "mqtt.conflag.cleansess",
+    "mean_abs_shap": 5.253081025656795e-05
+  },
+  {
+    "feature": "mqtt.proto_len",
+    "mean_abs_shap": 4.575740562591431e-05
+  },
+  {
+    "feature": "mqtt.conflags",
+    "mean_abs_shap": 3.227080377591414e-05
+  },
+  {
+    "feature": "mqtt.ver",
+    "mean_abs_shap": 2.7868300131633916e-05
+  },
+  {
+    "feature": "arp.opcode",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "arp.hw.size",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "icmp.unused",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "http.tls_port",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "dns.qry.type",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "dns.retransmission",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "dns.retransmit_request",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "dns.retransmit_request_in",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "mqtt.msg_decoded_as",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "mbtcp.len",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "mbtcp.trans_id",
+    "mean_abs_shap": 0.0
+  },
+  {
+    "feature": "mbtcp.unit_id",
+    "mean_abs_shap": 0.0
+  }
+]

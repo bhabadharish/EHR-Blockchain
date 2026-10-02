@@ -1,0 +1,82 @@
+{
+  "Baseline_1_LogisticRegression": {
+    "paired_t_statistic": -13.621671254383223,
+    "p_value": 0.00016818402770496597,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.7534843750676693,
+    "difference": -0.17127622705782264
+  },
+  "Baseline_2_RandomForest": {
+    "paired_t_statistic": -29.383457795255048,
+    "p_value": 7.987183307593912e-06,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.9562053343096221,
+    "difference": -0.3739971862997754
+  },
+  "Baseline_3_LightGBM": {
+    "paired_t_statistic": -30.086351283734405,
+    "p_value": 7.26911198334079e-06,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.9605080377650144,
+    "difference": -0.3782998897551677
+  },
+  "Baseline_4_MLP": {
+    "paired_t_statistic": -6.781348244062098,
+    "p_value": 0.0024683764479594547,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.6728008490546851,
+    "difference": -0.09059270104483841
+  },
+  "Baseline_5_1D_CNN": {
+    "paired_t_statistic": 12.086428364209885,
+    "p_value": 0.0002687788553496646,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.35810248855643156,
+    "difference": 0.2241056594534151
+  },
+  "Baseline_6_BiLSTM": {
+    "paired_t_statistic": 25.566987631599307,
+    "p_value": 1.3900059283953752e-05,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.11417906068277148,
+    "difference": 0.46802908732707516
+  },
+  "Ablation_A_TCN_Only": {
+    "paired_t_statistic": 15.376305306170574,
+    "p_value": 0.00010437478898321307,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.3288917372433668,
+    "difference": 0.25331641076647987
+  },
+  "Ablation_B_Transformer_Only": {
+    "paired_t_statistic": 16.358257074032803,
+    "p_value": 8.174479127649598e-05,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.2027630757319016,
+    "difference": 0.37944507227794505
+  },
+  "Ablation_C_TCN_Transformer": {
+    "paired_t_statistic": 6.860985789468444,
+    "p_value": 0.0023630460274754453,
+    "significant_at_005": true,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.3949585145258898,
+    "difference": 0.18724963348395685
+  },
+  "Ablation_E_Proposed_Feature_Selection": {
+    "paired_t_statistic": -0.4145157095648787,
+    "p_value": 0.6997620249854551,
+    "significant_at_005": false,
+    "proposed_f1_mean": 0.5822081480098467,
+    "baseline_f1_mean": 0.5905008902263303,
+    "difference": -0.008292742216483684
+  }
+}

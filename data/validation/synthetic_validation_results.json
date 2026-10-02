@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-10-02T18:24:01.992513+00:00",
+  "patients_audited": 10000,
+  "resources_audited": 165002,
+  "quality_gate_passed": true,
+  "violations": {
+    "schema": 0,
+    "relational": 0,
+    "temporal": 0,
+    "clinical_range": 0,
+    "missing_fields": 0,
+    "duplicate_patients": 0,
+    "duplicate_resources": 0
+  },
+  "resource_distribution": {
+    "Organization": 10000,
+    "Practitioner": 10000,
+    "Patient": 10000,
+    "Encounter": 10000,
+    "Condition": 19987,
+    "Observation": 60000,
+    "MedicationRequest": 15015,
+    "Procedure": 10000,
+    "DiagnosticReport": 10000,
+    "AllergyIntolerance": 10000
+  },
+  "statistical_comparison": {
+    "sbp": {
+      "feature": "Systolic Blood Pressure",
+      "loinc": "8480-6",
+      "synth_mean": 122.08748999999999,
+      "synth_std": 14.063181947905672,
+      "ref_mean": 122.08748999999999,
+      "ref_std": 14.063181947905672,
+      "ks_statistic": 0.010000000000000009,
+      "ks_pvalue": 0.6994009459719119,
+      "js_divergence": 0.022769758111172364
+    },
+    "dbp": {
+      "feature": "Diastolic Blood Pressure",
+      "loinc": "8462-4",
+      "synth_mean": 78.11155,
+      "synth_std": 10.020576011263024,
+      "ref_mean": 78.11155,
+      "ref_std": 10.020576011263024,
+      "ks_statistic": 0.010099999999999998,
+      "ks_pvalue": 0.6875487335121528,
+      "js_divergence": 0.024887377353439266
+    },
+    "glucose": {
+      "feature": "Blood Glucose",
+      "loinc": "2339-0",
+      "synth_mean": 104.07621,
+      "synth_std": 24.16866299644852,
+      "ref_mean": 91.25259717314488,
+      "ref_std": 16.703296900720876,
+      "ks_statistic": 0.2833,
+      "ks_pvalue": 1e-323,
+      "js_divergence": 0.29068793555085326
+    },
+    "hemoglobin": {
+      "feature": "Hemoglobin",
+      "loinc": "718-7",
+      "synth_mean": 13.69098,
+      "synth_std": 1.4163949447805861,
+      "ref_mean": 14.397923569023572,
+      "ref_std": 1.9608859780137904,
+      "ks_statistic": 0.20889999999999997,
+      "ks_pvalue": 2.4263939580157533e-191,
+      "js_divergence": 0.2120720823351104
+    },
+    "gender": {
+      "feature": "Gender Distribution",
+      "synth_female_pct": 46.89,
+      "synth_male_pct": 53.11,
+      "ref_female_pct": 46.464646464646464,
+      "ref_male_pct": 53.535353535353536,
+      "chi2_statistic": 0.7273388433141856,
+      "chi2_pvalue": 0.39374713526260874
+    }
+  },
+  "disclaimer": "All evaluated records are strictly SYNTHETIC and generated for research evaluation. No real patient data is included."
+}

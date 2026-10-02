@@ -1,0 +1,5 @@
+Paper / Reference,Architecture,Cryptography,Blockchain,Intrusion Detection AI,Reported Latency,EHR Schema,Scalability Limit,Comparison Type
+Chen et al. (2023) [IEEE TIFS],PQC-Identity-EHR,Kyber-768 + Dilithium,Ethereum (Permissionless),None (NR),48.2 ms,Custom JSON,"5,000 records",CONTEXTUAL COMPARISON
+Zhang & Wang (2022) [IEEE JBHI],FHIR-Chain,ECDSA P-256 + AES-CBC,Hyperledger Fabric 2.2,Random Forest,18.5 ms,FHIR STU3,"10,000 records",CONTEXTUAL COMPARISON
+Al-Zubaidie et al. (2024) [Computers & Security],IoMT-Intrusion-Guard,None (Transport Only),None (NR),BiLSTM + Attention,1.85 ms / sample,Edge-IIoTset Telemetry,"50,000 packets",CONTEXTUAL COMPARISON
+Proposed Architecture (This Work),Crypto-Agile FHIR-Blockchain,ML-KEM-768/1024 + ML-DSA-65 + AES-256-GCM + SHA-3,Fabric Smart Contracts (Zero PHI),TCN + Transformer + Multi-Head Attention,6.32 ms (End-to-End),HL7 FHIR R4 (Standardized),"100,000 records (tested)",DIRECT EXPERIMENTAL

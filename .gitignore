@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Large checkpoints & model binaries (reproducible via scripts/evaluate_models.py)
+checkpoints/
+models/*.pt
+
+# Large data sets (reproduced via scripts/generate_synthetic_ehr.py and scripts/download_raw_datasets.py)
+data/raw/
+data/synthetic/
+data/storage_vault/
+data/processed/
+
+# OS files
+.DS_Store
+Thumbs.db

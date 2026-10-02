@@ -1,0 +1,30 @@
+{
+  "machine": "arm64",
+  "chip": "Apple M2",
+  "total_ram_gb": 16.0,
+  "available_ram_gb": 9.09,
+  "os": "Darwin 27.2.0",
+  "python_version": "3.14.7",
+  "pytorch_version": "2.14.0",
+  "device": "mps",
+  "mps_available": true,
+  "mps_built": true,
+  "cpu_latency_ms": 1.683,
+  "cpu_tflops": 1.276,
+  "mps_latency_ms": 1.2,
+  "mps_tflops": 1.789,
+  "baseline_rss_mb": 407.28,
+  "target_ram_limit_gb": 6.0,
+  "target_max_parameters": 2000000,
+  "target_preferred_parameters": 1000000,
+  "sample_model_parameters": 16530,
+  "sample_model_size_mb": 0.0631,
+  "single_sample_inference_ms": 0.3715,
+  "compliance": {
+    "m2_hardware_confirmed": true,
+    "ram_budget_under_6gb_limit": true,
+    "model_parameter_limit_compliant": true,
+    "mps_acceleration_active": true,
+    "cpu_fallback_verified": true
+  }
+}

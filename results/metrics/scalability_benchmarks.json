@@ -1,0 +1,62 @@
+[
+  {
+    "scale_records": 10000,
+    "fhir_processing_sec": 4.02,
+    "fhir_throughput_rps": 2486.1,
+    "encryption_time_sec": 55.1,
+    "encryption_throughput_rps": 181.5,
+    "decryption_time_sec": 2.37,
+    "decryption_throughput_rps": 4226.7,
+    "storage_size_mb": 176.22,
+    "storage_per_record_kb": 18.05,
+    "blockchain_commit_sec": 1.93,
+    "blockchain_tps": 5179.3,
+    "e2e_latency_per_record_ms": 6.342,
+    "memory_usage_mb": 5444.95
+  },
+  {
+    "scale_records": 25000,
+    "fhir_processing_sec": 8.77,
+    "fhir_throughput_rps": 2850.1,
+    "encryption_time_sec": 133.65,
+    "encryption_throughput_rps": 187.0,
+    "decryption_time_sec": 5.55,
+    "decryption_throughput_rps": 4506.4,
+    "storage_size_mb": 440.55,
+    "storage_per_record_kb": 18.05,
+    "blockchain_commit_sec": 3.4,
+    "blockchain_tps": 7343.3,
+    "e2e_latency_per_record_ms": 6.055,
+    "memory_usage_mb": 5927.0
+  },
+  {
+    "scale_records": 50000,
+    "fhir_processing_sec": 15.51,
+    "fhir_throughput_rps": 3222.8,
+    "encryption_time_sec": 263.35,
+    "encryption_throughput_rps": 189.9,
+    "decryption_time_sec": 11.17,
+    "decryption_throughput_rps": 4475.2,
+    "storage_size_mb": 881.1,
+    "storage_per_record_kb": 18.05,
+    "blockchain_commit_sec": 6.64,
+    "blockchain_tps": 7532.0,
+    "e2e_latency_per_record_ms": 5.933,
+    "memory_usage_mb": 6730.05
+  },
+  {
+    "scale_records": 100000,
+    "fhir_processing_sec": 33.14,
+    "fhir_throughput_rps": 3017.6,
+    "encryption_time_sec": 529.2,
+    "encryption_throughput_rps": 189.0,
+    "decryption_time_sec": 23.28,
+    "decryption_throughput_rps": 4294.8,
+    "storage_size_mb": 1762.21,
+    "storage_per_record_kb": 18.05,
+    "blockchain_commit_sec": 16.67,
+    "blockchain_tps": 5998.9,
+    "e2e_latency_per_record_ms": 6.023,
+    "memory_usage_mb": 6730.81
+  }
+]
