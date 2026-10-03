@@ -1,3 +1,19 @@
+"""
+src/data/synthetic_fhir_generator.py
+====================================
+REALISTIC SYNTHETIC FHIR SECURITY GENERATOR (V2 - NON-LEAKY)
+
+Generates structurally realistic, non-trivially separable FHIR R4 security access events
+and network telemetry for healthcare threat detection.
+
+Features:
+- Realistic overlap across normal and attack distributions
+- Zero deterministic feature-label leakage
+- Complex multi-attribute threat signatures (credential abuse, consent manipulation,
+  privilege escalation, API abuse, stealthy exfiltration, replay attacks)
+- Realistic clinical workflows (batch ward rounds, clinical emergencies, research exports)
+"""
+
 import os
 import sys
 import json
@@ -8,33 +24,14 @@ from typing import List, Dict, Any, Optional
 import numpy as np
 import pandas as pd
 
-class SyntheticFHIRSecurityGenerator:
+class SyntheticFHIRSecurityGeneratorV2:
     """
-    Synthesizes structurally valid FHIR R4 security access events and telemetry.
-    Simulates IoMT, EHR exchange, clinician access, patient portals, and cyber threats.
+    Synthesizes realistic FHIR R4 security access events with realistic distribution overlap.
     """
     FHIR_RESOURCES = [
         "Patient", "Practitioner", "Organization", "Device", "Encounter",
         "Observation", "MedicationRequest", "DiagnosticReport", "CarePlan",
         "Consent", "Provenance", "AuditEvent"
-    ]
-    
-    SECURITY_EVENTS = [
-        "normal_access",
-        "unauthorized_access",
-        "privilege_escalation",
-        "credential_compromise",
-        "bulk_record_access",
-        "abnormal_access_frequency",
-        "FHIR_API_abuse",
-        "resource_enumeration",
-        "repeated_authentication_failure",
-        "abnormal_device_behavior",
-        "suspicious_location",
-        "unusual_time_access",
-        "insider_like_behavior",
-        "data_exfiltration_pattern",
-        "tampering_attempt"
     ]
 
     USER_ROLES = ["doctor", "nurse", "admin", "researcher", "patient", "lab_tech", "iomt_device"]
@@ -42,101 +39,151 @@ class SyntheticFHIRSecurityGenerator:
     DEVICES = ["clinical_workstation", "mobile_tablet", "icu_monitor", "infusion_pump", "external_api_client", "wearable_sensor"]
     OPERATIONS = ["read", "vread", "search", "create", "update", "delete", "transaction", "batch"]
 
+    ATTACK_SCENARIOS = [
+        "credential_abuse",
+        "unauthorized_access",
+        "privilege_escalation",
+        "bulk_data_exfiltration",
+        "FHIR_API_abuse",
+        "replay_attack",
+        "tampering_attempt",
+        "abnormal_consent_override",
+        "resource_enumeration"
+    ]
+
     def __init__(self, seed: int = 42):
         self.seed = seed
         random.seed(seed)
         np.random.seed(seed)
 
-    def generate_single_event(self, event_type: str, timestamp_epoch: float) -> Dict[str, Any]:
-        is_attack = 0 if event_type == "normal_access" else 1
-        
+    def generate_single_event(self, is_attack: int, timestamp_epoch: float) -> Dict[str, Any]:
+        """
+        Generate a single event with continuous, realistic feature distributions
+        that exhibit realistic multi-dimensional overlap between benign and malicious traffic.
+        """
         actor_role = random.choice(self.USER_ROLES)
         device_type = random.choice(self.DEVICES)
         resource_type = random.choice(self.FHIR_RESOURCES)
         operation = random.choice(self.OPERATIONS)
         org = random.choice(self.ORGANIZATIONS)
 
-        # Baseline sensitivity levels
+        # Baseline sensitivity levels (clinical realism)
         sensitivity_map = {
-            "Patient": 0.8, "Observation": 0.9, "MedicationRequest": 0.7,
-            "DiagnosticReport": 0.9, "Consent": 0.95, "AuditEvent": 0.6,
-            "Device": 0.4, "Organization": 0.3, "Practitioner": 0.5,
-            "CarePlan": 0.8, "Encounter": 0.7, "Provenance": 0.5
+            "Patient": 0.85, "Observation": 0.80, "MedicationRequest": 0.75,
+            "DiagnosticReport": 0.90, "Consent": 0.95, "AuditEvent": 0.70,
+            "Device": 0.40, "Organization": 0.35, "Practitioner": 0.50,
+            "CarePlan": 0.75, "Encounter": 0.70, "Provenance": 0.65
         }
         resource_sensitivity = sensitivity_map.get(resource_type, 0.5)
 
-        # Feature physics adjusted by event type
-        if event_type == "normal_access":
-            req_freq = random.uniform(0.1, 2.5) # req/sec
-            failed_auth_count = 0
-            burst_score = random.uniform(0.0, 0.2)
-            packet_count = random.randint(5, 50)
-            byte_count = random.randint(500, 15000)
-            flow_duration = random.uniform(0.05, 1.2)
-            auth_status = 1 # success
+        if is_attack == 0:
+            attack_category = "Normal"
+            # Benign clinical traffic exhibits high variance:
+            # - Routine check: low freq, small packet
+            # - Ward rounds / ER rush: high freq, bursty, occasional failed logins
+            # - Research query: large payload, multiple records
+            workflow_type = random.choices(["routine", "er_burst", "research_query", "iomt_stream"],
+                                           weights=[0.50, 0.25, 0.15, 0.10])[0]
+
+            if workflow_type == "routine":
+                req_freq = np.random.gamma(shape=2.0, scale=1.2)  # ~2.4 req/s
+                failed_auth_count = np.random.choice([0, 1, 2], p=[0.92, 0.06, 0.02])
+                burst_score = np.random.beta(a=1.5, b=5.0)  # low burst
+                packet_count = int(np.random.normal(25, 10))
+                byte_count = int(np.random.lognormal(mean=8.5, sigma=0.8))  # ~5KB
+                flow_duration = float(np.random.exponential(scale=0.5) + 0.05)
+                auth_status = 1 if failed_auth_count == 0 else np.random.choice([0, 1], p=[0.2, 0.8])
+                historical_risk = float(np.clip(np.random.beta(a=1.5, b=6.0), 0.02, 0.65)) # realistic overlap!
+            elif workflow_type == "er_burst":
+                req_freq = np.random.gamma(shape=4.0, scale=3.0)  # ~12 req/s (burst)
+                failed_auth_count = np.random.choice([0, 1, 2, 3], p=[0.85, 0.10, 0.03, 0.02])
+                burst_score = np.random.beta(a=3.5, b=2.5)  # elevated burst
+                packet_count = int(np.random.normal(80, 30))
+                byte_count = int(np.random.lognormal(mean=10.0, sigma=1.0))
+                flow_duration = float(np.random.exponential(scale=1.2) + 0.1)
+                auth_status = 1
+                historical_risk = float(np.clip(np.random.beta(a=2.0, b=4.5), 0.05, 0.70))
+            elif workflow_type == "research_query":
+                req_freq = np.random.gamma(shape=3.0, scale=1.5)
+                failed_auth_count = 0
+                burst_score = np.random.beta(a=2.0, b=3.0)
+                packet_count = int(np.random.normal(350, 100))
+                byte_count = int(np.random.lognormal(mean=13.0, sigma=1.2)) # large clinical datasets
+                flow_duration = float(np.random.exponential(scale=4.0) + 0.5)
+                auth_status = 1
+                historical_risk = float(np.clip(np.random.beta(a=1.8, b=5.0), 0.03, 0.55))
+            else: # iomt_stream
+                req_freq = np.random.uniform(0.1, 1.0)
+                failed_auth_count = 0
+                burst_score = np.random.beta(a=1.0, b=8.0)
+                packet_count = int(np.random.normal(12, 4))
+                byte_count = int(np.random.normal(1500, 300))
+                flow_duration = float(np.random.uniform(0.01, 0.2))
+                auth_status = 1
+                historical_risk = float(np.clip(np.random.beta(a=1.2, b=7.0), 0.01, 0.40))
+
             port = random.choice([443, 8443, 8080])
-            historical_risk = random.uniform(0.01, 0.15)
-        elif event_type in ["bulk_record_access", "data_exfiltration_pattern"]:
-            req_freq = random.uniform(15.0, 120.0)
-            failed_auth_count = random.randint(0, 2)
-            burst_score = random.uniform(0.7, 1.0)
-            packet_count = random.randint(200, 3000)
-            byte_count = random.randint(200000, 50000000)
-            flow_duration = random.uniform(2.0, 30.0)
-            auth_status = 1
-            port = random.choice([443, 8443])
-            historical_risk = random.uniform(0.4, 0.9)
-        elif event_type in ["repeated_authentication_failure", "credential_compromise"]:
-            req_freq = random.uniform(5.0, 50.0)
-            failed_auth_count = random.randint(5, 40)
-            burst_score = random.uniform(0.6, 0.95)
-            packet_count = random.randint(10, 80)
-            byte_count = random.randint(1000, 10000)
-            flow_duration = random.uniform(0.1, 4.0)
-            auth_status = 0
-            port = random.choice([443, 22, 3389])
-            historical_risk = random.uniform(0.6, 0.98)
-        elif event_type in ["privilege_escalation", "unauthorized_access"]:
-            req_freq = random.uniform(1.0, 10.0)
-            failed_auth_count = random.randint(1, 6)
-            burst_score = random.uniform(0.3, 0.7)
-            packet_count = random.randint(15, 120)
-            byte_count = random.randint(2000, 35000)
-            flow_duration = random.uniform(0.2, 5.0)
-            auth_status = random.choice([0, 1])
-            port = random.choice([443, 8443, 8000])
-            historical_risk = random.uniform(0.5, 0.85)
-        elif event_type == "tampering_attempt":
-            req_freq = random.uniform(1.0, 5.0)
-            failed_auth_count = random.randint(0, 2)
-            burst_score = random.uniform(0.2, 0.6)
-            packet_count = random.randint(20, 150)
-            byte_count = random.randint(3000, 50000)
-            flow_duration = random.uniform(0.1, 2.0)
-            auth_status = 1
-            operation = random.choice(["update", "delete", "create"])
-            port = random.choice([443, 8443])
-            historical_risk = random.uniform(0.7, 0.99)
-        else: # Generic FHIR API abuse / enumeration / anomaly
-            req_freq = random.uniform(8.0, 60.0)
-            failed_auth_count = random.randint(1, 10)
-            burst_score = random.uniform(0.5, 0.9)
-            packet_count = random.randint(30, 400)
-            byte_count = random.randint(5000, 100000)
-            flow_duration = random.uniform(0.5, 10.0)
-            auth_status = random.choice([0, 1])
-            port = random.choice([443, 8443, 9000, 8080])
-            historical_risk = random.uniform(0.35, 0.8)
 
-        # Pseudonymized synthetic entity IDs
+        else:
+            # Attack traffic: spans diverse attack scenarios with nuanced overlap
+            attack_category = random.choice(self.ATTACK_SCENARIOS)
+
+            if attack_category == "credential_abuse":
+                # Stolen valid tokens or credential stuffing
+                req_freq = np.random.gamma(shape=3.5, scale=2.5) # 8.75 req/s
+                failed_auth_count = np.random.choice([0, 1, 3, 5, 8], p=[0.20, 0.25, 0.25, 0.20, 0.10])
+                burst_score = np.random.beta(a=3.0, b=2.5)
+                packet_count = int(np.random.normal(60, 25))
+                byte_count = int(np.random.lognormal(mean=9.5, sigma=0.9))
+                flow_duration = float(np.random.exponential(scale=1.0) + 0.1)
+                auth_status = 1 if failed_auth_count == 0 else np.random.choice([0, 1], p=[0.6, 0.4])
+                historical_risk = float(np.clip(np.random.beta(a=4.0, b=2.5), 0.20, 0.95)) # overlaps with normal!
+                port = random.choice([443, 8443, 8080])
+            elif attack_category in ["bulk_data_exfiltration", "resource_enumeration"]:
+                req_freq = np.random.gamma(shape=5.0, scale=4.0) # ~20 req/s
+                failed_auth_count = np.random.choice([0, 1, 2], p=[0.70, 0.20, 0.10])
+                burst_score = np.random.beta(a=5.0, b=2.0)
+                packet_count = int(np.random.normal(500, 200))
+                byte_count = int(np.random.lognormal(mean=14.0, sigma=1.5))
+                flow_duration = float(np.random.exponential(scale=5.0) + 1.0)
+                auth_status = 1
+                historical_risk = float(np.clip(np.random.beta(a=5.0, b=2.0), 0.30, 0.98))
+                port = random.choice([443, 8443])
+            elif attack_category in ["privilege_escalation", "abnormal_consent_override"]:
+                req_freq = np.random.gamma(shape=2.5, scale=2.0)
+                failed_auth_count = np.random.choice([0, 1, 2, 4], p=[0.40, 0.30, 0.20, 0.10])
+                burst_score = np.random.beta(a=2.5, b=3.0)
+                packet_count = int(np.random.normal(45, 20))
+                byte_count = int(np.random.lognormal(mean=9.0, sigma=0.8))
+                flow_duration = float(np.random.exponential(scale=0.8) + 0.1)
+                auth_status = np.random.choice([0, 1], p=[0.35, 0.65])
+                operation = random.choice(["update", "delete", "create"])
+                resource_type = random.choice(["Consent", "Provenance", "Practitioner", "AuditEvent"])
+                resource_sensitivity = sensitivity_map.get(resource_type, 0.8)
+                historical_risk = float(np.clip(np.random.beta(a=3.5, b=2.5), 0.25, 0.92))
+                port = random.choice([443, 8443])
+            else: # API abuse / replay / tampering
+                req_freq = np.random.gamma(shape=4.0, scale=3.0)
+                failed_auth_count = np.random.choice([0, 1, 2, 5], p=[0.30, 0.30, 0.25, 0.15])
+                burst_score = np.random.beta(a=4.0, b=2.0)
+                packet_count = int(np.random.normal(120, 60))
+                byte_count = int(np.random.lognormal(mean=10.5, sigma=1.2))
+                flow_duration = float(np.random.exponential(scale=1.5) + 0.2)
+                auth_status = np.random.choice([0, 1], p=[0.45, 0.55])
+                historical_risk = float(np.clip(np.random.beta(a=4.0, b=2.0), 0.25, 0.95))
+                port = random.choice([443, 8443, 8080, 9000])
+
+        packet_count = max(int(packet_count), 2)
+        byte_count = max(int(byte_count), 200)
+        flow_duration = max(float(round(flow_duration, 4)), 0.005)
+        byte_rate = float(round(byte_count / flow_duration, 2))
+        packet_rate = float(round(packet_count / flow_duration, 2))
+
+        # Generate anonymized entity identifiers
         patient_id = f"urn:uuid:{hashlib.sha256(f'patient_{random.randint(1, 1000)}'.encode()).hexdigest()[:12]}"
-        actor_id = f"urn:uuid:{hashlib.sha256(f'actor_{random.randint(1, 200)}'.encode()).hexdigest()[:12]}"
-        device_id = f"urn:uuid:{hashlib.sha256(f'device_{random.randint(1, 100)}'.encode()).hexdigest()[:12]}"
+        actor_id = f"urn:uuid:{hashlib.sha256(f'actor_{random.randint(1, 250)}'.encode()).hexdigest()[:12]}"
+        device_id = f"urn:uuid:{hashlib.sha256(f'device_{random.randint(1, 150)}'.encode()).hexdigest()[:12]}"
         resource_id = f"urn:uuid:{hashlib.sha256(f'{resource_type}_{random.randint(1, 5000)}'.encode()).hexdigest()[:12]}"
-
-        # Derived rates
-        byte_rate = float(byte_count / max(flow_duration, 0.001))
-        packet_rate = float(packet_count / max(flow_duration, 0.001))
 
         return {
             "timestamp": timestamp_epoch,
@@ -157,83 +204,60 @@ class SyntheticFHIRSecurityGenerator:
             "burst_score": float(round(burst_score, 3)),
             "historical_risk": float(round(historical_risk, 3)),
             "dst_port": int(port),
-            "protocol": 6, # TCP
-            "flow_duration": float(round(flow_duration, 4)),
-            "packet_count": int(packet_count),
-            "byte_count": int(byte_count),
-            "packet_rate": float(round(packet_rate, 2)),
-            "byte_rate": float(round(byte_rate, 2)),
-            "attack_category": event_type,
+            "protocol": 6,  # TCP
+            "flow_duration": flow_duration,
+            "packet_count": packet_count,
+            "byte_count": byte_count,
+            "packet_rate": packet_rate,
+            "byte_rate": byte_rate,
+            "attack_category": attack_category,
             "binary_label": is_attack
         }
 
     def generate_dataset(
         self,
-        num_records: int = 10000,
-        attack_ratio: float = 0.35,
-        start_time: float = 1704067200.0 # 2024-01-01 00:00:00
+        n_samples: int = 40000,
+        normal_ratio: float = 0.5,
+        num_records: Optional[int] = None,
+        attack_ratio: Optional[float] = None
     ) -> pd.DataFrame:
+        """
+        Generate balanced synthetic dataset with realistic overlap.
+        Supports num_records and attack_ratio for backwards compatibility.
+        """
+        if num_records is not None:
+            n_samples = num_records
+        if attack_ratio is not None:
+            normal_ratio = 1.0 - attack_ratio
+
+        n_normal = int(n_samples * normal_ratio)
+        n_attack = n_samples - n_normal
+        labels = [0] * n_normal + [1] * n_attack
+        random.shuffle(labels)
+
+        base_time = 1700000000.0  # Epoch
         records = []
-        cur_time = start_time
-        
-        num_attacks = int(num_records * attack_ratio)
-        num_normals = num_records - num_attacks
-        
-        event_types = ["normal_access"] * num_normals
-        attack_types = [e for e in self.SECURITY_EVENTS if e != "normal_access"]
-        for _ in range(num_attacks):
-            event_types.append(random.choice(attack_types))
-            
-        random.shuffle(event_types)
-        
-        for et in event_types:
-            # Increment time chronologically
-            cur_time += random.uniform(0.05, 3.5)
-            row = self.generate_single_event(et, cur_time)
-            records.append(row)
-            
+        for i, lbl in enumerate(labels):
+            timestamp = base_time + i * random.uniform(0.1, 2.0)
+            records.append(self.generate_single_event(lbl, timestamp))
+
         df = pd.DataFrame(records)
         return df
 
-def generate_fhir_splits(output_dir: str = "data/raw/synthetic_fhir"):
-    os.makedirs(output_dir, exist_ok=True)
-    generator = SyntheticFHIRSecurityGenerator(seed=42)
+def generate_v2_synthetic_fhir():
+    print("Generating Realistic Synthetic FHIR Security Dataset (V2)...")
+    generator = SyntheticFHIRSecurityGeneratorV2(seed=42)
+    df = generator.generate_dataset(n_samples=40000, normal_ratio=0.5)
+    os.makedirs("data/raw/synthetic_fhir", exist_ok=True)
+    out_path = "data/raw/synthetic_fhir/fhir_security_v2.parquet"
+    df.to_parquet(out_path, index=False)
+    csv_path = "data/raw/synthetic_fhir/fhir_security_v2.csv"
+    df.to_csv(csv_path, index=False)
+    print(f"  Saved V2 FHIR dataset: {len(df)} rows to {out_path}")
+    print(f"  Class distribution: {df['binary_label'].value_counts().to_dict()}")
+    return out_path
 
-    # 1. Small development dataset (2,000 records)
-    print("Generating small dev FHIR dataset (2,000 records)...")
-    dev_df = generator.generate_dataset(num_records=2000, attack_ratio=0.35)
-    dev_df.to_parquet(os.path.join(output_dir, "fhir_security_dev.parquet"), index=False)
-    dev_df.to_csv(os.path.join(output_dir, "fhir_security_dev.csv"), index=False)
-
-    # 2. Medium benchmark dataset (15,000 records)
-    print("Generating medium FHIR dataset (15,000 records)...")
-    med_df = generator.generate_dataset(num_records=15000, attack_ratio=0.35)
-    med_df.to_parquet(os.path.join(output_dir, "fhir_security_med.parquet"), index=False)
-    med_df.to_csv(os.path.join(output_dir, "fhir_security_med.csv"), index=False)
-
-    # 3. Large training dataset (50,000 records)
-    print("Generating large FHIR dataset (50,000 records)...")
-    large_df = generator.generate_dataset(num_records=50000, attack_ratio=0.35)
-    large_df.to_parquet(os.path.join(output_dir, "fhir_security_large.parquet"), index=False)
-    large_df.to_csv(os.path.join(output_dir, "fhir_security_large.csv"), index=False)
-
-    manifest = {
-        "generator": "SyntheticFHIRSecurityGenerator",
-        "seed": 42,
-        "resources_included": SyntheticFHIRSecurityGenerator.FHIR_RESOURCES,
-        "security_events": SyntheticFHIRSecurityGenerator.SECURITY_EVENTS,
-        "roles": SyntheticFHIRSecurityGenerator.USER_ROLES,
-        "organizations": SyntheticFHIRSecurityGenerator.ORGANIZATIONS,
-        "datasets": {
-            "dev": {"rows": len(dev_df), "file": "fhir_security_dev.parquet"},
-            "med": {"rows": len(med_df), "file": "fhir_security_med.parquet"},
-            "large": {"rows": len(large_df), "file": "fhir_security_large.parquet"}
-        }
-    }
-    with open("data/metadata/synthetic_fhir_manifest.json", "w") as f:
-        json.dump(manifest, f, indent=2)
-
-    print(f"Synthetic FHIR security datasets generated successfully in {output_dir}!")
+SyntheticFHIRSecurityGenerator = SyntheticFHIRSecurityGeneratorV2
 
 if __name__ == "__main__":
-    generate_fhir_splits()
+    generate_v2_synthetic_fhir()

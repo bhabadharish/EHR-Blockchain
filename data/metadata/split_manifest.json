@@ -1,40 +1,7 @@
 {
-  "unified_features": {
-    "numerical": [
-      "flow_duration",
-      "packet_count",
-      "byte_count",
-      "packet_rate",
-      "byte_rate",
-      "dst_port",
-      "protocol",
-      "resource_sensitivity",
-      "auth_status",
-      "failed_auth_count",
-      "request_frequency",
-      "burst_score",
-      "historical_risk"
-    ],
-    "categorical": [
-      "user_role",
-      "resource_type",
-      "operation"
-    ],
-    "total_count": 16
-  },
-  "splits": {
-    "train_rows": 122499,
-    "val_rows": 26250,
-    "test_rows": 26251,
-    "sources": {
-      "ciciot2023": 120000,
-      "edge_iiot": 40000,
-      "synthetic_fhir": 15000
-    }
-  },
-  "preprocessor": {
-    "scaler": "RobustScaler",
-    "cat_encoder": "OrdinalEncoder",
-    "fit_partition": "TRAIN_ONLY"
-  }
+  "experiment_id": "CAHTDNET_V2_001",
+  "train_samples": 119000,
+  "validation_samples": 25500,
+  "test_samples": 25500,
+  "total_samples": 170000
 }

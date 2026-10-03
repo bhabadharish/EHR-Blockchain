@@ -19,7 +19,7 @@ def test_result_registry_exists_and_valid():
         reg = json.load(f)
     assert "models" in reg
     assert "CA-HTDNet" in reg["models"]
-    assert reg["experiment_id"] in ["CAHTDNET_FINAL_V001", "CAHTDNet_final_locked_v001"]
+    assert reg["experiment_id"] in ["CAHTDNET_FINAL_V001", "CAHTDNet_final_locked_v001", "CAHTDNET_V2_001"]
 
 def test_model_and_preprocessor_hashes():
     loader = FrozenModelLoader()

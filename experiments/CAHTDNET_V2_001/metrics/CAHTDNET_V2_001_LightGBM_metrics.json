@@ -1,0 +1,88 @@
+{
+  "engine_version": "1.0.0-canonical",
+  "n_samples": 25500,
+  "threshold": 0.5,
+  "confusion_matrix": {
+    "tn": 6207,
+    "fp": 271,
+    "fn": 360,
+    "tp": 18662,
+    "raw_matrix": [
+      [
+        6207,
+        271
+      ],
+      [
+        360,
+        18662
+      ]
+    ]
+  },
+  "accuracy": 0.9752549019607843,
+  "macro_precision": 0.965433407705376,
+  "macro_recall": 0.9696203229558638,
+  "macro_f1": 0.9675020130100002,
+  "weighted_precision": 0.9753962755640079,
+  "weighted_recall": 0.9752549019607843,
+  "weighted_f1": 0.9753103019701475,
+  "binary_precision": 0.9856863677177415,
+  "binary_recall": 0.9810745452633792,
+  "binary_f1": 0.9833750494006059,
+  "fpr": 0.04183389935165174,
+  "fnr": 0.018925454736620755,
+  "mcc": 0.9350443566827124,
+  "cohen_kappa": 0.9350050658119302,
+  "roc_auc": 0.996915487986173,
+  "pr_auc": 0.998915691924207,
+  "brier_score": 0.018192334206936236,
+  "per_class": {
+    "class_0": {
+      "name": "Normal",
+      "precision": 0.9451804476930105,
+      "recall": 0.9581661006483483,
+      "f1": 0.9516289766193944,
+      "support": 6478
+    },
+    "class_1": {
+      "name": "Attack",
+      "precision": 0.9856863677177415,
+      "recall": 0.9810745452633792,
+      "f1": 0.9833750494006059,
+      "support": 19022
+    }
+  },
+  "classification_report": {
+    "Normal": {
+      "precision": 0.9451804476930105,
+      "recall": 0.9581661006483483,
+      "f1-score": 0.9516289766193944,
+      "support": 6478.0
+    },
+    "Attack": {
+      "precision": 0.9856863677177415,
+      "recall": 0.9810745452633792,
+      "f1-score": 0.9833750494006059,
+      "support": 19022.0
+    },
+    "accuracy": 0.9752549019607843,
+    "macro avg": {
+      "precision": 0.965433407705376,
+      "recall": 0.9696203229558638,
+      "f1-score": 0.9675020130100002,
+      "support": 25500.0
+    },
+    "weighted avg": {
+      "precision": 0.9753962755640079,
+      "recall": 0.9752549019607843,
+      "f1-score": 0.9753103019701475,
+      "support": 25500.0
+    }
+  },
+  "metadata": {
+    "experiment_id": "CAHTDNET_V2_001",
+    "model": "LightGBM",
+    "split": "locked_test",
+    "inference_time_s": 0.1582,
+    "latency_ms_per_sample": 0.0062
+  }
+}

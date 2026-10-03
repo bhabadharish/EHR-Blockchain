@@ -1,22 +1,19 @@
 {
-  "experiment_id": "CAHTDNET_FINAL_V001",
-  "model_id": "CA-HTDNet-v1",
-  "dataset_id": "CICIoT2023-EdgeIIoT-SyntheticFHIR-Harmonized",
-  "dataset_hash": "f0ca3adc6fbda74390178aef901a616af5d87db0eff672f8a5ddbda86f723e2f",
-  "test_split_hash": "69169cd8b113b638f2d19af8f7281ecb3744023e996c443b8e1e06ea58eec99d",
-  "validation_split_hash": "f1092d4ebbf8a3b74af3b7526a4a5e3e2eef9a15d8256a631fba59eafaa53583",
-  "split_ids_hash": "c4e188ac34895c6e043324b718c23d0054afcf0625528613b63a9cf134438405",
-  "feature_version": "16-features-v1",
-  "preprocessor_hash": "5f5ec9629bfe018de686084bcd87d6fb7601fab7f2ff5e3edf1adb9a6158928f",
-  "model_hash": "42f80a0dcf58d11dd4d7c29f7da285afa12a8553f71d0f42cdb9db90e5bb1ceb",
-  "prediction_hash": "6fcf8483a7615404c6cda98cfbfca66fe7b9f9bfa352c8ea6c7bf170ca06240e",
-  "metrics_hash": "94b8424a692231870106f3f1fd48699e33a4d5cde8f47596d2765a2e9742f1a4",
+  "experiment_id": "CAHTDNET_V2_001",
+  "model_id": "CA-HTDNet-v2",
+  "dataset_id": "CICIoT2023-EdgeIIoT-SyntheticFHIR-Stratified-V2",
+  "dataset_hash": "4cc343ddc7319dcff22469141dc9db588fa279afe3a3af11d49eb194a600562c",
+  "test_split_hash": "1f28b1960e7db080c3e5e49c88116486de3107653eac5c1b62388cf0d2da2e7c",
+  "validation_split_hash": "40f47662b6af9bd810bacd6f31d342b4d62fce4b88ae340f4a0af063923b0d47",
+  "split_ids_hash": "02eb8d2fe7c6a2ae24c36248c834f016ac0ed9980da1954e675f6ae0239fe55d",
+  "feature_version": "v2-engineered-21-features",
+  "preprocessor_hash": "ef05bbf9fd2d63fd8ea498630ae6aaa528f929c490fce89bd43ed6f76a4998b3",
+  "model_hash": "a1bc6b035e624f767f394b15c5df9b93cd9577986405f56bd95e33e115f9e823",
+  "prediction_hash": "d4f0a851cc6abe3b641ab9d7f148dba357d2c96bc9a86cb8b1f3be41c4a9e75f",
+  "metrics_hash": "3be772e7df5b9c4d736ff989e7eb79ca8dcc6d577c9549c9414522bafa9f4061",
   "seed": 42,
+  "optimal_threshold": 0.45,
+  "calibration": "Platt_Scaling",
   "metric_engine_version": "1.0.0-canonical",
-  "timestamp_utc": "2026-10-03 07:57:39 UTC",
-  "hardware": {
-    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
-    "processor": "arm",
-    "python_version": "3.14.7"
-  }
+  "timestamp_utc": "2026-10-03T13:56:54.954853"
 }

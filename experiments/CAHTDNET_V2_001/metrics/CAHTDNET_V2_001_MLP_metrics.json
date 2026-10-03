@@ -1,0 +1,88 @@
+{
+  "engine_version": "1.0.0-canonical",
+  "n_samples": 25500,
+  "threshold": 0.5,
+  "confusion_matrix": {
+    "tn": 6086,
+    "fp": 392,
+    "fn": 677,
+    "tp": 18345,
+    "raw_matrix": [
+      [
+        6086,
+        392
+      ],
+      [
+        677,
+        18345
+      ]
+    ]
+  },
+  "accuracy": 0.958078431372549,
+  "macro_precision": 0.9394876618127175,
+  "macro_recall": 0.9519485635472085,
+  "macro_f1": 0.9454773926752542,
+  "weighted_precision": 0.9589634103811598,
+  "weighted_recall": 0.958078431372549,
+  "weighted_f1": 0.9583713831654138,
+  "binary_precision": 0.9790788279874046,
+  "binary_recall": 0.9644096309536326,
+  "binary_f1": 0.9716888688789428,
+  "fpr": 0.060512503859215805,
+  "fnr": 0.035590369046367365,
+  "mcc": 0.8913491290240407,
+  "cohen_kappa": 0.8909724980401087,
+  "roc_auc": 0.9908789741158326,
+  "pr_auc": 0.9968435276598842,
+  "brier_score": 0.032102018615741516,
+  "per_class": {
+    "class_0": {
+      "name": "Normal",
+      "precision": 0.8998964956380304,
+      "recall": 0.9394874961407842,
+      "f1": 0.9192659164715656,
+      "support": 6478
+    },
+    "class_1": {
+      "name": "Attack",
+      "precision": 0.9790788279874046,
+      "recall": 0.9644096309536326,
+      "f1": 0.9716888688789428,
+      "support": 19022
+    }
+  },
+  "classification_report": {
+    "Normal": {
+      "precision": 0.8998964956380304,
+      "recall": 0.9394874961407842,
+      "f1-score": 0.9192659164715656,
+      "support": 6478.0
+    },
+    "Attack": {
+      "precision": 0.9790788279874046,
+      "recall": 0.9644096309536326,
+      "f1-score": 0.9716888688789428,
+      "support": 19022.0
+    },
+    "accuracy": 0.958078431372549,
+    "macro avg": {
+      "precision": 0.9394876618127175,
+      "recall": 0.9519485635472085,
+      "f1-score": 0.9454773926752542,
+      "support": 25500.0
+    },
+    "weighted avg": {
+      "precision": 0.9589634103811598,
+      "recall": 0.958078431372549,
+      "f1-score": 0.9583713831654138,
+      "support": 25500.0
+    }
+  },
+  "metadata": {
+    "experiment_id": "CAHTDNET_V2_001",
+    "model": "MLP",
+    "split": "locked_test",
+    "inference_time_s": 0.0058,
+    "latency_ms_per_sample": 0.0002
+  }
+}

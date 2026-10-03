@@ -1,0 +1,34 @@
+{
+  "experiment_id": "CAHTDNET_V2_001",
+  "split_version": "2.0.0",
+  "random_seed": 42,
+  "sample_counts": {
+    "total": 170000,
+    "train": 119000,
+    "validation": 25500,
+    "test": 25500
+  },
+  "class_distributions": {
+    "train": {
+      "1": 88769,
+      "0": 30231
+    },
+    "validation": {
+      "1": 19022,
+      "0": 6478
+    },
+    "test": {
+      "1": 19022,
+      "0": 6478
+    }
+  },
+  "hashes": {
+    "primary_dataset_hash": "4cc343ddc7319dcff22469141dc9db588fa279afe3a3af11d49eb194a600562c",
+    "train_parquet_hash": "7757a1e4b065ed59280eb398fe5f0513c52e3c659aac9d453a682f4523c754ba",
+    "val_parquet_hash": "40f47662b6af9bd810bacd6f31d342b4d62fce4b88ae340f4a0af063923b0d47",
+    "test_parquet_hash": "1f28b1960e7db080c3e5e49c88116486de3107653eac5c1b62388cf0d2da2e7c",
+    "train_ids_hash": "f200bc0b0759509c92b59127739712a662b9313b7eb276cff9ad2b57fe34bb57",
+    "val_ids_hash": "86438c5d01131a587c62c99c3e2b5316c867658919a9155f976c0521107cad86",
+    "test_ids_hash": "02eb8d2fe7c6a2ae24c36248c834f016ac0ed9980da1954e675f6ae0239fe55d"
+  }
+}

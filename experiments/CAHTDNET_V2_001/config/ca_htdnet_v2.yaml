@@ -1,0 +1,77 @@
+experiment_id: "CAHTDNET_V2_001"
+model_name: "CA-HTDNet-V2"
+model_version: "2.0.0"
+dataset_version: "2.0.0-stratified-multimodal"
+split_version: "2.0.0"
+feature_version: "2.0.0"
+random_seed: 42
+evaluation_seeds: [42, 123, 2024, 3407, 777]
+
+dataset:
+  sources:
+    - name: "CICIoT2023"
+      raw_path: "data/raw/cic_iot/train.csv"
+      sample_size: 70000
+    - name: "Edge-IIoTset"
+      raw_path: "data/raw/edge_iiot/ML-EdgeIIoT-dataset.csv"
+      sample_size: 60000
+    - name: "Synthetic_FHIR_EHR"
+      raw_path: "data/raw/synthetic_fhir/fhir_security_v2.parquet"
+      sample_size: 40000
+  total_samples: 170000
+  split_ratio:
+    train: 0.70
+    validation: 0.15
+    test: 0.15
+  stratify_column: "binary_label"
+
+architecture:
+  embedding_dim: 16
+  hidden_dim: 128
+  projection_dim: 128
+  attention_heads: 4
+  num_transformer_layers: 2
+  tcn_kernel_size: 3
+  tcn_channels: [64, 128]
+  dropout: 0.15
+  feature_gating: true
+  cross_feature_attention: true
+  dual_branch: true
+  gated_residual_fusion: true
+  representation_dim: 64
+  auxiliary_risk_head: true
+
+training:
+  max_epochs: 30
+  batch_size: 256
+  learning_rate: 0.001
+  optimizer: "AdamW"
+  weight_decay: 0.0001
+  scheduler: "CosineAnnealingLR"
+  scheduler_t_max: 30
+  loss_type: "class_balanced_focal_margin"
+  focal_gamma: 2.0
+  focal_alpha: 0.55
+  margin_penalty: 0.15
+  early_stopping:
+    monitor: "val_macro_f1"
+    patience: 8
+    mode: "max"
+
+threshold:
+  optimization_split: "validation"
+  grid:
+    start: 0.05
+    end: 0.95
+    step: 0.01
+  selection_rule: "maximize_macro_f1_subject_to_fpr_fnr_constraints"
+  fpr_target: 0.01
+  fnr_target: 0.01
+
+calibration:
+  methods: ["uncalibrated", "temperature_scaling", "platt_scaling", "isotonic"]
+  fit_split: "validation"
+
+metrics_engine:
+  canonical_engine: "results/metric_engine.py"
+  tolerance: 1.0e-6

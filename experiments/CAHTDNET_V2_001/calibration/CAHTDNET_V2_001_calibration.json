@@ -1,0 +1,30 @@
+[
+  {
+    "method": "Uncalibrated",
+    "brier_score": 0.03536473587155342,
+    "ece": 0.06558851482032563,
+    "log_loss": 0.13634784519672394,
+    "optimal_parameter": 1.0
+  },
+  {
+    "method": "Temperature_Scaling",
+    "brier_score": 0.0275183767080307,
+    "ece": 0.014425448855586028,
+    "log_loss": 0.08928980678319931,
+    "optimal_parameter": 0.3671
+  },
+  {
+    "method": "Platt_Scaling",
+    "brier_score": 0.02656892128288746,
+    "ece": 0.00675619439058478,
+    "log_loss": 0.08590345084667206,
+    "optimal_parameter": "coef=2.9196, intercept=0.5670"
+  },
+  {
+    "method": "Isotonic_Regression",
+    "brier_score": 0.02713809907436371,
+    "ece": 0.010009016597186936,
+    "log_loss": 0.08824580907821655,
+    "optimal_parameter": "non-parametric"
+  }
+]

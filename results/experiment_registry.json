@@ -1,19 +1,19 @@
 {
-  "experiment_id": "CAHTDNET_FINAL_V001",
-  "CAHTDNET_FINAL_V001": {
-    "model": "CA-HTDNet",
-    "model_version": "1.0.0",
-    "dataset": "CICIoT2023 + Edge-IIoTset + Synthetic FHIR R4",
-    "train_split": "data/splits/train.parquet",
-    "validation_split": "data/splits/validation.parquet",
-    "test_split": "data/splits/test.parquet (LOCKED)",
+  "experiment_id": "CAHTDNET_V2_001",
+  "CAHTDNET_V2_001": {
+    "model": "CA-HTDNet-V2",
+    "model_version": "2.0.0",
+    "dataset": "CICIoT2023 + Edge-IIoTset + Synthetic FHIR V2",
+    "train_split": "experiments/CAHTDNET_V2_001/splits/train.parquet",
+    "validation_split": "experiments/CAHTDNET_V2_001/splits/validation.parquet",
+    "test_split": "experiments/CAHTDNET_V2_001/splits/test.parquet (LOCKED)",
     "random_seed": 42,
-    "threshold": 0.35,
-    "calibration": "Temperature Scaling (L-BFGS on Validation)",
-    "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_test_predictions.parquet",
-    "metrics_file": "experiments/metrics/CAHTDNET_FINAL_V001_metrics.json",
-    "preprocessor_file": "models/preprocessors/preprocessor.pkl",
-    "model_file": "experiments/models/CAHTDNET_FINAL_V001.pt"
+    "threshold": 0.45,
+    "calibration": "Platt Scaling (Logistic Regression on Validation logits)",
+    "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_test_predictions.parquet",
+    "metrics_file": "experiments/CAHTDNET_V2_001/metrics/CAHTDNET_V2_001_metrics.json",
+    "preprocessor_file": "experiments/CAHTDNET_V2_001/preprocessing/preprocessor.pkl",
+    "model_file": "experiments/CAHTDNET_V2_001/models/CAHTDNET_V2_001.pt"
   },
   "preprocessor": {
     "path": "models/preprocessors/preprocessor.pkl",
@@ -23,489 +23,391 @@
     "CA-HTDNet": {
       "model_version": "1.0.0",
       "model_sha256": "42f80a0dcf58d11dd4d7c29f7da285afa12a8553f71d0f42cdb9db90e5bb1ceb",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_test_predictions.parquet",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_test_predictions.parquet",
       "stored_metrics": {
-        "Accuracy": 0.9873909565349891,
-        "Macro_Precision": 0.9269445105380181,
-        "Macro_Recall": 0.9895107265201037,
-        "Macro_F1": 0.9556497924453624,
-        "Weighted_F1": 0.9878211659366002,
-        "ROC_AUC": 0.9991300884051686,
-        "PR_AUC": 0.9999334645464626,
-        "FPR": 0.008017103153393906,
-        "FNR": 0.012961443806398687,
-        "MCC": 0.9143170512185261,
+        "Accuracy": 0.955843137254902,
+        "Macro_Precision": 0.9283642684033104,
+        "Macro_Recall": 0.9643457151010437,
+        "Macro_F1": 0.9441802321293615,
+        "Weighted_F1": 0.9567316633145692,
+        "ROC_AUC": 0.9941905959687438,
+        "PR_AUC": 0.9980257414331053,
+        "FPR": 0.018369867242976227,
+        "FNR": 0.05293870255493639,
+        "MCC": 0.8919845571207398,
         "Confusion_Matrix": [
           [
-            1856,
-            15
+            6359,
+            119
           ],
           [
-            316,
-            24064
+            1007,
+            18015
           ]
         ]
       },
       "recomputed_metrics": {
-        "Accuracy": 0.9873909565349891,
-        "Macro_Precision": 0.9269445105380181,
-        "Macro_Recall": 0.9895107265201037,
-        "Macro_F1": 0.9556497924453624,
-        "Weighted_F1": 0.9878211659366002,
-        "ROC_AUC": 0.9991300884051686,
-        "PR_AUC": 0.9999334645464626,
-        "FPR": 0.008017103153393906,
-        "FNR": 0.012961443806398687,
-        "MCC": 0.9143170512185261,
+        "Accuracy": 0.955843137254902,
+        "Macro_Precision": 0.9283642684033104,
+        "Macro_Recall": 0.9643457151010437,
+        "Macro_F1": 0.9441802321293615,
+        "Weighted_F1": 0.9567316633145692,
+        "ROC_AUC": 0.9941905959687438,
+        "PR_AUC": 0.9980257414331053,
+        "FPR": 0.018369867242976227,
+        "FNR": 0.05293870255493639,
+        "MCC": 0.8919845571207398,
         "Confusion_Matrix": [
           [
-            1856,
-            15
+            6359,
+            119
           ],
           [
-            316,
-            24064
-          ]
-        ]
-      }
-    },
-    "Logistic Regression": {
-      "model_version": "1.0.0",
-      "model_sha256": "41d0df482558aa91dddb7392456622718bd8b4645ac7e4314039ae63d5d33aeb",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_Logistic_Regression_test_predictions.parquet",
-      "stored_metrics": {
-        "Accuracy": 0.9540969867814559,
-        "Macro_Precision": 0.8058887005690736,
-        "Macro_Recall": 0.9488872076673058,
-        "Macro_F1": 0.8600895206306981,
-        "Weighted_F1": 0.9584264504377159,
-        "ROC_AUC": 0.9579105372840239,
-        "PR_AUC": 0.9953822375007895,
-        "FPR": 0.05718866916087654,
-        "FNR": 0.045036915504511894,
-        "MCC": 0.7411059968869016,
-        "Confusion_Matrix": [
-          [
-            1764,
-            107
-          ],
-          [
-            1098,
-            23282
-          ]
-        ]
-      },
-      "recomputed_metrics": {
-        "Accuracy": 0.9540969867814559,
-        "Macro_Precision": 0.8058887005690736,
-        "Macro_Recall": 0.9488872076673058,
-        "Macro_F1": 0.8600895206306981,
-        "Weighted_F1": 0.9584264504377159,
-        "ROC_AUC": 0.9579105372840239,
-        "PR_AUC": 0.9953822375007895,
-        "FPR": 0.05718866916087654,
-        "FNR": 0.045036915504511894,
-        "MCC": 0.7411059968869016,
-        "Confusion_Matrix": [
-          [
-            1764,
-            107
-          ],
-          [
-            1098,
-            23282
-          ]
-        ]
-      }
-    },
-    "Decision Tree": {
-      "model_version": "1.0.0",
-      "model_sha256": "73522bbc558c9c7076fab017ee37b89472263fdf129eac1e1e117ab7b59f8d0b",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_Decision_Tree_test_predictions.parquet",
-      "stored_metrics": {
-        "Accuracy": 0.9891432707325435,
-        "Macro_Precision": 0.9421516962947014,
-        "Macro_Recall": 0.9813251808945219,
-        "Macro_F1": 0.9607423920788272,
-        "Weighted_F1": 0.989373499997875,
-        "ROC_AUC": 0.9853607192198703,
-        "PR_AUC": 0.99779448192397,
-        "FPR": 0.02779262426509888,
-        "FNR": 0.00955701394585726,
-        "MCC": 0.9226456420573758,
-        "Confusion_Matrix": [
-          [
-            1819,
-            52
-          ],
-          [
-            233,
-            24147
-          ]
-        ]
-      },
-      "recomputed_metrics": {
-        "Accuracy": 0.9891432707325435,
-        "Macro_Precision": 0.9421516962947014,
-        "Macro_Recall": 0.9813251808945219,
-        "Macro_F1": 0.9607423920788272,
-        "Weighted_F1": 0.989373499997875,
-        "ROC_AUC": 0.9853607192198703,
-        "PR_AUC": 0.99779448192397,
-        "FPR": 0.02779262426509888,
-        "FNR": 0.00955701394585726,
-        "MCC": 0.9226456420573758,
-        "Confusion_Matrix": [
-          [
-            1819,
-            52
-          ],
-          [
-            233,
-            24147
-          ]
-        ]
-      }
-    },
-    "Random Forest": {
-      "model_version": "1.0.0",
-      "model_sha256": "79bccda3cc8328c8508360711bb03b164f564cf32245ff8afb7d66126e9bd66e",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_Random_Forest_test_predictions.parquet",
-      "stored_metrics": {
-        "Accuracy": 0.9908574911431945,
-        "Macro_Precision": 0.9473241114988309,
-        "Macro_Recall": 0.9889097287776953,
-        "Macro_F1": 0.9670105191592464,
-        "Weighted_F1": 0.9910604986559393,
-        "ROC_AUC": 0.9993959440517128,
-        "PR_AUC": 0.9999538069875166,
-        "FPR": 0.013361838588989846,
-        "FNR": 0.00881870385561936,
-        "MCC": 0.9353098096964813,
-        "Confusion_Matrix": [
-          [
-            1846,
-            25
-          ],
-          [
-            215,
-            24165
-          ]
-        ]
-      },
-      "recomputed_metrics": {
-        "Accuracy": 0.9908574911431945,
-        "Macro_Precision": 0.9473241114988309,
-        "Macro_Recall": 0.9889097287776953,
-        "Macro_F1": 0.9670105191592464,
-        "Weighted_F1": 0.9910604986559393,
-        "ROC_AUC": 0.9993959440517128,
-        "PR_AUC": 0.9999538069875166,
-        "FPR": 0.013361838588989846,
-        "FNR": 0.00881870385561936,
-        "MCC": 0.9353098096964813,
-        "Confusion_Matrix": [
-          [
-            1846,
-            25
-          ],
-          [
-            215,
-            24165
-          ]
-        ]
-      }
-    },
-    "Extra Trees": {
-      "model_version": "1.0.0",
-      "model_sha256": "090a7444ef0d9912a3aeab797b195ec4f1f3f8a43edad027cf55a6c86eb7d12f",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_Extra_Trees_test_predictions.parquet",
-      "stored_metrics": {
-        "Accuracy": 0.9822863890899395,
-        "Macro_Precision": 0.9011224671686765,
-        "Macro_Recall": 0.988983125718788,
-        "Macro_F1": 0.9397639101699887,
-        "Weighted_F1": 0.9831597425062768,
-        "ROC_AUC": 0.9990429898248339,
-        "PR_AUC": 0.9999267917602233,
-        "FPR": 0.003206841261357563,
-        "FNR": 0.018826907301066446,
-        "MCC": 0.885758698048563,
-        "Confusion_Matrix": [
-          [
-            1865,
-            6
-          ],
-          [
-            459,
-            23921
-          ]
-        ]
-      },
-      "recomputed_metrics": {
-        "Accuracy": 0.9822863890899395,
-        "Macro_Precision": 0.9011224671686765,
-        "Macro_Recall": 0.988983125718788,
-        "Macro_F1": 0.9397639101699887,
-        "Weighted_F1": 0.9831597425062768,
-        "ROC_AUC": 0.9990429898248339,
-        "PR_AUC": 0.9999267917602233,
-        "FPR": 0.003206841261357563,
-        "FNR": 0.018826907301066446,
-        "MCC": 0.885758698048563,
-        "Confusion_Matrix": [
-          [
-            1865,
-            6
-          ],
-          [
-            459,
-            23921
-          ]
-        ]
-      }
-    },
-    "XGBoost": {
-      "model_version": "1.0.0",
-      "model_sha256": "1307b6f7c0accff18890606a579cbaa54181137b88289176031c790eecaa7a6c",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_XGBoost_test_predictions.parquet",
-      "stored_metrics": {
-        "Accuracy": 0.9919622109633919,
-        "Macro_Precision": 0.9585453230338072,
-        "Macro_Recall": 0.9830895464603953,
-        "Macro_F1": 0.97043601200696,
-        "Weighted_F1": 0.9920669589850994,
-        "ROC_AUC": 0.9993870325055497,
-        "PR_AUC": 0.999953127438333,
-        "FPR": 0.027258150721539285,
-        "FNR": 0.006562756357670222,
-        "MCC": 0.9413149358975186,
-        "Confusion_Matrix": [
-          [
-            1820,
-            51
-          ],
-          [
-            160,
-            24220
-          ]
-        ]
-      },
-      "recomputed_metrics": {
-        "Accuracy": 0.9919622109633919,
-        "Macro_Precision": 0.9585453230338072,
-        "Macro_Recall": 0.9830895464603953,
-        "Macro_F1": 0.97043601200696,
-        "Weighted_F1": 0.9920669589850994,
-        "ROC_AUC": 0.9993870325055497,
-        "PR_AUC": 0.999953127438333,
-        "FPR": 0.027258150721539285,
-        "FNR": 0.006562756357670222,
-        "MCC": 0.9413149358975186,
-        "Confusion_Matrix": [
-          [
-            1820,
-            51
-          ],
-          [
-            160,
-            24220
+            1007,
+            18015
           ]
         ]
       }
     },
     "LightGBM": {
-      "model_version": "1.0.0",
-      "model_sha256": "80edf20a17a0dfa887fba1c4029b0fe2170778907b74e8cdd5c1d855d1f88efb",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_LightGBM_test_predictions.parquet",
+      "model_version": "2.0.0",
+      "model_sha256": "1a16f15d7b409ef9d1654400d8bf20b3039b7427dd36b733a68a97674824a116",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_LightGBM_test_predictions.parquet",
       "stored_metrics": {
-        "Accuracy": 0.9903622719134509,
-        "Macro_Precision": 0.9431888632259391,
-        "Macro_Recall": 0.9906169420659616,
-        "Macro_F1": 0.9654575759230462,
-        "Weighted_F1": 0.9906069613895343,
-        "ROC_AUC": 0.9993574369647865,
-        "PR_AUC": 0.999950691729166,
-        "FPR": 0.009086050240513094,
-        "FNR": 0.009680065627563577,
-        "MCC": 0.9326005893920504,
+        "Accuracy": 0.9752549019607843,
+        "Macro_Precision": 0.965433407705376,
+        "Macro_Recall": 0.9696203229558638,
+        "Macro_F1": 0.9675020130100002,
+        "Weighted_F1": 0.9753103019701475,
+        "ROC_AUC": 0.996915487986173,
+        "PR_AUC": 0.998915691924207,
+        "FPR": 0.04183389935165174,
+        "FNR": 0.018925454736620755,
+        "MCC": 0.9350443566827124,
         "Confusion_Matrix": [
           [
-            1854,
-            17
+            6207,
+            271
           ],
           [
-            236,
-            24144
+            360,
+            18662
           ]
         ]
       },
       "recomputed_metrics": {
-        "Accuracy": 0.9903622719134509,
-        "Macro_Precision": 0.9431888632259391,
-        "Macro_Recall": 0.9906169420659616,
-        "Macro_F1": 0.9654575759230462,
-        "Weighted_F1": 0.9906069613895343,
-        "ROC_AUC": 0.9993574369647865,
-        "PR_AUC": 0.999950691729166,
-        "FPR": 0.009086050240513094,
-        "FNR": 0.009680065627563577,
-        "MCC": 0.9326005893920504,
+        "Accuracy": 0.9752549019607843,
+        "Macro_Precision": 0.965433407705376,
+        "Macro_Recall": 0.9696203229558638,
+        "Macro_F1": 0.9675020130100002,
+        "Weighted_F1": 0.9753103019701475,
+        "ROC_AUC": 0.996915487986173,
+        "PR_AUC": 0.998915691924207,
+        "FPR": 0.04183389935165174,
+        "FNR": 0.018925454736620755,
+        "MCC": 0.9350443566827124,
         "Confusion_Matrix": [
           [
-            1854,
-            17
+            6207,
+            271
           ],
           [
-            236,
-            24144
+            360,
+            18662
+          ]
+        ]
+      }
+    },
+    "XGBoost": {
+      "model_version": "2.0.0",
+      "model_sha256": "890acb0cd9c32013f630b7fc1c905ebfcb32dfbf50b9b74b5dd55b199f0f52ec",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_XGBoost_test_predictions.parquet",
+      "stored_metrics": {
+        "Accuracy": 0.9732156862745098,
+        "Macro_Precision": 0.962933981070032,
+        "Macro_Recall": 0.966726515687836,
+        "Macro_F1": 0.9648097223306761,
+        "Weighted_F1": 0.9732703186326458,
+        "ROC_AUC": 0.9963656217566315,
+        "PR_AUC": 0.9987265682511343,
+        "FPR": 0.046464958320469284,
+        "FNR": 0.02008201030385869,
+        "MCC": 0.9296527609345646,
+        "Confusion_Matrix": [
+          [
+            6177,
+            301
+          ],
+          [
+            382,
+            18640
+          ]
+        ]
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9732156862745098,
+        "Macro_Precision": 0.962933981070032,
+        "Macro_Recall": 0.966726515687836,
+        "Macro_F1": 0.9648097223306761,
+        "Weighted_F1": 0.9732703186326458,
+        "ROC_AUC": 0.9963656217566315,
+        "PR_AUC": 0.9987265682511343,
+        "FPR": 0.046464958320469284,
+        "FNR": 0.02008201030385869,
+        "MCC": 0.9296527609345646,
+        "Confusion_Matrix": [
+          [
+            6177,
+            301
+          ],
+          [
+            382,
+            18640
+          ]
+        ]
+      }
+    },
+    "Random_Forest": {
+      "model_version": "2.0.0",
+      "model_sha256": "5a6994f2f2cc4e182e9d767c1870c3ff006e020dba8f69101093fb98feb3efe5",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_Random_Forest_test_predictions.parquet",
+      "stored_metrics": {
+        "Accuracy": 0.9738039215686275,
+        "Macro_Precision": 0.9641042948941276,
+        "Macro_Recall": 0.9670189980701568,
+        "Macro_F1": 0.9655495779918359,
+        "Weighted_F1": 0.9738449221536107,
+        "ROC_AUC": 0.9965074320113378,
+        "PR_AUC": 0.998781908731333,
+        "FPR": 0.04677369558505712,
+        "FNR": 0.019188308274629376,
+        "MCC": 0.931118730993018,
+        "Confusion_Matrix": [
+          [
+            6175,
+            303
+          ],
+          [
+            365,
+            18657
+          ]
+        ]
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9738039215686275,
+        "Macro_Precision": 0.9641042948941276,
+        "Macro_Recall": 0.9670189980701568,
+        "Macro_F1": 0.9655495779918359,
+        "Weighted_F1": 0.9738449221536107,
+        "ROC_AUC": 0.9965074320113378,
+        "PR_AUC": 0.998781908731333,
+        "FPR": 0.04677369558505712,
+        "FNR": 0.019188308274629376,
+        "MCC": 0.931118730993018,
+        "Confusion_Matrix": [
+          [
+            6175,
+            303
+          ],
+          [
+            365,
+            18657
+          ]
+        ]
+      }
+    },
+    "Extra_Trees": {
+      "model_version": "2.0.0",
+      "model_sha256": "3e9c2440b7b0c31197efe8b45c7e2d6f7de21d09c2aa992a70a47d3a8831463a",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_Extra_Trees_test_predictions.parquet",
+      "stored_metrics": {
+        "Accuracy": 0.9700392156862745,
+        "Macro_Precision": 0.9572340495285949,
+        "Macro_Recall": 0.964495604105274,
+        "Macro_F1": 0.9607879448528355,
+        "Weighted_F1": 0.970157228022112,
+        "ROC_AUC": 0.9948237694843127,
+        "PR_AUC": 0.9981878704206517,
+        "FPR": 0.04677369558505712,
+        "FNR": 0.024235096204394912,
+        "MCC": 0.92170104926334,
+        "Confusion_Matrix": [
+          [
+            6175,
+            303
+          ],
+          [
+            461,
+            18561
+          ]
+        ]
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9700392156862745,
+        "Macro_Precision": 0.9572340495285949,
+        "Macro_Recall": 0.964495604105274,
+        "Macro_F1": 0.9607879448528355,
+        "Weighted_F1": 0.970157228022112,
+        "ROC_AUC": 0.9948237694843127,
+        "PR_AUC": 0.9981878704206517,
+        "FPR": 0.04677369558505712,
+        "FNR": 0.024235096204394912,
+        "MCC": 0.92170104926334,
+        "Confusion_Matrix": [
+          [
+            6175,
+            303
+          ],
+          [
+            461,
+            18561
           ]
         ]
       }
     },
     "CatBoost": {
-      "model_version": "1.0.0",
-      "model_sha256": "56b154f22949518305f9bd4020c536cec2bba270faf17b602156034aec4898d3",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_CatBoost_test_predictions.parquet",
+      "model_version": "2.0.0",
+      "model_sha256": "7762a53e009f1180c5e27784ae18d4bd5d237d8d22bb1fd27c946b242a9a4141",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_CatBoost_test_predictions.parquet",
       "stored_metrics": {
-        "Accuracy": 0.9878861757647328,
-        "Macro_Precision": 0.9287919150065461,
-        "Macro_Recall": 0.9910109792879445,
-        "Macro_F1": 0.9573626432223512,
-        "Weighted_F1": 0.9882957031474543,
-        "ROC_AUC": 0.9993438778225925,
-        "PR_AUC": 0.9999498335234343,
-        "FPR": 0.005344735435595938,
-        "FNR": 0.012633305988515177,
-        "MCC": 0.9176961111350908,
+        "Accuracy": 0.9744313725490196,
+        "Macro_Precision": 0.9637124192750027,
+        "Macro_Recall": 0.9693228253377761,
+        "Macro_F1": 0.9664726887401698,
+        "Weighted_F1": 0.9745082432876755,
+        "ROC_AUC": 0.9965350320385922,
+        "PR_AUC": 0.9987832768504992,
+        "FPR": 0.041062056190182154,
+        "FNR": 0.020292293134265588,
+        "MCC": 0.933018376578639,
         "Confusion_Matrix": [
           [
-            1861,
-            10
+            6212,
+            266
           ],
           [
-            308,
-            24072
+            386,
+            18636
           ]
         ]
       },
       "recomputed_metrics": {
-        "Accuracy": 0.9878861757647328,
-        "Macro_Precision": 0.9287919150065461,
-        "Macro_Recall": 0.9910109792879445,
-        "Macro_F1": 0.9573626432223512,
-        "Weighted_F1": 0.9882957031474543,
-        "ROC_AUC": 0.9993438778225925,
-        "PR_AUC": 0.9999498335234343,
-        "FPR": 0.005344735435595938,
-        "FNR": 0.012633305988515177,
-        "MCC": 0.9176961111350908,
+        "Accuracy": 0.9744313725490196,
+        "Macro_Precision": 0.9637124192750027,
+        "Macro_Recall": 0.9693228253377761,
+        "Macro_F1": 0.9664726887401698,
+        "Weighted_F1": 0.9745082432876755,
+        "ROC_AUC": 0.9965350320385922,
+        "PR_AUC": 0.9987832768504992,
+        "FPR": 0.041062056190182154,
+        "FNR": 0.020292293134265588,
+        "MCC": 0.933018376578639,
         "Confusion_Matrix": [
           [
-            1861,
-            10
+            6212,
+            266
           ],
           [
-            308,
-            24072
+            386,
+            18636
           ]
         ]
       }
     },
     "MLP": {
-      "model_version": "1.0.0",
-      "model_sha256": "e01c76ad333a9f20b3d3bc23a72b3c936a7fa78cdae389f569944b7c49369f03",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_MLP_test_predictions.parquet",
+      "model_version": "2.0.0",
+      "model_sha256": "e884be90fe6e21b6cf2ac62be8a4e7a5071a04f414fe3f735a80efe287bd8bd0",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_MLP_test_predictions.parquet",
       "stored_metrics": {
-        "Accuracy": 0.9909336787170012,
-        "Macro_Precision": 0.963653788709634,
-        "Macro_Recall": 0.9682255807193163,
-        "Macro_F1": 0.9659263629535534,
-        "Weighted_F1": 0.9909559183148166,
-        "ROC_AUC": 0.999093324166754,
-        "PR_AUC": 0.9999305792741657,
-        "FPR": 0.058257616247995726,
-        "FNR": 0.005291222313371616,
-        "MCC": 0.9318681547757269,
+        "Accuracy": 0.958078431372549,
+        "Macro_Precision": 0.9394876618127175,
+        "Macro_Recall": 0.9519485635472085,
+        "Macro_F1": 0.9454773926752542,
+        "Weighted_F1": 0.9583713831654138,
+        "ROC_AUC": 0.9908789741158326,
+        "PR_AUC": 0.9968435276598842,
+        "FPR": 0.060512503859215805,
+        "FNR": 0.035590369046367365,
+        "MCC": 0.8913491290240407,
         "Confusion_Matrix": [
           [
-            1762,
-            109
+            6086,
+            392
           ],
           [
-            129,
-            24251
+            677,
+            18345
           ]
         ]
       },
       "recomputed_metrics": {
-        "Accuracy": 0.9909336787170012,
-        "Macro_Precision": 0.963653788709634,
-        "Macro_Recall": 0.9682255807193163,
-        "Macro_F1": 0.9659263629535534,
-        "Weighted_F1": 0.9909559183148166,
-        "ROC_AUC": 0.999093324166754,
-        "PR_AUC": 0.9999305792741657,
-        "FPR": 0.058257616247995726,
-        "FNR": 0.005291222313371616,
-        "MCC": 0.9318681547757269,
+        "Accuracy": 0.958078431372549,
+        "Macro_Precision": 0.9394876618127175,
+        "Macro_Recall": 0.9519485635472085,
+        "Macro_F1": 0.9454773926752542,
+        "Weighted_F1": 0.9583713831654138,
+        "ROC_AUC": 0.9908789741158326,
+        "PR_AUC": 0.9968435276598842,
+        "FPR": 0.060512503859215805,
+        "FNR": 0.035590369046367365,
+        "MCC": 0.8913491290240407,
         "Confusion_Matrix": [
           [
-            1762,
-            109
+            6086,
+            392
           ],
           [
-            129,
-            24251
+            677,
+            18345
           ]
         ]
       }
     },
     "FT-Transformer": {
-      "model_version": "1.0.0",
-      "model_sha256": "FILE_NOT_FOUND",
-      "prediction_file": "experiments/predictions/CAHTDNET_FINAL_V001_FT-Transformer_test_predictions.parquet",
+      "model_version": "2.0.0",
+      "model_sha256": "N/A",
+      "prediction_file": "experiments/CAHTDNET_V2_001/predictions/CAHTDNET_V2_001_FT-Transformer_test_predictions.parquet",
       "stored_metrics": {
-        "Accuracy": 0.9763056645461126,
-        "Macro_Precision": 0.8758914986666768,
-        "Macro_Recall": 0.9852698170644819,
-        "Macro_F1": 0.9220144152658947,
-        "Weighted_F1": 0.9778077645809851,
-        "ROC_AUC": 0.9986993965578851,
-        "PR_AUC": 0.9999002489037684,
-        "FPR": 0.00427578834847675,
-        "FNR": 0.025184577522559475,
-        "MCC": 0.8541868619782728,
+        "Accuracy": 0.9294901960784314,
+        "Macro_Precision": 0.9344227685433353,
+        "Macro_Recall": 0.8765940861962891,
+        "Macro_F1": 0.9006559571293782,
+        "Weighted_F1": 0.9269841485238259,
+        "ROC_AUC": 0.9813989328227509,
+        "PR_AUC": 0.993700939525249,
+        "FPR": 0.23093547391170113,
+        "FNR": 0.015876353695720744,
+        "MCC": 0.8089525215794542,
         "Confusion_Matrix": [
           [
-            1863,
-            8
+            4982,
+            1496
           ],
           [
-            614,
-            23766
+            302,
+            18720
           ]
         ]
       },
       "recomputed_metrics": {
-        "Accuracy": 0.9763056645461126,
-        "Macro_Precision": 0.8758914986666768,
-        "Macro_Recall": 0.9852698170644819,
-        "Macro_F1": 0.9220144152658947,
-        "Weighted_F1": 0.9778077645809851,
-        "ROC_AUC": 0.9986993965578851,
-        "PR_AUC": 0.9999002489037684,
-        "FPR": 0.00427578834847675,
-        "FNR": 0.025184577522559475,
-        "MCC": 0.8541868619782728,
+        "Accuracy": 0.9294901960784314,
+        "Macro_Precision": 0.9344227685433353,
+        "Macro_Recall": 0.8765940861962891,
+        "Macro_F1": 0.9006559571293782,
+        "Weighted_F1": 0.9269841485238259,
+        "ROC_AUC": 0.9813989328227509,
+        "PR_AUC": 0.993700939525249,
+        "FPR": 0.23093547391170113,
+        "FNR": 0.015876353695720744,
+        "MCC": 0.8089525215794542,
         "Confusion_Matrix": [
           [
-            1863,
-            8
+            4982,
+            1496
           ],
           [
-            614,
-            23766
+            302,
+            18720
           ]
         ]
       }

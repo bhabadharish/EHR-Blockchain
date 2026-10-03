@@ -1,7 +1,6 @@
-partition,class,class_name,count,percentage
-Train,0,Normal,8729,7.126
-Train,1,Attack,113770,92.874
-Validation,0,Normal,1870,7.124
-Validation,1,Attack,24380,92.876
-Test,0,Normal,1871,7.127
-Test,1,Attack,24380,92.873
+dataset,domain,samples,normal_samples,attack_samples
+CICIoT2023,Network Flow / IoT Telemetry,70000,3187,66813
+Edge-IIoTset,Industrial IoT Protocols,60000,20000,40000
+Synthetic FHIR/EHR V2,Healthcare Clinical / API Telemetry,40000,20000,20000
+Unified Primary Multimodal,Cross-domain Heterogeneous Security,170000,43187,126813
+Locked Test Split,Holdout Evaluation Set,25500,6478,19022
