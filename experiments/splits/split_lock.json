@@ -1,0 +1,14 @@
+{
+  "train_parquet_hash": "f0ca3adc6fbda74390178aef901a616af5d87db0eff672f8a5ddbda86f723e2f",
+  "val_parquet_hash": "f1092d4ebbf8a3b74af3b7526a4a5e3e2eef9a15d8256a631fba59eafaa53583",
+  "test_parquet_hash": "69169cd8b113b638f2d19af8f7281ecb3744023e996c443b8e1e06ea58eec99d",
+  "train_ids_hash": "cb31669beabdc3e43f72170a582e52576b322121f5856b628cb4f51594835107",
+  "val_ids_hash": "4ef9d6667c7b97aa37d7e07751eef3176eaa9993bc8c3a2b79a512bc09dc0dc9",
+  "test_ids_hash": "c4e188ac34895c6e043324b718c23d0054afcf0625528613b63a9cf134438405",
+  "row_counts": {
+    "train": 122499,
+    "validation": 26250,
+    "test": 26251,
+    "total": 175000
+  }
+}

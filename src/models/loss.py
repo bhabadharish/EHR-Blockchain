@@ -1,3 +1,14 @@
+"""
+src/models/loss.py
+==================
+LOSS FUNCTIONS FOR IMBALANCED CYBERSECURITY & HEALTHCARE THREAT DETECTION
+
+Supports:
+1. Standard Cross-Entropy
+2. Weighted Cross-Entropy (handling ~93% attack vs 7% normal imbalance)
+3. Cost-Sensitive Focal Loss (dynamically focusing on hard samples with asymmetric false negative penalty)
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -5,15 +16,14 @@ from typing import Optional
 
 class CostSensitiveFocalLoss(nn.Module):
     """
-    Cost-Sensitive Focal Loss for high-security intrusion detection.
-    Penalizes False Negatives (critical missed cyber attacks) with higher weight
-    while dynamically downweighting easy well-classified negative examples.
+    Cost-Sensitive Focal Loss with optional class weights and focal modulation.
+    FL(p_t) = - alpha_t * (1 - p_t)^gamma * log(p_t)
     """
     def __init__(
         self,
-        alpha: float = 0.75,
+        alpha: float = 0.50,
         gamma: float = 2.0,
-        fn_penalty: float = 2.5,
+        fn_penalty: float = 1.0,
         class_weights: Optional[torch.Tensor] = None
     ):
         super().__init__()
@@ -23,16 +33,33 @@ class CostSensitiveFocalLoss(nn.Module):
         self.class_weights = class_weights
 
     def forward(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
-        # logits: (batch, num_classes)
-        # targets: (batch)
-        ce_loss = F.cross_entropy(logits, targets, reduction="none", weight=self.class_weights)
-        p = torch.exp(-ce_loss)
+        # logits: (batch_size, num_classes)
+        # targets: (batch_size,)
+        num_classes = logits.shape[1]
+        probs = F.softmax(logits, dim=-1)
         
-        # Standard focal factor
-        focal_weight = (1.0 - p) ** self.gamma
+        # Gather probabilities of true classes
+        targets = targets.view(-1, 1)
+        target_probs = probs.gather(1, targets).squeeze(-1) # p_t
+        target_probs = torch.clamp(target_probs, min=1e-7, max=1.0 - 1e-7)
+
+        # Cross entropy term: -log(p_t)
+        log_pt = torch.log(target_probs)
         
-        # Cost-sensitive asymmetric false-negative penalty on attack class (label 1)
-        cost_multiplier = torch.where(targets == 1, self.fn_penalty, 1.0)
-        
-        loss = cost_multiplier * focal_weight * ce_loss
+        # Focal modulating factor: (1 - p_t)^gamma
+        focal_weight = torch.pow(1.0 - target_probs, self.gamma)
+
+        # Class weights if provided
+        if self.class_weights is not None:
+            w = self.class_weights.gather(0, targets.squeeze(-1))
+        else:
+            w = torch.ones_like(target_probs)
+
+        # Asymmetric False Negative penalty (true attack classified with low confidence)
+        if self.fn_penalty > 1.0:
+            fn_multiplier = torch.where(targets.squeeze(-1) == 1, self.fn_penalty, 1.0)
+        else:
+            fn_multiplier = 1.0
+
+        loss = -1.0 * w * fn_multiplier * focal_weight * log_pt
         return loss.mean()

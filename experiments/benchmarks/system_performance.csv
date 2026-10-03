@@ -1,0 +1,7 @@
+Pipeline_Stage,Category,Mean_Latency_ms,P95_ms
+1. FHIR Schema Validation,Healthcare R4 Standard,0.0,0.0
+2. Threat-Adaptive Zero-Trust Decision,Access Control Engine,0.037,0.053
+3. Intelligent Threat Inference (CA-HTDNet),Proposed Deep Learning Model,0.024,0.03
+4. Cryptographic Encryption (AES-256-GCM + PQC),Crypto Agility,0.003,0.003
+5. Blockchain Immutable Audit Anchoring,Permissioned Fabric Ledger,0.082,0.094
+Total End-to-End EHR Security Pipeline,Combined Architecture,0.146,0.18

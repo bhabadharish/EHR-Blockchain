@@ -1,0 +1,92 @@
+{
+  "engine_version": "1.0.0-canonical",
+  "n_samples": 26251,
+  "threshold": 0.5,
+  "confusion_matrix": {
+    "tn": 1861,
+    "fp": 10,
+    "fn": 308,
+    "tp": 24072,
+    "raw_matrix": [
+      [
+        1861,
+        10
+      ],
+      [
+        308,
+        24072
+      ]
+    ]
+  },
+  "accuracy": 0.9878861757647328,
+  "macro_precision": 0.9287919150065461,
+  "macro_recall": 0.9910109792879445,
+  "macro_f1": 0.9573626432223512,
+  "weighted_precision": 0.9894934490459758,
+  "weighted_recall": 0.9878861757647328,
+  "weighted_f1": 0.9882957031474543,
+  "binary_precision": 0.9995847520970019,
+  "binary_recall": 0.9873666940114848,
+  "binary_f1": 0.9934381577318311,
+  "fpr": 0.005344735435595938,
+  "fnr": 0.012633305988515177,
+  "mcc": 0.9176961111350908,
+  "cohen_kappa": 0.9147639474513793,
+  "roc_auc": 0.9993438778225925,
+  "pr_auc": 0.9999498335234343,
+  "brier_score": 0.009346449713119483,
+  "per_class": {
+    "class_0": {
+      "name": "Normal",
+      "precision": 0.8579990779160903,
+      "recall": 0.994655264564404,
+      "f1": 0.9212871287128713,
+      "support": 1871
+    },
+    "class_1": {
+      "name": "Attack",
+      "precision": 0.9995847520970019,
+      "recall": 0.9873666940114848,
+      "f1": 0.9934381577318311,
+      "support": 24380
+    }
+  },
+  "classification_report": {
+    "Normal": {
+      "precision": 0.8579990779160903,
+      "recall": 0.994655264564404,
+      "f1-score": 0.9212871287128713,
+      "support": 1871.0
+    },
+    "Attack": {
+      "precision": 0.9995847520970019,
+      "recall": 0.9873666940114848,
+      "f1-score": 0.9934381577318311,
+      "support": 24380.0
+    },
+    "accuracy": 0.9878861757647328,
+    "macro avg": {
+      "precision": 0.9287919150065461,
+      "recall": 0.9910109792879445,
+      "f1-score": 0.9573626432223512,
+      "support": 26251.0
+    },
+    "weighted avg": {
+      "precision": 0.9894934490459758,
+      "recall": 0.9878861757647328,
+      "f1-score": 0.9882957031474543,
+      "support": 26251.0
+    }
+  },
+  "metadata": {
+    "experiment_id": "CAHTDNET_FINAL_V001",
+    "model": "CatBoost",
+    "model_type": "baseline",
+    "dataset": "CICIoT2023+Edge-IIoTset+SyntheticFHIR",
+    "split": "locked_test",
+    "train_time_s": 2.358,
+    "inf_time_s": 0.0033,
+    "latency_ms_per_sample": 0.0001,
+    "model_size_kb": 172.02
+  }
+}

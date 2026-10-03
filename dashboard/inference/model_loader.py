@@ -113,14 +113,13 @@ class FrozenModelLoader:
         x_num, x_cat = self.preprocessor.transform(df_in)
 
         with torch.no_grad():
-            bx = torch.tensor(x_num, dtype=torch.float32, device=self.device)
-            out = self.model(bx)
+            bx_num = torch.tensor(x_num, dtype=torch.float32, device=self.device)
+            bx_cat = torch.tensor(x_cat, dtype=torch.long, device=self.device)
+            out = self.model(bx_num, bx_cat)
             probs = torch.softmax(out["calibrated_logits"], dim=-1).cpu().numpy()[0]
             threat_prob = float(probs[1])
             benign_prob = float(probs[0])
-
-            # Tri-state decision head
-            tri_state_probs = torch.softmax(out["tri_state_logits"], dim=-1).cpu().numpy()[0]
+            risk_score = float(out["risk_score"].cpu().numpy()[0]) if "risk_score" in out else threat_prob
 
         latency_ms = (time.perf_counter() - t0) * 1000.0
 
@@ -147,11 +146,11 @@ class FrozenModelLoader:
             "confidence": confidence,
             "operating_threshold": thresh,
             "decision": decision,
-            "risk_level": risk_level,
+            "threat_risk_score": risk_score,
             "tri_state_probabilities": {
-                "Normal": float(tri_state_probs[0]),
-                "Suspicious": float(tri_state_probs[1]),
-                "Attack": float(tri_state_probs[2])
+                "Normal": float(benign_prob),
+                "Suspicious": float(max(0.0, 1.0 - abs(threat_prob - 0.5) * 2.0)),
+                "Attack": float(threat_prob)
             },
             "latency_ms": latency_ms,
             "features_evaluated": len(feature_dict)

@@ -1,0 +1,4 @@
+Method,Parameter,Brier_Score,ECE,NLL,Brier_Score_Str,ECE_Str,NLL_Str
+Uncalibrated,1.0,0.0081,0.0113,0.02693,0.0081,1.130%,0.0269
+Temperature_Scaling,1.1696,0.0083,0.01371,0.03006,0.0083,1.371%,0.0301
+Platt_Scaling,logistic_fit,0.00622,0.003,0.02009,0.00622,0.300%,0.0201

@@ -171,3 +171,45 @@ class ResultConsistencyEngine:
                 })
 
         return rows
+
+    @staticmethod
+    def verify_results_lock(lock_path: str = "results/FINAL_RESULTS_LOCK.json") -> Dict[str, Any]:
+        """
+        Verifies cryptographic integrity of the benchmark lock artifact (Section 55).
+        Checks SHA-256 hashes of model, preprocessor, predictions, and metrics.
+        """
+        if not os.path.exists(lock_path):
+            return {
+                "status": "RESULT INTEGRITY FAILURE",
+                "message": "FINAL_RESULTS_LOCK.json not found.",
+                "verified": False,
+                "checks": {}
+            }
+        with open(lock_path, "r") as f:
+            lock_data = json.load(f)
+
+        def get_sha256(p):
+            if not os.path.exists(p):
+                return "MISSING"
+            h = hashlib.sha256()
+            with open(p, "rb") as fl:
+                while chunk := fl.read(8192 * 1024):
+                    h.update(chunk)
+            return h.hexdigest()
+
+        exp_id = lock_data.get("experiment_id", "CAHTDNET_FINAL_V001")
+        checks = {
+            "model_hash": get_sha256(f"experiments/models/{exp_id}.pt") == lock_data.get("model_hash"),
+            "preprocessor_hash": get_sha256("models/preprocessors/preprocessor.pkl") == lock_data.get("preprocessor_hash"),
+            "prediction_hash": get_sha256(f"experiments/predictions/{exp_id}_test_predictions.parquet") == lock_data.get("prediction_hash"),
+            "metrics_hash": get_sha256(f"experiments/metrics/{exp_id}_metrics.json") == lock_data.get("metrics_hash")
+        }
+
+        all_ok = all(checks.values())
+        return {
+            "status": "VERIFIED" if all_ok else "RESULT INTEGRITY FAILURE",
+            "verified": all_ok,
+            "experiment_id": exp_id,
+            "checks": checks,
+            "timestamp": lock_data.get("timestamp")
+        }

@@ -1,0 +1,28 @@
+{
+  "numerical_features": [
+    "flow_duration",
+    "packet_count",
+    "byte_count",
+    "packet_rate",
+    "byte_rate",
+    "dst_port",
+    "protocol",
+    "resource_sensitivity",
+    "auth_status",
+    "failed_auth_count",
+    "request_frequency",
+    "burst_score",
+    "historical_risk"
+  ],
+  "categorical_features": [
+    "user_role",
+    "resource_type",
+    "operation"
+  ],
+  "num_numerical": 13,
+  "num_categorical": 3,
+  "total_features": 16,
+  "scaling": "RobustScaler (IQR based)",
+  "categorical_encoding": "OrdinalEncoder (with 0-imputed unknown values)",
+  "fit_partition": "TRAIN_ONLY"
+}

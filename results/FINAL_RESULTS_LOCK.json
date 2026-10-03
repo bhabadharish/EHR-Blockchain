@@ -1,0 +1,11 @@
+{
+  "experiment_id": "CAHTDNET_FINAL_V001",
+  "verification_status": "VERIFIED_CANONICAL",
+  "model_hash": "42f80a0dcf58d11dd4d7c29f7da285afa12a8553f71d0f42cdb9db90e5bb1ceb",
+  "preprocessor_hash": "5f5ec9629bfe018de686084bcd87d6fb7601fab7f2ff5e3edf1adb9a6158928f",
+  "prediction_hash": "6fcf8483a7615404c6cda98cfbfca66fe7b9f9bfa352c8ea6c7bf170ca06240e",
+  "metrics_hash": "94b8424a692231870106f3f1fd48699e33a4d5cde8f47596d2765a2e9742f1a4",
+  "dataset_hash": "f0ca3adc6fbda74390178aef901a616af5d87db0eff672f8a5ddbda86f723e2f",
+  "split_hash": "69169cd8b113b638f2d19af8f7281ecb3744023e996c443b8e1e06ea58eec99d",
+  "timestamp": "2026-10-03T13:30:21.171427"
+}

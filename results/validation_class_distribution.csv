@@ -1,0 +1,4 @@
+partition,class,class_name,count,percentage
+Validation,0,Normal,1870,7.124
+Validation,1,Attack,24380,92.876
+Validation,-1,Total,26250,100.0

@@ -1,16 +1,32 @@
-{
-  "Uncalibrated": {
-    "Brier_Score": 0.004918476566672325,
-    "ECE": 0.0009719172151848015
+[
+  {
+    "Method": "Uncalibrated",
+    "Parameter": "1.0",
+    "Brier_Score": 0.0081,
+    "ECE": 0.0113,
+    "NLL": 0.02693,
+    "Brier_Score_Str": "0.00810",
+    "ECE_Str": "1.130%",
+    "NLL_Str": "0.0269"
   },
-  "Temperature_Scaling": {
-    "Optimal_Temperature": 1.0612244897959184,
-    "Brier_Score": 0.004916969572316302,
-    "ECE": 0.0007587819413326039
+  {
+    "Method": "Temperature_Scaling",
+    "Parameter": "1.1696",
+    "Brier_Score": 0.0083,
+    "ECE": 0.01371,
+    "NLL": 0.03006,
+    "Brier_Score_Str": "0.00830",
+    "ECE_Str": "1.371%",
+    "NLL_Str": "0.0301"
   },
-  "Platt_Scaling": {
-    "Brier_Score": 0.00491666654124856,
-    "ECE": 0.0008363181952918987
-  },
-  "Selected_Method": "Temperature_Scaling"
-}
+  {
+    "Method": "Platt_Scaling",
+    "Parameter": "logistic_fit",
+    "Brier_Score": 0.00622,
+    "ECE": 0.003,
+    "NLL": 0.02009,
+    "Brier_Score_Str": "0.00622",
+    "ECE_Str": "0.300%",
+    "NLL_Str": "0.0201"
+  }
+]
