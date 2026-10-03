@@ -1,0 +1,64 @@
+{
+  "generator": "SyntheticFHIRSecurityGenerator",
+  "seed": 42,
+  "resources_included": [
+    "Patient",
+    "Practitioner",
+    "Organization",
+    "Device",
+    "Encounter",
+    "Observation",
+    "MedicationRequest",
+    "DiagnosticReport",
+    "CarePlan",
+    "Consent",
+    "Provenance",
+    "AuditEvent"
+  ],
+  "security_events": [
+    "normal_access",
+    "unauthorized_access",
+    "privilege_escalation",
+    "credential_compromise",
+    "bulk_record_access",
+    "abnormal_access_frequency",
+    "FHIR_API_abuse",
+    "resource_enumeration",
+    "repeated_authentication_failure",
+    "abnormal_device_behavior",
+    "suspicious_location",
+    "unusual_time_access",
+    "insider_like_behavior",
+    "data_exfiltration_pattern",
+    "tampering_attempt"
+  ],
+  "roles": [
+    "doctor",
+    "nurse",
+    "admin",
+    "researcher",
+    "patient",
+    "lab_tech",
+    "iomt_device"
+  ],
+  "organizations": [
+    "Hospital_Alpha",
+    "Hospital_Beta",
+    "Hospital_Gamma",
+    "Research_Consortium"
+  ],
+  "datasets": {
+    "dev": {
+      "rows": 2000,
+      "file": "fhir_security_dev.parquet"
+    },
+    "med": {
+      "rows": 15000,
+      "file": "fhir_security_med.parquet"
+    },
+    "large": {
+      "rows": 50000,
+      "file": "fhir_security_large.parquet"
+    }
+  }
+}

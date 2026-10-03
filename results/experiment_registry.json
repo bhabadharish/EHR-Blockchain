@@ -1,0 +1,770 @@
+{
+  "experiment_id": "CAHTDNet_final_locked_v001",
+  "project_title": "Crypto-Agile FHIR-Blockchain Architecture for Post-Quantum Electronic Health Record Exchange with Intelligent Threat Detection",
+  "dataset_name": "Harmonized Multimodal (CICIoT2023 + Edge-IIoTset + Synthetic FHIR R4)",
+  "dataset_source": "CICIoT2023 (120k) + Edge-IIoTset (40k) + Synthetic FHIR (15k)",
+  "splits": {
+    "train_samples": 122499,
+    "validation_samples": 26250,
+    "test_samples": 26251,
+    "test_split_seed": 42,
+    "test_file_sha256": "69169cd8b113b638f2d19af8f7281ecb3744023e996c443b8e1e06ea58eec99d"
+  },
+  "preprocessor": {
+    "path": "models/preprocessors/preprocessor.pkl",
+    "sha256": "5f5ec9629bfe018de686084bcd87d6fb7601fab7f2ff5e3edf1adb9a6158928f",
+    "numerical_features": [
+      "flow_duration",
+      "packet_count",
+      "byte_count",
+      "packet_rate",
+      "byte_rate",
+      "dst_port",
+      "protocol",
+      "resource_sensitivity",
+      "auth_status",
+      "failed_auth_count",
+      "request_frequency",
+      "burst_score",
+      "historical_risk"
+    ],
+    "categorical_features": [
+      "user_role",
+      "resource_type",
+      "operation"
+    ],
+    "fit_partition": "TRAIN_ONLY"
+  },
+  "models": {
+    "Logistic_Regression": {
+      "display_name": "Logistic Regression",
+      "model_path": "models/baselines/Logistic_Regression.pkl",
+      "model_sha256": "41d0df482558aa91dddb7392456622718bd8b4645ac7e4314039ae63d5d33aeb",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9540969867814559,
+        "Balanced_Accuracy": 0.9488872076673058,
+        "Macro_Precision": 0.8058887005690736,
+        "Macro_Recall": 0.9488872076673058,
+        "Macro_F1": 0.8600895206306981,
+        "Weighted_Precision": 0.9684073498775218,
+        "Weighted_Recall": 0.9540969867814559,
+        "Weighted_F1": 0.9584264504377159,
+        "Per_Class_Precision": [
+          0.6163522012578616,
+          0.9954251998802855
+        ],
+        "Per_Class_Recall": [
+          0.9428113308391235,
+          0.9549630844954881
+        ],
+        "Per_Class_F1": [
+          0.745404605958166,
+          0.9747744353032302
+        ],
+        "ROC_AUC": 0.9579105372840239,
+        "PR_AUC": 0.9953822375007895,
+        "FPR": 0.05718866916087654,
+        "FNR": 0.045036915504511894,
+        "MCC": 0.7411059968869016,
+        "Cohen_Kappa": 0.7213892562136406,
+        "Confusion_Matrix": [
+          [
+            1764,
+            107
+          ],
+          [
+            1098,
+            23282
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.005887031555175781,
+        "Throughput_Samples_Sec": 4459123.372104325,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "Logistic Regression"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9540969867814559,
+        "Macro_Precision": 0.8058887005690736,
+        "Macro_Recall": 0.9488872076673058,
+        "Macro_F1": 0.8600895206306981,
+        "Weighted_F1": 0.9584264504377159,
+        "ROC_AUC": 0.9579105372840239,
+        "PR_AUC": 0.9953822375007895,
+        "FPR": 0.05718866916087654,
+        "FNR": 0.045036915504511894,
+        "MCC": 0.7411059968869016,
+        "Confusion_Matrix": [
+          [
+            1764,
+            107
+          ],
+          [
+            1098,
+            23282
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "Decision_Tree": {
+      "display_name": "Decision Tree",
+      "model_path": "models/baselines/Decision_Tree.pkl",
+      "model_sha256": "7081fe4c012c1cfaf2162d18f39d111213e6af61431b183a6f65047bc2a93782",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9891051769456402,
+        "Balanced_Accuracy": 0.9822915849135525,
+        "Macro_Precision": 0.9412688928162318,
+        "Macro_Recall": 0.9822915849135525,
+        "Macro_F1": 0.9606875353314352,
+        "Weighted_Precision": 0.9899266233720118,
+        "Weighted_Recall": 0.9891051769456402,
+        "Weighted_F1": 0.9893470942316611,
+        "Per_Class_Precision": [
+          0.8845220766618147,
+          0.9980157089706491
+        ],
+        "Per_Class_Recall": [
+          0.9743452699091395,
+          0.9902378999179655
+        ],
+        "Per_Class_F1": [
+          0.927263479145473,
+          0.9941115915173976
+        ],
+        "ROC_AUC": 0.9864414168328036,
+        "PR_AUC": 0.9979612773265004,
+        "FPR": 0.025654730090860504,
+        "FNR": 0.009762100082034455,
+        "MCC": 0.9226489553224215,
+        "Cohen_Kappa": 0.9213899301483341,
+        "Confusion_Matrix": [
+          [
+            1823,
+            48
+          ],
+          [
+            238,
+            24142
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.0011470317840576172,
+        "Throughput_Samples_Sec": 22886026.668883808,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "Decision Tree"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9891051769456402,
+        "Macro_Precision": 0.9412688928162318,
+        "Macro_Recall": 0.9822915849135525,
+        "Macro_F1": 0.9606875353314352,
+        "Weighted_F1": 0.9893470942316611,
+        "ROC_AUC": 0.9864414168328036,
+        "PR_AUC": 0.9979612773265004,
+        "FPR": 0.025654730090860504,
+        "FNR": 0.009762100082034455,
+        "MCC": 0.9226489553224215,
+        "Confusion_Matrix": [
+          [
+            1823,
+            48
+          ],
+          [
+            238,
+            24142
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "Random_Forest": {
+      "display_name": "Random Forest",
+      "model_path": "models/baselines/Random_Forest.pkl",
+      "model_sha256": "7e91a3f668bfdba7190c282886dffc275cb88ba277ef00b07d03905b7feee38e",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9908574911431945,
+        "Balanced_Accuracy": 0.9889097287776953,
+        "Macro_Precision": 0.9473241114988309,
+        "Macro_Recall": 0.9889097287776953,
+        "Macro_F1": 0.9670105191592464,
+        "Weighted_Precision": 0.9916050479358584,
+        "Weighted_Recall": 0.9908574911431945,
+        "Weighted_F1": 0.9910604986559393,
+        "Per_Class_Precision": [
+          0.8956817079087821,
+          0.9989665150888797
+        ],
+        "Per_Class_Recall": [
+          0.9866381614110101,
+          0.9911812961443807
+        ],
+        "Per_Class_F1": [
+          0.9389623601220752,
+          0.9950586781964176
+        ],
+        "ROC_AUC": 0.9993959440517128,
+        "PR_AUC": 0.9999538069875166,
+        "FPR": 0.013361838588989846,
+        "FNR": 0.00881870385561936,
+        "MCC": 0.9353098096964813,
+        "Cohen_Kappa": 0.9340335078167838,
+        "Confusion_Matrix": [
+          [
+            1846,
+            25
+          ],
+          [
+            215,
+            24165
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.03412199020385742,
+        "Throughput_Samples_Sec": 769327.9273326905,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "Random Forest"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9908574911431945,
+        "Macro_Precision": 0.9473241114988309,
+        "Macro_Recall": 0.9889097287776953,
+        "Macro_F1": 0.9670105191592464,
+        "Weighted_F1": 0.9910604986559393,
+        "ROC_AUC": 0.9993959440517128,
+        "PR_AUC": 0.9999538069875166,
+        "FPR": 0.013361838588989846,
+        "FNR": 0.00881870385561936,
+        "MCC": 0.9353098096964813,
+        "Confusion_Matrix": [
+          [
+            1846,
+            25
+          ],
+          [
+            215,
+            24165
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "Extra_Trees": {
+      "display_name": "Extra Trees",
+      "model_path": "models/baselines/Extra_Trees.pkl",
+      "model_sha256": "86a046a5e77a8562df3433775a90de7f34133c074c986be869b32b9edd3d7b8d",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9822863890899395,
+        "Balanced_Accuracy": 0.988983125718788,
+        "Macro_Precision": 0.9011224671686765,
+        "Macro_Recall": 0.988983125718788,
+        "Macro_F1": 0.9397639101699887,
+        "Weighted_Precision": 0.9856902919395745,
+        "Weighted_Recall": 0.9822863890899395,
+        "Weighted_F1": 0.9831597425062768,
+        "Per_Class_Precision": [
+          0.8024956970740104,
+          0.9997492372633426
+        ],
+        "Per_Class_Recall": [
+          0.9967931587386424,
+          0.9811730926989336
+        ],
+        "Per_Class_F1": [
+          0.8891537544696066,
+          0.9903740658703708
+        ],
+        "ROC_AUC": 0.9990429898248339,
+        "PR_AUC": 0.9999267917602233,
+        "FPR": 0.003206841261357563,
+        "FNR": 0.018826907301066446,
+        "MCC": 0.885758698048563,
+        "Cohen_Kappa": 0.8796496916778298,
+        "Confusion_Matrix": [
+          [
+            1865,
+            6
+          ],
+          [
+            459,
+            23921
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.027074813842773438,
+        "Throughput_Samples_Sec": 969572.6867206763,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "Extra Trees"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9822863890899395,
+        "Macro_Precision": 0.9011224671686765,
+        "Macro_Recall": 0.988983125718788,
+        "Macro_F1": 0.9397639101699887,
+        "Weighted_F1": 0.9831597425062768,
+        "ROC_AUC": 0.9990429898248339,
+        "PR_AUC": 0.9999267917602233,
+        "FPR": 0.003206841261357563,
+        "FNR": 0.018826907301066446,
+        "MCC": 0.885758698048563,
+        "Confusion_Matrix": [
+          [
+            1865,
+            6
+          ],
+          [
+            459,
+            23921
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "SVM": {
+      "display_name": "SVM",
+      "model_path": "models/baselines/SVM.pkl",
+      "model_sha256": "4780099c14f6398ec8367240a2032f0f0ab5a972d32b41c7c15a881fea4e800b",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9287265247038208,
+        "Balanced_Accuracy": 0.5,
+        "Macro_Precision": 0.4643632623519104,
+        "Macro_Recall": 0.5,
+        "Macro_F1": 0.4815231774999506,
+        "Weighted_Precision": 0.8625329576884366,
+        "Weighted_Recall": 0.9287265247038208,
+        "Weighted_F1": 0.8944066944077403,
+        "Per_Class_Precision": [
+          0.0,
+          0.9287265247038208
+        ],
+        "Per_Class_Recall": [
+          0.0,
+          1.0
+        ],
+        "Per_Class_F1": [
+          0.0,
+          0.9630463549999012
+        ],
+        "ROC_AUC": 0.2497084948847944,
+        "PR_AUC": 0.9005080184424601,
+        "FPR": 1.0,
+        "FNR": 0.0,
+        "MCC": 0.0,
+        "Cohen_Kappa": 0.0,
+        "Confusion_Matrix": [
+          [
+            0,
+            1871
+          ],
+          [
+            0,
+            24380
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.004155158996582031,
+        "Throughput_Samples_Sec": 6317688.449850814,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "SVM"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9287265247038208,
+        "Macro_Precision": 0.4643632623519104,
+        "Macro_Recall": 0.5,
+        "Macro_F1": 0.4815231774999506,
+        "Weighted_F1": 0.8944066944077403,
+        "ROC_AUC": 0.2497084948847944,
+        "PR_AUC": 0.9005080184424601,
+        "FPR": 1.0,
+        "FNR": 0.0,
+        "MCC": 0.0,
+        "Confusion_Matrix": [
+          [
+            0,
+            1871
+          ],
+          [
+            0,
+            24380
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "XGBoost": {
+      "display_name": "XGBoost",
+      "model_path": "models/baselines/XGBoost.pkl",
+      "model_sha256": "b428c04281ee562c61b53eeea7263dcd39c13946d97ece3abc5e605461ab1547",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9924193364062321,
+        "Balanced_Accuracy": 0.9739599798136489,
+        "Macro_Precision": 0.9691033923758661,
+        "Macro_Recall": 0.9739599798136489,
+        "Macro_F1": 0.9715168448347036,
+        "Weighted_Precision": 0.9924629234293895,
+        "Weighted_Recall": 0.9924193364062321,
+        "Weighted_F1": 0.9924388558087136,
+        "Per_Class_Precision": [
+          0.9418604651162791,
+          0.9963463196354531
+        ],
+        "Per_Class_Recall": [
+          0.9524318546231961,
+          0.9954881050041017
+        ],
+        "Per_Class_F1": [
+          0.9471166622375764,
+          0.9959170274318307
+        ],
+        "ROC_AUC": 0.9993782086498777,
+        "PR_AUC": 0.9999524416233203,
+        "FPR": 0.04756814537680385,
+        "FNR": 0.004511894995898278,
+        "MCC": 0.9430508668804238,
+        "Cohen_Kappa": 0.9430338266455095,
+        "Confusion_Matrix": [
+          [
+            1782,
+            89
+          ],
+          [
+            110,
+            24270
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.007717132568359375,
+        "Throughput_Samples_Sec": 3401652.0731586753,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "XGBoost"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9924193364062321,
+        "Macro_Precision": 0.9691033923758661,
+        "Macro_Recall": 0.9739599798136489,
+        "Macro_F1": 0.9715168448347036,
+        "Weighted_F1": 0.9924388558087136,
+        "ROC_AUC": 0.9993782086498777,
+        "PR_AUC": 0.9999524416233203,
+        "FPR": 0.04756814537680385,
+        "FNR": 0.004511894995898278,
+        "MCC": 0.9430508668804238,
+        "Confusion_Matrix": [
+          [
+            1782,
+            89
+          ],
+          [
+            110,
+            24270
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "LightGBM": {
+      "display_name": "LightGBM",
+      "model_path": "models/baselines/LightGBM.pkl",
+      "model_sha256": "434b9c2b47b8031d45bd9bd93e0109c3912f3e895cd12def34fe4af86e401f46",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.992305055045522,
+        "Balanced_Accuracy": 0.9743919102891199,
+        "Macro_Precision": 0.9679346048200208,
+        "Macro_Recall": 0.9743919102891199,
+        "Macro_F1": 0.971136988946854,
+        "Weighted_Precision": 0.9923658373557982,
+        "Weighted_Recall": 0.992305055045522,
+        "Weighted_F1": 0.9923314197913413,
+        "Per_Class_Precision": [
+          0.9394418114797262,
+          0.9964273981603153
+        ],
+        "Per_Class_Recall": [
+          0.9535008017103154,
+          0.9952830188679245
+        ],
+        "Per_Class_F1": [
+          0.9464190981432361,
+          0.9958548797504719
+        ],
+        "ROC_AUC": 0.9993601663313236,
+        "PR_AUC": 0.9999510280547363,
+        "FPR": 0.046499198289684664,
+        "FNR": 0.0047169811320754715,
+        "MCC": 0.9423043904619232,
+        "Cohen_Kappa": 0.9422742242310522,
+        "Confusion_Matrix": [
+          [
+            1784,
+            87
+          ],
+          [
+            115,
+            24265
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.02846813201904297,
+        "Throughput_Samples_Sec": 922118.809286121,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "LightGBM"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.992305055045522,
+        "Macro_Precision": 0.9679346048200208,
+        "Macro_Recall": 0.9743919102891199,
+        "Macro_F1": 0.971136988946854,
+        "Weighted_F1": 0.9923314197913413,
+        "ROC_AUC": 0.9993601663313236,
+        "PR_AUC": 0.9999510280547363,
+        "FPR": 0.046499198289684664,
+        "FNR": 0.0047169811320754715,
+        "MCC": 0.9423043904619232,
+        "Confusion_Matrix": [
+          [
+            1784,
+            87
+          ],
+          [
+            115,
+            24265
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "CatBoost": {
+      "display_name": "CatBoost",
+      "model_path": "models/baselines/CatBoost.pkl",
+      "model_sha256": "aaf495977be95369df1baecc3e10620f004a6b0b22da7c4c910d96546dac3d50",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9919241171764885,
+        "Balanced_Accuracy": 0.9714728144131599,
+        "Macro_Precision": 0.9677821587220218,
+        "Macro_Recall": 0.9714728144131599,
+        "Macro_F1": 0.9696188805639605,
+        "Weighted_Precision": 0.9919584875404401,
+        "Weighted_Recall": 0.9919241171764885,
+        "Weighted_F1": 0.9919399836143048,
+        "Per_Class_Precision": [
+          0.9395866454689984,
+          0.9959776719750452
+        ],
+        "Per_Class_Recall": [
+          0.9476215927311598,
+          0.99532403609516
+        ],
+        "Per_Class_F1": [
+          0.9435870143693454,
+          0.9956507467585755
+        ],
+        "ROC_AUC": 0.999346618150441,
+        "PR_AUC": 0.999950011323025,
+        "FPR": 0.052378407268840195,
+        "FNR": 0.004675963904840033,
+        "MCC": 0.9392477221796922,
+        "Cohen_Kappa": 0.9392378460450269,
+        "Confusion_Matrix": [
+          [
+            1773,
+            98
+          ],
+          [
+            114,
+            24266
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.0035848617553710938,
+        "Throughput_Samples_Sec": 7322737.051343442,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "CatBoost"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9919241171764885,
+        "Macro_Precision": 0.9677821587220218,
+        "Macro_Recall": 0.9714728144131599,
+        "Macro_F1": 0.9696188805639605,
+        "Weighted_F1": 0.9919399836143048,
+        "ROC_AUC": 0.999346618150441,
+        "PR_AUC": 0.999950011323025,
+        "FPR": 0.052378407268840195,
+        "FNR": 0.004675963904840033,
+        "MCC": 0.9392477221796922,
+        "Confusion_Matrix": [
+          [
+            1773,
+            98
+          ],
+          [
+            114,
+            24266
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "MLP": {
+      "display_name": "MLP",
+      "model_path": "models/baselines/MLP.pkl",
+      "model_sha256": "fa3236bd2f16d9b922bf461604547211bbe233600e1c4fe4699e825c1cf7cf75",
+      "operating_threshold": 0.5,
+      "stored_metrics": {
+        "Accuracy": 0.9909336787170012,
+        "Balanced_Accuracy": 0.9682255807193163,
+        "Macro_Precision": 0.963653788709634,
+        "Macro_Recall": 0.9682255807193163,
+        "Macro_F1": 0.9659263629535534,
+        "Weighted_Precision": 0.9909822432103164,
+        "Weighted_Recall": 0.9909336787170012,
+        "Weighted_F1": 0.9909559183148166,
+        "Per_Class_Precision": [
+          0.9317821258593337,
+          0.9955254515599343
+        ],
+        "Per_Class_Recall": [
+          0.9417423837520043,
+          0.9947087776866284
+        ],
+        "Per_Class_F1": [
+          0.936735778841042,
+          0.9951169470660648
+        ],
+        "ROC_AUC": 0.999093324166754,
+        "PR_AUC": 0.9999305792741657,
+        "FPR": 0.058257616247995726,
+        "FNR": 0.005291222313371616,
+        "MCC": 0.9318681547757269,
+        "Cohen_Kappa": 0.9318528745702177,
+        "Confusion_Matrix": [
+          [
+            1762,
+            109
+          ],
+          [
+            129,
+            24251
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.010426998138427734,
+        "Throughput_Samples_Sec": 2517598.991722687,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "MLP"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9909336787170012,
+        "Macro_Precision": 0.963653788709634,
+        "Macro_Recall": 0.9682255807193163,
+        "Macro_F1": 0.9659263629535534,
+        "Weighted_F1": 0.9909559183148166,
+        "ROC_AUC": 0.999093324166754,
+        "PR_AUC": 0.9999305792741657,
+        "FPR": 0.058257616247995726,
+        "FNR": 0.005291222313371616,
+        "MCC": 0.9318681547757269,
+        "Confusion_Matrix": [
+          [
+            1762,
+            109
+          ],
+          [
+            129,
+            24251
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    },
+    "CA-HTDNet": {
+      "display_name": "CA-HTDNet (Proposed)",
+      "model_path": "models/proposed/ca_htdnet.pt",
+      "model_sha256": "dc7fa83bba31b1ec0d80e663bed31a763b06b16f0bd51d99eb7d5a7b71fc282c",
+      "operating_threshold": 0.57,
+      "stored_metrics": {
+        "Accuracy": 0.9906289284217744,
+        "Balanced_Accuracy": 0.9897735897286374,
+        "Macro_Precision": 0.945348817506957,
+        "Macro_Recall": 0.9897735897286374,
+        "Macro_F1": 0.9662960365293937,
+        "Weighted_Precision": 0.9914648311073201,
+        "Weighted_Recall": 0.9906289284217744,
+        "Weighted_F1": 0.9908514753819199,
+        "Per_Class_Precision": [
+          0.891566265060241,
+          0.999131369953673
+        ],
+        "Per_Class_Recall": [
+          0.9887760555852485,
+          0.9907711238720263
+        ],
+        "Per_Class_F1": [
+          0.937658388241257,
+          0.9949336848175303
+        ],
+        "ROC_AUC": 0.9990441846077759,
+        "PR_AUC": 0.9999224249082588,
+        "FPR": 0.01122394441475147,
+        "FNR": 0.009228876127973748,
+        "MCC": 0.9340665694302225,
+        "Cohen_Kappa": 0.9326067108990527,
+        "Confusion_Matrix": [
+          [
+            1850,
+            21
+          ],
+          [
+            225,
+            24155
+          ]
+        ],
+        "Training_Time_s": 0.0,
+        "Inference_Time_s": 0.6573090553283691,
+        "Throughput_Samples_Sec": 39937.073416531435,
+        "Model_Size_KB": 0.0,
+        "Parameter_Count": 0,
+        "Model": "CA-HTDNet (Proposed)"
+      },
+      "recomputed_metrics": {
+        "Accuracy": 0.9906289284217744,
+        "Macro_Precision": 0.945348817506957,
+        "Macro_Recall": 0.9897735897286374,
+        "Macro_F1": 0.9662960365293937,
+        "Weighted_F1": 0.9908514753819199,
+        "ROC_AUC": 0.9990441846077759,
+        "PR_AUC": 0.9999224249082588,
+        "FPR": 0.01122394441475147,
+        "FNR": 0.009228876127973748,
+        "MCC": 0.9340665694302225,
+        "Confusion_Matrix": [
+          [
+            1850,
+            21
+          ],
+          [
+            225,
+            24155
+          ]
+        ]
+      },
+      "reconciliation_status": "VERIFIED"
+    }
+  }
+}

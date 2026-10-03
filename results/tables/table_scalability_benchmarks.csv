@@ -1,5 +1,0 @@
-scale_records,fhir_processing_sec,fhir_throughput_rps,encryption_time_sec,encryption_throughput_rps,decryption_time_sec,decryption_throughput_rps,storage_size_mb,storage_per_record_kb,blockchain_commit_sec,blockchain_tps,e2e_latency_per_record_ms,memory_usage_mb
-10000,4.02,2486.1,55.1,181.5,2.37,4226.7,176.22,18.05,1.93,5179.3,6.342,5444.95
-25000,8.77,2850.1,133.65,187.0,5.55,4506.4,440.55,18.05,3.4,7343.3,6.055,5927.0
-50000,15.51,3222.8,263.35,189.9,11.17,4475.2,881.1,18.05,6.64,7532.0,5.933,6730.05
-100000,33.14,3017.6,529.2,189.0,23.28,4294.8,1762.21,18.05,16.67,5998.9,6.023,6730.81

@@ -1,0 +1,16 @@
+{
+  "Uncalibrated": {
+    "Brier_Score": 0.004918476566672325,
+    "ECE": 0.0009719172151848015
+  },
+  "Temperature_Scaling": {
+    "Optimal_Temperature": 1.0612244897959184,
+    "Brier_Score": 0.004916969572316302,
+    "ECE": 0.0007587819413326039
+  },
+  "Platt_Scaling": {
+    "Brier_Score": 0.00491666654124856,
+    "ECE": 0.0008363181952918987
+  },
+  "Selected_Method": "Temperature_Scaling"
+}

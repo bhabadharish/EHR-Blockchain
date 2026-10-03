@@ -1,0 +1,38 @@
+name: CA-HTDNet CI & Validation Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Master Result Validation Gate
+        run: |
+          python scripts/validate_dashboard_results.py
+
+      - name: Run Subsystem Integration & Integrity Tests
+        run: |
+          pytest tests/test_dashboard_integrity.py -v
+
+      - name: Validate Streamlit Headless App Test
+        run: |
+          python -c "from streamlit.testing.v1 import AppTest; at = AppTest.from_file('app/streamlit_app.py', default_timeout=30); at.run(); assert not at.exception, f'Streamlit error: {at.exception}'; print('Streamlit app passed validation!')"

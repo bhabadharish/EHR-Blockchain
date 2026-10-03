@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-03T12:45:42.094404",
+  "overall_status": "PASS",
+  "results": {
+    "Model artifacts": "PASS",
+    "Preprocessors": "PASS",
+    "Dataset metadata": "PASS",
+    "Class mapping": "PASS",
+    "Metrics": "PASS",
+    "Confusion matrix": "PASS",
+    "Experiment registry": "PASS",
+    "ROC data": "PASS",
+    "PR data": "PASS",
+    "Threshold": "PASS",
+    "Cross-dataset data": "PASS"
+  },
+  "registry_experiment_id": "CAHTDNet_final_locked_v001"
+}

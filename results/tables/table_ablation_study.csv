@@ -1,6 +1,0 @@
-model,accuracy_mean,accuracy_std,accuracy_ci95,macro_f1_mean,macro_f1_std,macro_f1_ci95,weighted_f1_mean,balanced_accuracy_mean,roc_auc_mean,pr_auc_mean,fpr_mean,fnr_mean,inference_latency_ms,parameter_count,architecture_description
-Ablation_A_TCN_Only,0.3788,0.0507,0.0629,0.3289,0.0383,0.0476,0.3612,0.3972,0.9002,0.4718,0.4796,0.0886,0.002,63887,A: Dilated Causal 1D Convolutions only
-Ablation_B_Transformer_Only,0.305,0.0431,0.0536,0.2028,0.0359,0.0446,0.2357,0.3201,0.8497,0.3021,0.587,0.0491,0.019,68047,B: Multi-Layer Transformer Encoder only
-Ablation_C_TCN_Transformer,0.5296,0.0771,0.0958,0.395,0.0535,0.0665,0.4857,0.4932,0.9281,0.4928,0.6924,0.0174,0.008,80911,C: TCN + Transformer Encoder (no attention pooling)
-Ablation_E_Proposed_Feature_Selection,0.6734,0.017,0.0211,0.5905,0.0178,0.0221,0.641,0.6562,0.9742,0.6831,0.1989,0.0492,0.006,156505,E: Proposed Architecture + Top-25 Univariate Feature Selection
-Proposed_TCN_Transformer_Attention,0.6743,0.0157,0.0195,0.5822,0.0281,0.0349,0.6405,0.6462,0.968,0.6605,0.4991,0.0235,0.013,158405,D: Full Proposed Architecture (TCN + Transformer + Multi-Head Attn)

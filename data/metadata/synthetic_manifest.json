@@ -1,0 +1,127 @@
+{
+  "filename": "synthetic_minority_attacks.parquet",
+  "csv_filename": "synthetic_minority_attacks.csv",
+  "size_bytes_parquet": 3515395,
+  "size_bytes_csv": 9395198,
+  "row_count": 20000,
+  "column_count": 47,
+  "features": [
+    "flow_duration",
+    "Header_Length",
+    "Protocol Type",
+    "Duration",
+    "Rate",
+    "Srate",
+    "Drate",
+    "fin_flag_number",
+    "syn_flag_number",
+    "rst_flag_number",
+    "psh_flag_number",
+    "ack_flag_number",
+    "ece_flag_number",
+    "cwr_flag_number",
+    "ack_count",
+    "syn_count",
+    "fin_count",
+    "urg_count",
+    "rst_count",
+    "HTTP",
+    "HTTPS",
+    "DNS",
+    "Telnet",
+    "SMTP",
+    "SSH",
+    "IRC",
+    "TCP",
+    "UDP",
+    "DHCP",
+    "ARP",
+    "ICMP",
+    "IPv",
+    "LLC",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Std",
+    "Tot size",
+    "IAT",
+    "Number",
+    "Magnitue",
+    "Radius",
+    "Covariance",
+    "Variance",
+    "Weight"
+  ],
+  "class_labels": [
+    "Uploading_Attack",
+    "Recon-PingSweep",
+    "Backdoor_Malware",
+    "XSS",
+    "SqlInjection",
+    "CommandInjection",
+    "BrowserHijacking",
+    "DictionaryBruteForce"
+  ],
+  "samples_per_class": 2500,
+  "generation_source": "Regularized Multivariate Gaussian Copula fitted strictly on CICIoT2023 Train minority classes",
+  "creation_timestamp": "2026-10-03 10:22:39",
+  "validation_metrics": {
+    "Uploading_Attack": {
+      "real_samples": 140,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.18854037267080742,
+      "mean_wasserstein_distance": 626639.262411938,
+      "max_ks_statistic": 0.5114285714285713
+    },
+    "Recon-PingSweep": {
+      "real_samples": 249,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.2008423258250393,
+      "mean_wasserstein_distance": 646632.2980562717,
+      "max_ks_statistic": 0.5139839357429719
+    },
+    "Backdoor_Malware": {
+      "real_samples": 392,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.19599600709849155,
+      "mean_wasserstein_distance": 686957.759023372,
+      "max_ks_statistic": 0.4891836734693877
+    },
+    "XSS": {
+      "real_samples": 414,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.19550493593782822,
+      "mean_wasserstein_distance": 700309.8368908705,
+      "max_ks_statistic": 0.4945217391304347
+    },
+    "SqlInjection": {
+      "real_samples": 590,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.2127302873986735,
+      "mean_wasserstein_distance": 664320.9878583974,
+      "max_ks_statistic": 0.5056610169491524
+    },
+    "CommandInjection": {
+      "real_samples": 620,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.2037461430575035,
+      "mean_wasserstein_distance": 704065.5937108978,
+      "max_ks_statistic": 0.5061290322580645
+    },
+    "BrowserHijacking": {
+      "real_samples": 665,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.1983193854200719,
+      "mean_wasserstein_distance": 673341.3261719323,
+      "max_ks_statistic": 0.5469022556390978
+    },
+    "DictionaryBruteForce": {
+      "real_samples": 1541,
+      "synthetic_samples": 2500,
+      "mean_ks_statistic": 0.22543227153457665,
+      "mean_wasserstein_distance": 665746.7465729173,
+      "max_ks_statistic": 0.4972874756651524
+    }
+  }
+}

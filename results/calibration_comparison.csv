@@ -1,0 +1,4 @@
+Method,Brier Score,ECE
+Uncalibrated,0.00492,0.00097
+Temperature Scaling (T=1.06),0.00492,0.00076
+Platt Scaling (Sigmoid),0.00492,0.00084

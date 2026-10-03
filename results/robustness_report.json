@@ -1,0 +1,44 @@
+[
+  {
+    "Test": "Baseline (Clean)",
+    "Accuracy": 0.9927619047619047,
+    "Macro_F1": 0.9727045103411898,
+    "Drop_F1": "0.0%"
+  },
+  {
+    "Test": "Feature Noise (std=0.10)",
+    "Accuracy": 0.6596190476190477,
+    "Macro_F1": 0.5236354358265453,
+    "Drop_F1": "-44.91%"
+  },
+  {
+    "Test": "Feature Noise (std=0.25)",
+    "Accuracy": 0.6556190476190477,
+    "Macro_F1": 0.5143401021129305,
+    "Drop_F1": "-45.84%"
+  },
+  {
+    "Test": "Feature Noise (std=0.50)",
+    "Accuracy": 0.6450666666666667,
+    "Macro_F1": 0.4951354890203574,
+    "Drop_F1": "-47.76%"
+  },
+  {
+    "Test": "Missing Features (10% dropout)",
+    "Accuracy": 0.9852190476190477,
+    "Macro_F1": 0.9418142691361471,
+    "Drop_F1": "-3.09%"
+  },
+  {
+    "Test": "Missing Features (25% dropout)",
+    "Accuracy": 0.9736761904761905,
+    "Macro_F1": 0.889188580244106,
+    "Drop_F1": "-8.35%"
+  },
+  {
+    "Test": "Missing Features (50% dropout)",
+    "Accuracy": 0.956152380952381,
+    "Macro_F1": 0.788367796837792,
+    "Drop_F1": "-18.43%"
+  }
+]

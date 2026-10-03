@@ -1,26 +1,62 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
-env/
-venv/
-.venv/
-.pytest_cache/
+
+# C/C++ build artifacts & compiler outputs
+*.dylib
+*.dll
+*.o
+
+# Raw large datasets (>50MB / multi-GB archives)
+# Note: Clean harmonized partitions are preserved in data/splits/ and data/metadata/
+CICIOT23/
+data/raw/
+data/interim/
+*.zip
+*.tar.gz
+*.tar
+*.csv.gz
+
+# Ephemeral runtime off-chain EHR vault files
+data/processed/offchain_vault/*.enc
+
+# Training & Profiling telemetry
+catboost_info/
+wandb/
 .coverage
 htmlcov/
+.pytest_cache/
 
-# Large checkpoints & model binaries (reproducible via scripts/evaluate_models.py)
-checkpoints/
-models/*.pt
-
-# Large data sets (reproduced via scripts/generate_synthetic_ehr.py and scripts/download_raw_datasets.py)
-data/raw/
-data/synthetic/
-data/storage_vault/
-data/processed/
-
-# OS files
+# OS specific files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Streamlit runtime state
+.streamlit/secrets.toml
+
+# Keep gitkeep for empty directories if needed
+!.gitkeep

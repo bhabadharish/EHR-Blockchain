@@ -1,127 +1,184 @@
 # Crypto-Agile FHIR-Blockchain Architecture for Post-Quantum Electronic Health Record Exchange with Intelligent Threat Detection
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![HL7 FHIR R4](https://img.shields.io/badge/HL7-FHIR%20R4-orange.svg)](https://hl7.org/fhir/R4/)
-[![NIST FIPS 203](https://img.shields.io/badge/NIST-FIPS%20203%20ML--KEM-green.svg)](https://csrc.nist.gov/)
-[![NIST FIPS 204](https://img.shields.io/badge/NIST-FIPS%20204%20ML--DSA-green.svg)](https://csrc.nist.gov/)
-[![Hyperledger Fabric](https://img.shields.io/badge/Blockchain-Hyperledger%20Fabric-blueviolet.svg)](https://www.hyperledger.org/)
-[![Scientific Reproducibility](https://img.shields.io/badge/Research-Reproducible%20(Zero%20Fabrication)-brightgreen.svg)]()
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch 2.14](https://img.shields.io/badge/PyTorch-2.14-ee4c2c.svg)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Hardware: Apple M2](https://img.shields.io/badge/Hardware-Apple%20M2%2016GB-black.svg)]()
+[![Validation: PASS](https://img.shields.io/badge/Result%20Validation-PASS-brightgreen.svg)]()
 
-A peer-reviewed research-grade prototype uniting **post-quantum cryptography (PQC)**, **HL7 FHIR R4 interoperability**, **permissioned blockchain smart contracts**, and **deep learning cyber threat detection** for secure federated health data exchange.
-
----
-
-## 🔬 Core Contributions & Architecture
-
-1. **Post-Quantum Cryptographic Agility**:
-   - Implements NIST FIPS 203 (**ML-KEM-768**, **ML-KEM-1024** lattice key encapsulation).
-   - Implements NIST FIPS 204 (**ML-DSA-65**, **ML-DSA-87** lattice digital signatures).
-   - Authenticated encryption via **AES-256-GCM** (NIST SP 800-38D) and **SHA-3-256** integrity verification (FIPS 202).
-   - Comparative runtime evaluation against Classical (ECDH+ECDSA P-256) and Hybrid modes.
-2. **Zero-PHI Permissioned Blockchain Ledger**:
-   - Content-addressable off-chain storage vault (`vault://ehr-store/{patient_id}/{sha3_digest}.enc.json`).
-   - Hyperledger Fabric smart contract engine maintaining solely SHA-3 digests, storage locators, and dynamic consent states. Zero PHI on-chain.
-   - Granular RBAC + ABAC policy engine with break-glass emergency override and instantaneous consent revocation.
-3. **Deep Learning Cyber Threat Detection**:
-   - Proposed **TCN + Transformer + Multi-Head Attention** neural architecture for multi-class telemetry anomaly detection.
-   - Evaluated on authentic **Edge-IIoTset** network telemetry (15 threat classes).
-   - Game-theoretic **SHAP (SHapley Additive exPlanations)** explainability identifying top informative packet features.
-4. **Large-Scale Synthetic FHIR EHR Corpus**:
-   - Over **100,000 synthetic patient bundles** (**1,650,322 valid FHIR R4 resources**) generated under seeded random distributions.
-   - 0 schema, relational, or range violations across 10,000 audited bundles.
+A research-grade cybersecurity platform that unifies **deep multimodal tabular threat detection (CA-HTDNet)**, **post-quantum cryptography (NIST FIPS 203/204/205)**, **HL7 FHIR R4 clinical data security**, and **Hyperledger Fabric permissioned blockchain auditing** for zero-trust electronic health record exchange.
 
 ---
 
-## 📊 Summary of Experimental Benchmarks (N = 5 Random Seeds)
+## 1. Core Architecture
 
-| Domain | Experimental Parameter | Measured Result |
-| :--- | :--- | :--- |
-| **PQC Encapsulation** | ML-KEM-768 Latency (10 KB payload) | **5.21 ± 0.04 ms** |
-| **Digital Signatures** | ML-DSA-65 Latency | **0.18 ± 0.01 ms** |
-| **End-to-End Exchange** | Complete Hospital A $\rightarrow$ B Workflow (13 Steps) | **6.324 ms** |
-| **Blockchain TPS** | Hyperledger Fabric Consensus Throughput | **~47,846 TPS** |
-| **Tamper Detection** | Modified ciphertext, metadata, hash, or signature | **100.0% Detection Rate** |
-| **Attack Simulation** | 10 Threat Vectors (Unauthorized, Replay, Injection, Flooding) | **100.0% Detection Rate** |
-| **Scalability Tested** | Cohort Scale Checkpoints | **10k, 25k, 50k, 100k Records** |
-
-*All reported metrics originate strictly from executed benchmarks. Zero fabricated numbers.*
+```text
+                 STREAMLIT APPLICATION
+                         │
+          ┌──────────────┴──────────────┐
+          │                             │
+     RESEARCH VIEW                 LIVE DEMO VIEW
+          │                             │
+          ▼                             ▼
+ Dataset & Results                Simulated Request
+          │                             │
+          ▼                             ▼
+ Model Validation               Frozen Model Inference
+          │                             │
+          └──────────────┬──────────────┘
+                         ▼
+                  Threat/Risk Engine
+                         │
+             ┌───────────┼───────────┐
+             ▼           ▼           ▼
+           ALLOW       REVIEW       BLOCK
+             │           │           │
+             └───────────┼───────────┘
+                         ▼
+                 Crypto-Agility
+                         │
+                         ▼
+                  FHIR Transaction
+                         │
+              ┌──────────┴──────────┐
+              ▼                     ▼
+       Encrypted EHR          Blockchain Audit
+       Off-chain Store        / Integrity Ledger
+```
 
 ---
 
-## 🚀 Quickstart & One-Command Replication
+## 2. Key Empirical Findings (Held-Out Test Set: 26,251 samples)
 
-### 1. Installation
+| Metric | Target | Measured Result | Status |
+|---|---|---|---|
+| **Accuracy** | $\ge 98.00\%$ | **99.06%** | `VERIFIED` |
+| **Macro Recall** | $\ge 98.00\%$ | **98.98%** | `VERIFIED` |
+| **False Negative Rate (FNR)** | $\le 2.000\%$ | **0.923%** | `VERIFIED` |
+| **False Positive Rate (FPR)** | $\le 2.000\%$ | **1.122%** | `VERIFIED` |
+| **Macro-F1** | $\ge 98.00\%$ | **96.63%** | `TARGET NOT REACHED (-1.37%)` |
+| **Macro Precision** | $\ge 98.00\%$ | **94.53%** | `TARGET NOT REACHED (-3.47%)` |
+| **ROC-AUC** | $\ge 0.9900$ | **0.9990** | `VERIFIED` |
+| **PR-AUC** | $\ge 0.9900$ | **0.9999** | `VERIFIED` |
+| **Confusion Matrix** | — | `[[1850, 21], [225, 24155]]` | `VERIFIED` |
+
+> [!NOTE]
+> All metrics are empirically verified on the locked test partition. Macro-F1 and Precision gaps are transparently documented in `FAILURE_ANALYSIS.md` as stemming from extreme natural telemetry class imbalance (96% attack vs 4% benign).
+
+---
+
+## 3. Quick Start & Offline Dashboard Launch
+
+The demonstration dashboard operates **100% offline with zero online training**.
+
+### Step 1: Install Dependencies
 ```bash
-# Clone the repository
-git clone https://github.com/rupesh/Blockchain-EHR.git
-cd Blockchain-EHR
-
-# Install Python dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Run Automated Verification Tests
+### Step 2: Validate Results & Subsystem Consistency
 ```bash
-pytest tests/ -v
+python scripts/validate_dashboard_results.py
 ```
 
-### 3. Reproduce All Experiments & Generate Figures
+### Step 3: Launch Streamlit SOC Dashboard
 ```bash
-python scripts/run_all_experiments.py
+streamlit run app/streamlit_app.py
 ```
-
-### 4. Launch Streamlit Interactive Research Dashboard
-```bash
-streamlit run dashboard/streamlit_app.py
-```
-Access the 17 interactive research pages at `http://localhost:8501`.
+Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ---
 
-## 📁 Repository Directory Structure
+## 4. Verification & Testing Suite
 
+Execute the complete automated validation pipeline:
+
+```bash
+# 1. Validate result consistency across models, datasets, and curves
+python scripts/validate_dashboard_results.py
+
+# 2. Test frozen inference pipeline (zero training)
+python scripts/test_inference_pipeline.py
+
+# 3. Test 11-stage FHIR security transaction pipeline
+python scripts/test_fhir_security.py
+
+# 4. Test NIST Post-Quantum Cryptography & Agility Layer
+python scripts/test_crypto_layer.py
+
+# 5. Test Hyperledger Fabric Consortium Ledger & Tamper Detection
+python scripts/test_blockchain_layer.py
+
+# 6. Run comprehensive Pytest unit test suite
+pytest tests/test_dashboard_integrity.py -v
 ```
-.
-├── backend/
-│   ├── api/             # FastAPI REST endpoints (/Patient, /ehr, etc.)
-│   ├── fhir/            # Pydantic FHIR R4 schemas, minimization, RFC 8785 JCS
-│   ├── crypto/          # Modular crypto-agility engine (PQC, Classical, Hybrid)
-│   ├── storage/         # Content-addressable off-chain encrypted vault
-│   ├── blockchain/      # Fabric chaincode state machine, consent, RBAC+ABAC
-│   ├── security/        # Threat model taxonomy, non-leaking telemetry pipeline
-│   └── models/          # Proposed TCN-Transformer-Attention & baseline architectures
+
+---
+
+## 5. Dashboard Features & Walkthrough
+
+The Streamlit dashboard includes 14 comprehensive research modules:
+
+1. **🏠 System Overview:** Status badges, interactive architecture schematic, verified KPI cards, Target vs Actual table.
+2. **📊 Dataset Intelligence:** Interactive profiles for CICIoT2023 (120k), Edge-IIoTset (40k), Synthetic FHIR (15k), and leakage safety verification.
+3. **🤖 Model Validation & Comparison:** Comprehensive 10-model benchmark table (XGBoost, LightGBM, CatBoost, Random Forest, Decision Tree, Extra Trees, MLP, SVM, Logistic Regression, CA-HTDNet).
+4. **📈 Performance Analysis:** Interactive confusion matrix (raw/normalized toggle), ROC curves, and PR curves.
+5. **🎯 Error & Threshold Analysis:** Interactive What-If Threshold Lab (dynamic metric recalculation leaving official results untouched) and False Positive/Negative Error Explorer.
+6. **🧪 Cross-Dataset Validation:** Domain transfer matrix (CICIoT $\leftrightarrow$ Edge-IIoTset) and generalization gap analysis.
+7. **🏥 FHIR Security Demonstration:** Interactive clinical access scenario with real-time 11-stage pipeline tracking.
+8. **🛡️ Live Threat Detection:** 7 prebuilt attack injections (DDoS, Bulk Exfiltration, Credential Compromise, API Enumeration, IoMT Anomaly, Privilege Escalation) evaluated through frozen model inference with feature attribution.
+9. **🔐 Crypto-Agility:** NIST FIPS 203 (ML-KEM-768), FIPS 204 (ML-DSA-65), FIPS 205 (SLH-DSA), and AES-256-GCM authenticated encryption with live measured latencies.
+10. **⛓️ Blockchain Audit:** Simulated Fabric consortium ledger, live block explorer, SHA3-256 integrity verification, and disk tamper test.
+11. **🚨 Threat Response:** Real-time event stream and automated mitigation policies.
+12. **🔬 Research Experiments & Ablation:** Architectural ablation trajectory A0 to A8, robustness tests, and calibration analysis.
+13. **📋 Reproducibility & Provenance:** Full automated reconciliation table (Stored vs Recomputed), artifact SHA-256 digests, and exportable CSV/JSON reports.
+14. **ℹ️ Architecture & Viva Mode:** Slide-by-slide presentation walkthrough designed for conference, defense, and thesis evaluation.
+
+---
+
+## 6. Project Structure
+
+```text
+Blockchain-EHR/
+├── app/
+│   └── streamlit_app.py               # 14-page research-grade Streamlit application
 ├── dashboard/
-│   └── streamlit_app.py # 17-page Streamlit research dashboard
+│   ├── inference/
+│   │   └── model_loader.py            # Frozen offline inference loader with SHA-256 checks
+│   └── validation/
+│       └── result_consistency.py      # Stored vs recomputed metric consistency engine
+├── data/
+│   ├── metadata/                      # Split manifests and schema definitions
+│   ├── processed/                     # Processed arrays and off-chain vault
+│   └── splits/                        # 70/15/15 train, val, test parquet splits
+├── docs/
+│   ├── dashboard_architecture.md      # Dashboard system flow and hierarchy
+│   ├── dashboard_validation.md        # Mathematical validation protocol
+│   ├── demo_guide.md                  # Viva / presentation demonstration guide
+│   ├── figures/                       # Publication-quality architectural figures
+│   └── result_provenance.md           # Artifact hashes and hardware execution metadata
+├── models/
+│   ├── baselines/                     # Trained baseline models (.pkl)
+│   ├── preprocessors/                 # Unified security preprocessor (.pkl)
+│   └── proposed/                      # CA-HTDNet state dict (.pt), config, threshold.json
+├── results/
+│   ├── curves/                        # Precomputed ROC and PR curves (.json)
+│   ├── predictions/                   # Frozen test predictions (.npz)
+│   ├── experiment_registry.json       # Single canonical source of truth for all results
+│   ├── final_results.csv              # Verified benchmark results table
+│   └── final_results.json             # Full model evaluation metrics
 ├── scripts/
-│   ├── run_all_experiments.py       # Master reproduction orchestrator
-│   ├── evaluate_models.py           # Multi-seed AI threat detection benchmark
-│   ├── run_crypto_benchmarks.py     # PQC vs Classical benchmarks
-│   ├── run_blockchain_benchmarks.py # Blockchain consensus & consent ablation
-│   ├── run_scalability.py           # 10k-100k FHIR scalability benchmark
-│   ├── run_attack_simulation.py     # 10 attack vector controlled simulations
-│   ├── generate_tables.py           # Publication-ready consolidated tables
-│   ├── generate_figures.py          # High-DPI publication figures (1 to 16)
-│   └── check_consistency.py         # Automated cross-artifact consistency audit
-├── figures/             # Figures 1 to 16 (300 DPI publication quality)
-├── results/             # Raw JSON metric manifests and publication CSV tables
-├── reports/             # Detailed scientific reports and quality gate audits
-├── tests/               # Automated pytest unit, integration, and security suites
-├── Dockerfile           # Docker containerization specification
-├── docker-compose.yml   # Multi-service container orchestration
-├── Makefile             # Automation shortcuts
-└── requirements.txt     # Locked production dependencies
+│   ├── build_experiment_registry.py   # Registry builder and prediction precomputer
+│   ├── test_blockchain_layer.py       # Blockchain ledger & tamper test
+│   ├── test_crypto_layer.py           # PQC benchmark and agility test
+│   ├── test_fhir_security.py          # 11-stage FHIR pipeline test
+│   ├── test_inference_pipeline.py     # Offline frozen inference test
+│   └── validate_dashboard_results.py  # Master result reconciliation validator
+└── tests/
+    └── test_dashboard_integrity.py    # Pytest test suite (100% passing)
 ```
 
 ---
 
-## ⚖️ Scientific Integrity & Quality Gates
-
-This project enforces 11 mandatory quality gates:
-- **QG1**: Raw dataset provenance & SHA-256 checksums verified.
-- **QG2/QG3**: Synthetic FHIR schema, relational, and clinical plausibility verified.
-- **QG4**: Cryptographic primitive correctness & 100% tamper detection verified.
-- **QG5/QG6**: Zero PHI on blockchain & dynamic consent revocation verified.
-- **QG7**: Strict train/validation/test split isolation with zero data leakage.
-- **QG8/QG9**: Deterministic PRNG seeds with paired t-test statistical validation.
-- **QG10**: Cross-artifact numerical consistency verified across tables and dashboard.
-- **QG11**: End-to-end exchange & 10-threat attack simulation validated.
+## 7. License & Citation
+Licensed under the [MIT License](LICENSE).

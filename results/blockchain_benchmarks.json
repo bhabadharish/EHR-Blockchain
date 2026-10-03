@@ -1,0 +1,18 @@
+{
+  "Blockchain": "Hyperledger Fabric Permissioned Architecture",
+  "Channel": "healthcare-consortium-channel",
+  "Organizations": [
+    "Hospital_A",
+    "Hospital_B",
+    "Hospital_C",
+    "Research_Consortium"
+  ],
+  "Total_Transactions_Tested": 100,
+  "Final_Block_Height": 203,
+  "Mean_Commit_Latency_ms": 0.09969956983695738,
+  "Median_Commit_Latency_ms": 0.08697950033820234,
+  "P95_Commit_Latency_ms": 0.1349646001472138,
+  "Throughput_TPS": 9975.7668727578,
+  "Mean_Integrity_Query_Latency_ms": 0.026146680174861103,
+  "Tampering_Detection_Reliability": 1.0
+}

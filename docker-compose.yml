@@ -1,24 +1,16 @@
 version: '3.8'
 
 services:
-  fhir-gateway:
+  ca-htdnet-dashboard:
     build: .
-    command: uvicorn backend.api.app:app --host 0.0.0.0 --port 8000
-    ports:
-      - "8000:8000"
-    volumes:
-      - .:/app
-    environment:
-      - PYTHONUNBUFFERED=1
-
-  research-dashboard:
-    build: .
-    command: streamlit run dashboard/streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    container_name: ca_htdnet_platform
     ports:
       - "8501:8501"
-    volumes:
-      - .:/app
     environment:
       - PYTHONUNBUFFERED=1
-    depends_on:
-      - fhir-gateway
+      - OMP_NUM_THREADS=1
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./results:/app/results
+    restart: unless-stopped

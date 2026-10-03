@@ -1,5 +1,0 @@
-configuration,tx_latency_ms_mean,tx_latency_ms_std,tx_latency_ms_ci95,access_decision_ms_mean,throughput_tps_mean,throughput_tps_ci95,storage_overhead_bytes_per_tx,ledger_verification_ms
-Blockchain_Audit_Consent,0.0113,0.0003,0.0003,0.0113,74167.5,2186.4,259.0,0.013
-Blockchain_Audit_Consent_Revocation,0.0113,0.0003,0.0003,0.0113,74259.3,2042.2,263.6,0.012
-Blockchain_Audit_Only,0.0067,0.0002,0.0002,0.0067,113019.3,3926.5,243.0,0.012
-No_Blockchain,0.0,0.0,0.0,0.0,2955679.9,451332.2,0.0,0.003

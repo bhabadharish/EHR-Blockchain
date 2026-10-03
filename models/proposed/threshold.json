@@ -1,0 +1,16 @@
+{
+  "selection_partition": "VALIDATION_STRICT",
+  "test_set_used": false,
+  "objective": "Maximize Macro-F1 subject to FNR <= 0.02, FPR <= 0.05",
+  "optimal_threshold": 0.57,
+  "validation_metrics_at_optimal": {
+    "threshold": 0.57,
+    "macro_f1": 0.9731,
+    "precision": 0.9972,
+    "recall": 0.995,
+    "fpr": 0.0364,
+    "fnr": 0.005,
+    "mcc": 0.9464,
+    "objective_score": 0.9731
+  }
+}

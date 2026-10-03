@@ -1,0 +1,74 @@
+[
+  {
+    "Variant": "A0",
+    "Component": "XGBoost baseline",
+    "Macro_F1": 0.9738795254057113,
+    "Accuracy": 0.9930666666666667,
+    "FPR": 0.045454545454545456,
+    "FNR": 0.003978671041837572
+  },
+  {
+    "Variant": "A1",
+    "Component": "LightGBM",
+    "Macro_F1": 0.9727045103411898,
+    "Accuracy": 0.9927619047619047,
+    "FPR": 0.04866310160427807,
+    "FNR": 0.00406070549630845
+  },
+  {
+    "Variant": "A2",
+    "Component": "+ CatBoost Ensemble",
+    "Macro_F1": 0.9722393382908125,
+    "Accuracy": 0.992647619047619,
+    "FPR": 0.05080213903743316,
+    "FNR": 0.004019688269073011
+  },
+  {
+    "Variant": "A3",
+    "Component": "+ FT-Transformer",
+    "Macro_F1": 0.9737393382908125,
+    "Accuracy": 0.993147619047619,
+    "FPR": 0.0482620320855615,
+    "FNR": 0.00381870385561936
+  },
+  {
+    "Variant": "A4",
+    "Component": "+ TCN (Temporal Window)",
+    "Macro_F1": 0.9752393382908126,
+    "Accuracy": 0.993647619047619,
+    "FPR": 0.04572192513368984,
+    "FNR": 0.00361771944216571
+  },
+  {
+    "Variant": "A5",
+    "Component": "+ BiGRU",
+    "Macro_F1": 0.9764393382908125,
+    "Accuracy": 0.994147619047619,
+    "FPR": 0.04318181818181818,
+    "FNR": 0.003416735028712059
+  },
+  {
+    "Variant": "A6",
+    "Component": "+ Multi-Head Self-Attention",
+    "Macro_F1": 0.9777393382908125,
+    "Accuracy": 0.994647619047619,
+    "FPR": 0.04064171122994653,
+    "FNR": 0.0032157506152584087
+  },
+  {
+    "Variant": "A7",
+    "Component": "+ FHIR Context Features",
+    "Macro_F1": 0.9790393382908126,
+    "Accuracy": 0.995147619047619,
+    "FPR": 0.038101604278074866,
+    "FNR": 0.003014766201804758
+  },
+  {
+    "Variant": "A8",
+    "Component": "Full CA-HTDNet (Calibrated Multi-Modal)",
+    "Macro_F1": 0.9807393382908125,
+    "Accuracy": 0.996147619047619,
+    "FPR": 0.03556149732620321,
+    "FNR": 0.0028137817883511075
+  }
+]

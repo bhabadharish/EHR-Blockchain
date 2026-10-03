@@ -1,0 +1,4 @@
+Split,Benign,Attack,Total
+Train,8729,113770,122499
+Validation,1870,24380,26250
+Test,1871,24380,26251

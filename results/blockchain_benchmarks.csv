@@ -1,0 +1,8 @@
+Metric,Value
+Mean Commit Latency,0.100 ms
+Median Commit Latency,0.087 ms
+P95 Commit Latency,0.135 ms
+Throughput,9975.8 tx/sec
+Mean Integrity Verification Query,0.026 ms
+Tamper Detection Accuracy,100.0% (Deterministic SHA3-256)
+Block Height,203

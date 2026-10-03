@@ -1,0 +1,5 @@
+Experiment,Train_Dataset,Test_Dataset,Accuracy,Macro_F1,Macro_Recall,FPR,FNR,Domain_Shift_Impact
+Exp A: CICIoT2023 -> Edge-IIoTset,CICIoT2023,Edge-IIoTset,100.00%,100.00%,100.00%,0.000%,0.000%,--0.77%
+Exp B: Edge-IIoTset -> CICIoT2023,Edge-IIoTset,CICIoT2023,97.67%,49.41%,50.00%,100.000%,0.000%,-1.56%
+Exp C: Multimodal Harmonized (Held-out),Combined (CIC + Edge + FHIR),Held-Out Combined Test,99.23%,97.11%,97.44%,4.650%,0.472%,Baseline (0.0%)
+Exp D: Network Model -> FHIR Healthcare,CICIoT2023,Synthetic FHIR Telemetry,13.51%,12.01%,19.06%,99.645%,62.241%,-85.72%

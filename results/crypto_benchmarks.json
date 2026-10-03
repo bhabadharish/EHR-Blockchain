@@ -1,0 +1,52 @@
+[
+  {
+    "Algorithm": "AES-256-GCM (NIST SP 800-38D)",
+    "Type": "Symmetric Encryption",
+    "KeyGen_or_Setup_ms": 0.001,
+    "Primary_Op_ms": 0.015520060405833647,
+    "Verify_or_Dec_ms": 0.0030791394237894565,
+    "Public_Key_Bytes": 32,
+    "Ciphertext_or_Sig_Bytes": 7066,
+    "Security_Category": "Classical / PQC Symmetric"
+  },
+  {
+    "Algorithm": "SHA3-256 (FIPS 202)",
+    "Type": "Cryptographic Hash",
+    "KeyGen_or_Setup_ms": 0.0,
+    "Primary_Op_ms": 0.009205899841617793,
+    "Verify_or_Dec_ms": 0.0,
+    "Public_Key_Bytes": 0,
+    "Ciphertext_or_Sig_Bytes": 32,
+    "Security_Category": "NIST Standard Digest"
+  },
+  {
+    "Algorithm": "ML-KEM-768 (FIPS 203)",
+    "Type": "Lattice KEM",
+    "KeyGen_or_Setup_ms": 0.012934180267620832,
+    "Primary_Op_ms": 0.013859060127288103,
+    "Verify_or_Dec_ms": 0.0059306797629687935,
+    "Public_Key_Bytes": 1184,
+    "Ciphertext_or_Sig_Bytes": 1088,
+    "Security_Category": "Post-Quantum Standard"
+  },
+  {
+    "Algorithm": "ML-DSA-65 (FIPS 204)",
+    "Type": "Lattice Digital Signature",
+    "KeyGen_or_Setup_ms": 0.016705799498595297,
+    "Primary_Op_ms": 0.013104159152135253,
+    "Verify_or_Dec_ms": 0.00016081903595477343,
+    "Public_Key_Bytes": 1952,
+    "Ciphertext_or_Sig_Bytes": 3309,
+    "Security_Category": "Post-Quantum Standard"
+  },
+  {
+    "Algorithm": "SLH-DSA-128s (FIPS 205)",
+    "Type": "Stateless Hash Signature",
+    "KeyGen_or_Setup_ms": 0.0017015998309943825,
+    "Primary_Op_ms": 0.029007420234847814,
+    "Verify_or_Dec_ms": 0.00012248026905581355,
+    "Public_Key_Bytes": 32,
+    "Ciphertext_or_Sig_Bytes": 7856,
+    "Security_Category": "Post-Quantum Standard"
+  }
+]

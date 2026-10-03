@@ -1,0 +1,46 @@
+[
+  {
+    "Experiment": "Exp A: CICIoT2023 -> Edge-IIoTset",
+    "Train_Dataset": "CICIoT2023",
+    "Test_Dataset": "Edge-IIoTset",
+    "Accuracy": "100.00%",
+    "Macro_F1": "100.00%",
+    "Macro_Recall": "100.00%",
+    "FPR": "0.000%",
+    "FNR": "0.000%",
+    "Domain_Shift_Impact": "--0.77%"
+  },
+  {
+    "Experiment": "Exp B: Edge-IIoTset -> CICIoT2023",
+    "Train_Dataset": "Edge-IIoTset",
+    "Test_Dataset": "CICIoT2023",
+    "Accuracy": "97.67%",
+    "Macro_F1": "49.41%",
+    "Macro_Recall": "50.00%",
+    "FPR": "100.000%",
+    "FNR": "0.000%",
+    "Domain_Shift_Impact": "-1.56%"
+  },
+  {
+    "Experiment": "Exp C: Multimodal Harmonized (Held-out)",
+    "Train_Dataset": "Combined (CIC + Edge + FHIR)",
+    "Test_Dataset": "Held-Out Combined Test",
+    "Accuracy": "99.23%",
+    "Macro_F1": "97.11%",
+    "Macro_Recall": "97.44%",
+    "FPR": "4.650%",
+    "FNR": "0.472%",
+    "Domain_Shift_Impact": "Baseline (0.0%)"
+  },
+  {
+    "Experiment": "Exp D: Network Model -> FHIR Healthcare",
+    "Train_Dataset": "CICIoT2023",
+    "Test_Dataset": "Synthetic FHIR Telemetry",
+    "Accuracy": "13.51%",
+    "Macro_F1": "12.01%",
+    "Macro_Recall": "19.06%",
+    "FPR": "99.645%",
+    "FNR": "62.241%",
+    "Domain_Shift_Impact": "-85.72%"
+  }
+]

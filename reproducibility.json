@@ -1,0 +1,53 @@
+{
+  "system": {
+    "os": "macOS Darwin arm64",
+    "architecture": "Apple Silicon M2 (16 GB Unified Memory)",
+    "python_version": "3.14.7",
+    "torch_version": "2.14.0",
+    "torch_mps_available": true,
+    "lightgbm_version": "4.7.0",
+    "xgboost_version": "3.4.1",
+    "catboost_version": "1.2.10",
+    "sklearn_version": "1.9.1",
+    "cryptography_version": "50.0.2"
+  },
+  "datasets": {
+    "ciciot2023": {
+      "path": "data/raw/cic_iot/train.csv",
+      "features": 47,
+      "classes": 34
+    },
+    "edge_iiotset": {
+      "path": "data/raw/edge_iiot/ML-EdgeIIoT-dataset.csv",
+      "features": 63,
+      "classes": 12
+    },
+    "synthetic_fhir": {
+      "path": "data/raw/synthetic_fhir/fhir_security_med.parquet",
+      "resources": 12,
+      "security_events": 15
+    }
+  },
+  "experiment_seeds": {
+    "data_split_seed": 42,
+    "model_init_seed": 42,
+    "numpy_seed": 42,
+    "torch_seed": 42
+  },
+  "reproducible_workflow": [
+    "python scripts/01_validate_data.py",
+    "python scripts/02_prepare_data.py",
+    "python scripts/03_generate_synthetic_fhir.py",
+    "python scripts/04_train_baselines.py",
+    "python scripts/06_train_ca_htdnet.py",
+    "python scripts/07_calibrate.py",
+    "python scripts/08_optimize_threshold.py",
+    "python scripts/09_cross_dataset.py",
+    "python scripts/10_ablation.py",
+    "python scripts/11_robustness.py",
+    "python scripts/12_crypto_benchmark.py",
+    "python scripts/13_blockchain_benchmark.py",
+    "python scripts/14_generate_results.py",
+    "streamlit run app/streamlit_app.py"
+  ]
+}
