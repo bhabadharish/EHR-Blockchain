@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\caption{Healthcare Cyberattack Threat Mitigation and Empirical Defense Verification Matrix}
+\label{tab:security_analysis}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{3.2cm}p{3.8cm}p{4.2cm}p{3.5cm}p{2.8cm}}
+\hline
+\textbf{Threat Scenario} & \textbf{Conventional Baseline} & \textbf{Proposed Quantum-Secure Control} & \textbf{Empirical Test} & \textbf{Detection Result} \\
+\hline
+Eavesdropping / Packet Sniffing & Plain HTTP / Classical TLS 1.2 & AES-256-GCM + ML-KEM-768 Ephemeral Encapsulation & EHR Vault Ciphertext Inspection & 100% Ciphertext Confidentiality \\
+Ciphertext Tampering & None / Checksum & SHA3-256 Digest Anchored in Fabric Microblock & SEC-06: Storage Ciphertext Mutation & 100% Tamper Interception (Digest Mismatch) \\
+Replay Attack & Session Cookie & Microsecond Ledger Nonce + FHIR Risk Burst Engine & SEC-04: High-frequency Replay Burst & 100% Flagged (CRITICAL Burst Score > 0.8) \\
+Unauthorized EHR Access & Static Database Password & Zero-Trust Threat-Adaptive Response Engine & SEC-01: Rogue Actor Delete Request & 100% Intercepted (BLOCK_ACTOR) \\
+Credential Compromise & Manual Admin Disablement & Automated ThreatCC Quarantining & SEC-10: Compromised IoMT Request & 100% Quarantined Status Enforced \\
+Malicious Insider Abuse & Internal Trust Assumption & Dual-Gated RBAC + ConsentCC Contract & SEC-03: Nurse Delete Operation & 100% Role Deficient Rejection \\
+Clinical Data Modification & Mutable SQL UPDATE & Immutable Merkle Chained Ledger Blocks & SEC-07: Unregistered Pointer Verification & 100% Unregistered Resource Detected \\
+Signature Forgery Attempt & RSA-1024 / MD5 & NIST FIPS 204 ML-DSA-65 Lattice Signature & SEC-08: Mutated Byte Signature Check & 100% Forgery Rejection \\
+Consent Agreement Manipulation & Application Flag & Smart Contract Consent Agreement (ConsentCC) & SEC-02: Forged Grantee Query & 100% Denied (No Agreement on Ledger) \\
+Quantum Key Compromise & RSA-2048 / ECC P-256 & FIPS 203 ML-KEM-768 Lattice Cryptography & Cryptographic Overhead & Key Lifecyle Audit & NIST Category 3 Quantum Security Certified \\
+\hline
+\end{tabular}
+}
+\end{table*}

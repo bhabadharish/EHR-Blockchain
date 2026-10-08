@@ -1,0 +1,15 @@
+seeds:
+  - 42
+  - 123
+  - 999
+primary_seed: 42
+
+cv_folds: 5
+early_stopping_patience: 25
+
+class_weighting: "balanced"  # balanced, scale_pos_weight, or none
+use_smote: false            # strict rule: do not artificially duplicate or augment minority test data
+
+hardware:
+  num_workers: 4
+  device: "cpu"

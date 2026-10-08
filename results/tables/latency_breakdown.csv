@@ -1,0 +1,7 @@
+Phase,Description,Mean_ms,P95_ms
+1. Proposal & Digest,Client payload canonicalization & SHA3-256 digest,0.0128,0.016
+2. Peer Endorsement,Consortium multi-peer chaincode simulation & verification,0.0057,0.0079
+3. Ordering Service,Raft block batching & header chaining,0.0019,0.0026
+4. Ledger State Commit,Block cryptographic seal & World State KV mutation,0.0279,0.0427
+5. Event Confirmation,Client notification & cryptographic receipt verification,0.0005,0.001
+Total End-to-End Blockchain,"Complete consensus, commit, and verification lifecycle",0.0488,0.0702

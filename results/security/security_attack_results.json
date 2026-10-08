@@ -1,0 +1,156 @@
+[
+  {
+    "Attack_ID": "SEC-01",
+    "Attack_Name": "Unauthorized EHR Access",
+    "Threat_Actor": "A1 External Attacker / A7 Unauthorized Clinician",
+    "Attack_Category": "Authorization Violation",
+    "Expected_Outcome": "BLOCK_ACTOR",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.1087,
+    "Logged_Event": "SEC_AUDIT_SEC-01_BLOCK_ACTOR"
+  },
+  {
+    "Attack_ID": "SEC-02",
+    "Attack_Name": "Unauthorized Consent Modification",
+    "Threat_Actor": "A3 Malicious Insider",
+    "Attack_Category": "Consent Tampering",
+    "Expected_Outcome": "DENIED_NO_CONSENT",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0046,
+    "Logged_Event": "SEC_AUDIT_SEC-02_DENIED_NO_CONSENT"
+  },
+  {
+    "Attack_ID": "SEC-03",
+    "Attack_Name": "Unauthorized Record Update",
+    "Threat_Actor": "A3 Malicious Insider / A4 Compromised IoMT",
+    "Attack_Category": "Access Control Violation",
+    "Expected_Outcome": "DENIED_ROLE_DEFICIENT",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0105,
+    "Logged_Event": "SEC_AUDIT_SEC-03_DENIED_ROLE_DEFICIENT"
+  },
+  {
+    "Attack_ID": "SEC-04",
+    "Attack_Name": "Replay Attempt",
+    "Threat_Actor": "A5 Network Attacker",
+    "Attack_Category": "Replay Attack",
+    "Expected_Outcome": "ANOMALY_BURST_FLAGGED",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0068,
+    "Logged_Event": "SEC_AUDIT_SEC-04_ANOMALY_BURST_FLAGGED"
+  },
+  {
+    "Attack_ID": "SEC-05",
+    "Attack_Name": "Invalid Transaction / Malformed Schema",
+    "Threat_Actor": "A1 External Attacker",
+    "Attack_Category": "Fuzzing / Schema Violation",
+    "Expected_Outcome": "SCHEMA_VALIDATION_REJECTED",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0015,
+    "Logged_Event": "SEC_AUDIT_SEC-05_SCHEMA_VALIDATION_REJECTED"
+  },
+  {
+    "Attack_ID": "SEC-06",
+    "Attack_Name": "Tampered Ciphertext in Storage",
+    "Threat_Actor": "A2 Compromised Hospital Server / DB Admin",
+    "Attack_Category": "Data Integrity Violation",
+    "Expected_Outcome": "TAMPERING_DETECTED_MISMATCH",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.003,
+    "Logged_Event": "SEC_AUDIT_SEC-06_TAMPERING_DETECTED_MISMATCH"
+  },
+  {
+    "Attack_ID": "SEC-07",
+    "Attack_Name": "Modified Metadata / Unregistered Resource",
+    "Threat_Actor": "A6 Rogue Blockchain Participant",
+    "Attack_Category": "Ledger Spoofing",
+    "Expected_Outcome": "NOT_REGISTERED_ON_LEDGER",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.001,
+    "Logged_Event": "SEC_AUDIT_SEC-07_NOT_REGISTERED_ON_LEDGER"
+  },
+  {
+    "Attack_ID": "SEC-08",
+    "Attack_Name": "Invalid Cryptographic Signature",
+    "Threat_Actor": "A10 Future Cryptographic Adversary / Impersonator",
+    "Attack_Category": "Authentication Forgery",
+    "Expected_Outcome": "SIGNATURE_VERIFICATION_FAILED",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0016,
+    "Logged_Event": "SEC_AUDIT_SEC-08_SIGNATURE_VERIFICATION_FAILED"
+  },
+  {
+    "Attack_ID": "SEC-09",
+    "Attack_Name": "Invalid Identity / Unregistered Actor",
+    "Threat_Actor": "A8 Stolen Credential / Impersonator",
+    "Attack_Category": "Identity Spoofing",
+    "Expected_Outcome": "ACTOR_UNREGISTERED_DENIAL",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0009,
+    "Logged_Event": "SEC_AUDIT_SEC-09_ACTOR_UNREGISTERED_DENIAL"
+  },
+  {
+    "Attack_ID": "SEC-10",
+    "Attack_Name": "Revoked Identity Access",
+    "Threat_Actor": "A3 Malicious Insider (Terminated)",
+    "Attack_Category": "Revocation Bypass Attempt",
+    "Expected_Outcome": "QUARANTINE_DEVICE_OR_BLOCK",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0768,
+    "Logged_Event": "SEC_AUDIT_SEC-10_QUARANTINE_DEVICE_OR_BLOCK"
+  },
+  {
+    "Attack_ID": "SEC-11",
+    "Attack_Name": "Expired Authorization / Consent",
+    "Threat_Actor": "A7 Unauthorized Clinician",
+    "Attack_Category": "Temporal Access Violation",
+    "Expected_Outcome": "CONSENT_EXPIRED_REJECTION",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0024,
+    "Logged_Event": "SEC_AUDIT_SEC-11_CONSENT_EXPIRED_REJECTION"
+  },
+  {
+    "Attack_ID": "SEC-12",
+    "Attack_Name": "Malformed Request Payload (SQLi / NoSQLi in FHIR)",
+    "Threat_Actor": "A1 External Attacker",
+    "Attack_Category": "Injection / Payload Manipulation",
+    "Expected_Outcome": "MALFORMED_VALIDATION_REJECTION",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0063,
+    "Logged_Event": "SEC_AUDIT_SEC-12_MALFORMED_VALIDATION_REJECTION"
+  },
+  {
+    "Attack_ID": "SEC-13",
+    "Attack_Name": "Duplicate Transaction Submission",
+    "Threat_Actor": "A5 Network Attacker / Replay",
+    "Attack_Category": "Ledger Duplicate Attack",
+    "Expected_Outcome": "EXISTING_STATE_DETECTED",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0006,
+    "Logged_Event": "SEC_AUDIT_SEC-13_EXISTING_STATE_DETECTED"
+  },
+  {
+    "Attack_ID": "SEC-14",
+    "Attack_Name": "Unauthorized Emergency Access Attempt",
+    "Threat_Actor": "A7 Unauthorized Clinician / A3 Insider",
+    "Attack_Category": "Break-Glass Privilege Abuse",
+    "Expected_Outcome": "BLOCK_ACTOR",
+    "Defense_Result": "SUCCESSFULLY_INTERCEPTED",
+    "Detection_Status": "DETECTED",
+    "Detection_Latency_ms": 0.0844,
+    "Logged_Event": "SEC_AUDIT_SEC-14_BLOCK_ACTOR"
+  }
+]

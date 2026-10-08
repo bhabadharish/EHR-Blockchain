@@ -1,0 +1,21 @@
+Dataset,Task,Class_Name,Precision,Recall,F1_Score,Support
+Edge-IIoTset,Task D: Multiclass Diagnosis,Benign,0.9995,0.9981,0.9988,3645
+Edge-IIoTset,Task D: Multiclass Diagnosis,BruteForce,0.7514,0.8858,0.8131,1498
+Edge-IIoTset,Task D: Multiclass Diagnosis,DDoS,0.9878,0.9394,0.963,7408
+Edge-IIoTset,Task D: Multiclass Diagnosis,Malware,1.0,0.9312,0.9644,3169
+Edge-IIoTset,Task D: Multiclass Diagnosis,Recon,0.962,0.9584,0.9602,3172
+Edge-IIoTset,Task D: Multiclass Diagnosis,Spoofing,0.3848,1.0,0.5557,182
+Edge-IIoTset,Task D: Multiclass Diagnosis,Web,0.9271,0.9349,0.931,4596
+Edge-IIoTset,Task D: Multiclass Diagnosis,macro avg,0.8589,0.9497,0.8837,23670
+Edge-IIoTset,Task D: Multiclass Diagnosis,weighted avg,0.9564,0.9461,0.9495,23670
+CICIoT2023,Task B: Multiclass Attack Families,Benign,0.9085,0.944,0.9259,1787
+CICIoT2023,Task B: Multiclass Attack Families,BruteForce,0.2778,0.2174,0.2439,23
+CICIoT2023,Task B: Multiclass Attack Families,DDoS,0.9998,0.9997,0.9997,54482
+CICIoT2023,Task B: Multiclass Attack Families,DoS,0.9987,0.9991,0.9989,13002
+CICIoT2023,Task B: Multiclass Attack Families,Malware,1.0,0.125,0.2222,8
+CICIoT2023,Task B: Multiclass Attack Families,Mirai,0.9998,0.9993,0.9995,4293
+CICIoT2023,Task B: Multiclass Attack Families,Recon,0.821,0.7753,0.7975,574
+CICIoT2023,Task B: Multiclass Attack Families,Spoofing,0.8232,0.8356,0.8294,797
+CICIoT2023,Task B: Multiclass Attack Families,Web,1.0,0.0882,0.1622,34
+CICIoT2023,Task B: Multiclass Attack Families,macro avg,0.8699,0.6648,0.6866,75000
+CICIoT2023,Task B: Multiclass Attack Families,weighted avg,0.994,0.994,0.9938,75000

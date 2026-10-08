@@ -1,4 +1,0 @@
-partition,class,class_name,count,percentage
-Test,0,Normal,1871,7.127
-Test,1,Attack,24380,92.873
-Test,-1,Total,26251,100.0

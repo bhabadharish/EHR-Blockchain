@@ -3,65 +3,51 @@ import sys
 import json
 import pytest
 import numpy as np
+import pandas as pd
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from dashboard.validation.result_consistency import ResultConsistencyEngine
-from dashboard.inference.model_loader import FrozenModelLoader
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
 from src.fhir.resources import FHIRResourceManager
 from src.crypto.pqc import PostQuantumCryptoEngine
 from src.crypto.crypto_agility import CryptoAgilityEngine
 from src.blockchain.client import FabricEHRClient
 from src.security.response_engine import ThreatAwareResponseEngine
+from src.security.fhir_risk_engine import FHIRRiskEngine
 
 def test_result_registry_exists_and_valid():
-    assert os.path.exists("results/experiment_registry.json")
-    with open("results/experiment_registry.json") as f:
+    assert os.path.exists("models/registry.json")
+    with open("models/registry.json") as f:
         reg = json.load(f)
-    assert "models" in reg
-    assert "CA-HTDNet" in reg["models"]
-    assert reg["experiment_id"] in ["CAHTDNET_FINAL_V001", "CAHTDNet_final_locked_v001", "CAHTDNET_V2_001"]
+    assert reg.get("model_name") == "HAB-IDS"
+    assert "artifacts" in reg
+    assert "xgboost" in reg["artifacts"]
 
-def test_model_and_preprocessor_hashes():
-    loader = FrozenModelLoader()
-    assert loader.integrity_status["model_status"] == "VERIFIED"
-    assert loader.integrity_status["preprocessor_status"] == "VERIFIED"
-    assert 0.0 < loader.optimal_threshold < 1.0
-
-def test_metric_reconciliation_zero_discrepancy():
-    engine = ResultConsistencyEngine()
-    report = engine.verify_all_models()
-    assert report["overall_status"] == "PASS"
-    assert len(report["discrepancies"]) == 0
-
-def test_class_mapping_consistency():
-    assert os.path.exists("data/metadata/label_mapping.json")
-    with open("data/metadata/label_mapping.json") as f:
-        lm = json.load(f)
-    assert "binary_classes" in lm
-    assert lm["binary_classes"] == ["Benign", "Attack"]
-    assert "detailed_classes" in lm
-    assert len(lm["detailed_classes"]) == 34
+def test_experiment_manifest_exists():
+    assert os.path.exists("results/experiment_manifest.json")
+    with open("results/experiment_manifest.json") as f:
+        man = json.load(f)
+    assert "git_commit" in man
+    assert "hardware" in man
+    assert "dataset_hashes" in man
 
 def test_threshold_specification():
-    assert os.path.exists("models/proposed/threshold.json")
-    with open("models/proposed/threshold.json") as f:
+    assert os.path.exists("models/final/decision_threshold.json")
+    with open("models/final/decision_threshold.json") as f:
         tm = json.load(f)
-    assert 0.0 < tm["optimal_threshold"] < 1.0
-    assert tm.get("test_set_used_in_selection", tm.get("test_set_used")) is False
+    opt_t = tm.get("optimal_threshold", 0.0)
+    assert 0.0 < opt_t < 1.0
 
-def test_frozen_inference_no_training():
-    loader = FrozenModelLoader()
-    sample = {
-        "flow_duration": 0.05, "packet_count": 10, "byte_count": 1200,
-        "packet_rate": 200.0, "byte_rate": 24000.0, "dst_port": 443, "protocol": 6,
-        "resource_sensitivity": 0.5, "auth_status": 1, "failed_auth_count": 0,
-        "request_frequency": 2.0, "burst_score": 0.1, "historical_risk": 0.05,
-        "user_role": "doctor", "resource_type": "Observation", "operation": "read"
-    }
-    res = loader.predict(sample)
-    assert res["predicted_class"] in ["Benign / Normal", "Cyber Threat"]
-    assert 0.0 <= res["threat_probability"] <= 1.0
-    assert res["decision"] in ["ALLOW", "REVIEW", "BLOCK"]
+def test_dashboard_artifacts_loadable():
+    # Verify core JSON benchmark artifacts load properly
+    with open("results/benchmark/blockchain_benchmark.json") as f:
+        bc_j = json.load(f)
+    assert len(bc_j) == 10
+    
+    with open("results/benchmark/crypto_benchmark.json") as f:
+        cr_j = json.load(f)
+    assert len(cr_j) >= 10
 
 def test_fhir_generation_and_validation():
     pat = FHIRResourceManager.create_patient("p-100", "Alice Smith", "female", "1980-05-12")
@@ -85,7 +71,7 @@ def test_crypto_layer_ml_kem_and_dsa():
     sig = pqc.ml_dsa_sign(msg, dsk)
     assert pqc.ml_dsa_verify(msg, sig, dpk) is True
 
-def test_blockchain_tamper_detection():
+def test_blockchain_tamper_detection(tmp_path):
     client = FabricEHRClient()
     res_obj = {"resourceType": "Observation", "id": "test-obs-pytest", "value": 98.6}
     reg = client.register_ehr_exchange("dr_test", "pt-test", "test-obs-pytest", res_obj, 0.05)

@@ -1,17 +1,554 @@
 {
-  "experiment_id": "CAHTDNET_V2_001",
-  "model": "CA-HTDNet-V2",
-  "dataset": "CICIoT2023+Edge-IIoTset+SyntheticFHIR_V2",
-  "split": "locked_test",
-  "accuracy": 0.955843137254902,
-  "macro_precision": 0.9283642684033104,
-  "macro_recall": 0.9643457151010437,
-  "macro_f1": 0.9441802321293615,
-  "weighted_f1": 0.9567316633145692,
-  "roc_auc": 0.9941905959687438,
-  "pr_auc": 0.9980257414331053,
-  "fpr": 0.018369867242976227,
-  "fnr": 0.05293870255493639,
-  "mcc": 0.8919845571207398,
-  "latency_ms": 0.0248
+  "architecture": "HAB-IDS",
+  "version": "1.0.0-PRODUCTION_CANDIDATE",
+  "timestamp": "2026-10-03T15:00:00Z",
+  "main_evaluation": {
+    "XGBoost": {
+      "Accuracy": 0.99958,
+      "Macro_Precision": 0.99941,
+      "Macro_Recall": 0.99896,
+      "Macro_F1": 0.99919,
+      "Weighted_F1": 0.99958,
+      "MCC": 0.99838,
+      "ROC_AUC": 0.99998,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00192,
+      "FNR": 0.00015,
+      "TPR": 0.99985,
+      "TNR": 0.99808,
+      "Confusion_Matrix": {
+        "TN": 3638,
+        "FP": 7,
+        "FN": 3,
+        "TP": 20022
+      },
+      "Total_Samples": 23670
+    },
+    "LightGBM": {
+      "Accuracy": 0.9997,
+      "Macro_Precision": 0.99983,
+      "Macro_Recall": 0.99904,
+      "Macro_F1": 0.99943,
+      "Weighted_F1": 0.9997,
+      "MCC": 0.99886,
+      "ROC_AUC": 0.99998,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00192,
+      "FNR": 0.0,
+      "TPR": 1.0,
+      "TNR": 0.99808,
+      "Confusion_Matrix": {
+        "TN": 3638,
+        "FP": 7,
+        "FN": 0,
+        "TP": 20025
+      },
+      "Total_Samples": 23670
+    },
+    "CatBoost": {
+      "Accuracy": 0.9997,
+      "Macro_Precision": 0.99983,
+      "Macro_Recall": 0.99904,
+      "Macro_F1": 0.99943,
+      "Weighted_F1": 0.9997,
+      "MCC": 0.99886,
+      "ROC_AUC": 0.99998,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00192,
+      "FNR": 0.0,
+      "TPR": 1.0,
+      "TNR": 0.99808,
+      "Confusion_Matrix": {
+        "TN": 3638,
+        "FP": 7,
+        "FN": 0,
+        "TP": 20025
+      },
+      "Total_Samples": 23670
+    },
+    "HAB_IDS": {
+      "Accuracy": 0.99962,
+      "Macro_Precision": 0.99955,
+      "Macro_Recall": 0.99899,
+      "Macro_F1": 0.99927,
+      "Weighted_F1": 0.99962,
+      "MCC": 0.99854,
+      "ROC_AUC": 0.99997,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00192,
+      "FNR": 0.0001,
+      "TPR": 0.9999,
+      "TNR": 0.99808,
+      "Confusion_Matrix": {
+        "TN": 3638,
+        "FP": 7,
+        "FN": 2,
+        "TP": 20023
+      },
+      "Total_Samples": 23670
+    },
+    "McNemar": {
+      "vs_XGBoost": {
+        "b_model_a_only": 1,
+        "c_model_b_only": 0,
+        "mcnemar_statistic": 0.0,
+        "p_value": 1.0,
+        "is_statistically_significant": false
+      },
+      "vs_LightGBM": {
+        "b_model_a_only": 0,
+        "c_model_b_only": 2,
+        "mcnemar_statistic": 0.5,
+        "p_value": 0.47950012218695337,
+        "is_statistically_significant": false
+      },
+      "vs_CatBoost": {
+        "b_model_a_only": 0,
+        "c_model_b_only": 2,
+        "mcnemar_statistic": 0.5,
+        "p_value": 0.47950012218695337,
+        "is_statistically_significant": false
+      }
+    },
+    "Bootstrap_CIs": {
+      "Macro_F1": {
+        "mean": 0.99927,
+        "ci_lower": 0.99877,
+        "ci_upper": 0.99975
+      },
+      "Accuracy": {
+        "mean": 0.99962,
+        "ci_lower": 0.99937,
+        "ci_upper": 0.99987
+      },
+      "MCC": {
+        "mean": 0.99855,
+        "ci_lower": 0.99755,
+        "ci_upper": 0.99951
+      }
+    },
+    "Optimal_Threshold": 0.035,
+    "High_Disagreement_Samples_Pct": 19.85
+  },
+  "task_evaluations": {
+    "Task_A_CICIoT2023_Binary": {
+      "Accuracy": 0.99467,
+      "Macro_Precision": 0.91051,
+      "Macro_Recall": 0.99345,
+      "Macro_F1": 0.94795,
+      "Weighted_F1": 0.99491,
+      "MCC": 0.90014,
+      "ROC_AUC": 0.99946,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00783,
+      "FNR": 0.00527,
+      "TPR": 0.99473,
+      "TNR": 0.99217,
+      "Confusion_Matrix": {
+        "TN": 1773,
+        "FP": 14,
+        "FN": 386,
+        "TP": 72827
+      },
+      "Total_Samples": 75000
+    },
+    "Task_B_CICIoT2023_Multiclass": {
+      "Accuracy": 0.994,
+      "Macro_Precision": 0.86987,
+      "Macro_Recall": 0.66484,
+      "Macro_F1": 0.68658,
+      "Weighted_F1": 0.99377,
+      "MCC": 0.98631,
+      "ROC_AUC": 0.0,
+      "Confusion_Matrix": [
+        [
+          1687,
+          6,
+          0,
+          0,
+          0,
+          0,
+          29,
+          65,
+          0
+        ],
+        [
+          7,
+          5,
+          0,
+          0,
+          0,
+          0,
+          6,
+          5,
+          0
+        ],
+        [
+          1,
+          0,
+          54463,
+          17,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          9,
+          12990,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          4290,
+          2,
+          0,
+          0
+        ],
+        [
+          73,
+          0,
+          0,
+          0,
+          0,
+          0,
+          445,
+          56,
+          0
+        ],
+        [
+          79,
+          7,
+          0,
+          0,
+          0,
+          0,
+          45,
+          666,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          13,
+          3
+        ]
+      ],
+      "Classification_Report": {
+        "Benign": {
+          "precision": 0.9084544964997308,
+          "recall": 0.9440402909904868,
+          "f1-score": 0.9259055982436882,
+          "support": 1787.0
+        },
+        "BruteForce": {
+          "precision": 0.2777777777777778,
+          "recall": 0.21739130434782608,
+          "f1-score": 0.24390243902439024,
+          "support": 23.0
+        },
+        "DDoS": {
+          "precision": 0.9998347775003672,
+          "recall": 0.9996512609669248,
+          "f1-score": 0.9997430108119023,
+          "support": 54482.0
+        },
+        "DoS": {
+          "precision": 0.9986930114553701,
+          "recall": 0.9990770650669127,
+          "f1-score": 0.998885001345688,
+          "support": 13002.0
+        },
+        "Malware": {
+          "precision": 1.0,
+          "recall": 0.125,
+          "f1-score": 0.2222222222222222,
+          "support": 8.0
+        },
+        "Mirai": {
+          "precision": 0.9997669540899558,
+          "recall": 0.9993011879804332,
+          "f1-score": 0.9995340167753961,
+          "support": 4293.0
+        },
+        "Recon": {
+          "precision": 0.8210332103321033,
+          "recall": 0.7752613240418118,
+          "f1-score": 0.7974910394265233,
+          "support": 574.0
+        },
+        "Spoofing": {
+          "precision": 0.823238566131026,
+          "recall": 0.835633626097867,
+          "f1-score": 0.8293897882938979,
+          "support": 797.0
+        },
+        "Web": {
+          "precision": 1.0,
+          "recall": 0.08823529411764706,
+          "f1-score": 0.16216216216216217,
+          "support": 34.0
+        },
+        "accuracy": 0.994,
+        "macro avg": {
+          "precision": 0.8698665326429257,
+          "recall": 0.6648434837344344,
+          "f1-score": 0.6865816975895411,
+          "support": 75000.0
+        },
+        "weighted avg": {
+          "precision": 0.9939892758759583,
+          "recall": 0.994,
+          "f1-score": 0.9937703854122517,
+          "support": 75000.0
+        }
+      },
+      "Total_Samples": 75000
+    },
+    "Task_D_Edge_IIoT_Multiclass": {
+      "Accuracy": 0.94609,
+      "Macro_Precision": 0.85893,
+      "Macro_Recall": 0.94969,
+      "Macro_F1": 0.88374,
+      "Weighted_F1": 0.94948,
+      "MCC": 0.93346,
+      "ROC_AUC": 0.0,
+      "Confusion_Matrix": [
+        [
+          3638,
+          0,
+          0,
+          0,
+          4,
+          3,
+          0
+        ],
+        [
+          0,
+          1327,
+          36,
+          0,
+          12,
+          3,
+          120
+        ],
+        [
+          0,
+          227,
+          6959,
+          0,
+          5,
+          0,
+          217
+        ],
+        [
+          0,
+          0,
+          0,
+          2951,
+          95,
+          123,
+          0
+        ],
+        [
+          2,
+          40,
+          4,
+          0,
+          3040,
+          85,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          182,
+          0
+        ],
+        [
+          0,
+          172,
+          46,
+          0,
+          4,
+          77,
+          4297
+        ]
+      ],
+      "Classification_Report": {
+        "Benign": {
+          "precision": 0.9994505494505495,
+          "recall": 0.998079561042524,
+          "f1-score": 0.9987645847632121,
+          "support": 3645.0
+        },
+        "BruteForce": {
+          "precision": 0.7514156285390714,
+          "recall": 0.8858477970627503,
+          "f1-score": 0.8131127450980392,
+          "support": 1498.0
+        },
+        "DDoS": {
+          "precision": 0.9877927608232789,
+          "recall": 0.9393898488120951,
+          "f1-score": 0.9629834636407666,
+          "support": 7408.0
+        },
+        "Malware": {
+          "precision": 1.0,
+          "recall": 0.9312085831492585,
+          "f1-score": 0.9643790849673203,
+          "support": 3169.0
+        },
+        "Recon": {
+          "precision": 0.9620253164556962,
+          "recall": 0.9583858764186634,
+          "f1-score": 0.9602021478205938,
+          "support": 3172.0
+        },
+        "Spoofing": {
+          "precision": 0.38477801268498946,
+          "recall": 1.0,
+          "f1-score": 0.5557251908396946,
+          "support": 182.0
+        },
+        "Web": {
+          "precision": 0.9270765911542611,
+          "recall": 0.9349434290687555,
+          "f1-score": 0.9309933918318709,
+          "support": 4596.0
+        },
+        "accuracy": 0.946092099704267,
+        "macro avg": {
+          "precision": 0.8589341227296925,
+          "recall": 0.9496935850791495,
+          "f1-score": 0.8837372298516425,
+          "support": 23670.0
+        },
+        "weighted avg": {
+          "precision": 0.9563838002335765,
+          "recall": 0.946092099704267,
+          "f1-score": 0.9494798246307576,
+          "support": 23670.0
+        }
+      },
+      "Total_Samples": 23670
+    },
+    "Task_F_Synthetic_FHIR_Binary": {
+      "Accuracy": 1.0,
+      "Macro_Precision": 1.0,
+      "Macro_Recall": 1.0,
+      "Macro_F1": 1.0,
+      "Weighted_F1": 1.0,
+      "MCC": 1.0,
+      "ROC_AUC": 1.0,
+      "PR_AUC": 1.0,
+      "FPR": 0.0,
+      "FNR": 0.0,
+      "TPR": 1.0,
+      "TNR": 1.0,
+      "Confusion_Matrix": {
+        "TN": 4875,
+        "FP": 0,
+        "FN": 0,
+        "TP": 2625
+      },
+      "Total_Samples": 7500
+    },
+    "Task_G_Harmonized_In_Domain_Edge": {
+      "Accuracy": 0.9518,
+      "Macro_Precision": 0.88506,
+      "Macro_Recall": 0.95648,
+      "Macro_F1": 0.91555,
+      "Weighted_F1": 0.95384,
+      "MCC": 0.8385,
+      "ROC_AUC": 0.99253,
+      "PR_AUC": 0.99847,
+      "FPR": 0.03676,
+      "FNR": 0.05029,
+      "TPR": 0.94971,
+      "TNR": 0.96324,
+      "Confusion_Matrix": {
+        "TN": 3511,
+        "FP": 134,
+        "FN": 1007,
+        "TP": 19018
+      },
+      "Total_Samples": 23670
+    },
+    "Task_E_Edge_to_CICIoT2023_Transfer": {
+      "Accuracy": 0.95675,
+      "Macro_Precision": 0.66356,
+      "Macro_Recall": 0.88313,
+      "Macro_F1": 0.72387,
+      "Weighted_F1": 0.96537,
+      "MCC": 0.50065,
+      "ROC_AUC": 0.82377,
+      "PR_AUC": 0.9911,
+      "FPR": 0.19418,
+      "FNR": 0.03957,
+      "TPR": 0.96043,
+      "TNR": 0.80582,
+      "Confusion_Matrix": {
+        "TN": 1440,
+        "FP": 347,
+        "FN": 2897,
+        "TP": 70316
+      },
+      "Total_Samples": 75000
+    },
+    "Task_E_CICIoT2023_to_Edge_Transfer": {
+      "Accuracy": 0.65932,
+      "Macro_Precision": 0.4877,
+      "Macro_Recall": 0.48201,
+      "Macro_F1": 0.47761,
+      "Weighted_F1": 0.69081,
+      "MCC": -0.02975,
+      "ROC_AUC": 0.49367,
+      "PR_AUC": 0.85084,
+      "FPR": 0.77421,
+      "FNR": 0.26177,
+      "TPR": 0.73823,
+      "TNR": 0.22579,
+      "Confusion_Matrix": {
+        "TN": 823,
+        "FP": 2822,
+        "FN": 5242,
+        "TP": 14783
+      },
+      "Total_Samples": 23670
+    }
+  },
+  "decision_threshold": 0.035,
+  "model_registry_status": "PRODUCTION_CANDIDATE"
 }

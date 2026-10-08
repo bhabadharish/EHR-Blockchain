@@ -1,7 +1,0 @@
-partition,class,class_name,count,percentage
-Train,0,Normal,8729,7.126
-Train,1,Attack,113770,92.874
-Validation,0,Normal,1870,7.124
-Validation,1,Attack,24380,92.876
-Test,0,Normal,1871,7.127
-Test,1,Attack,24380,92.873

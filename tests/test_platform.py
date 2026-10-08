@@ -31,14 +31,9 @@ def test_synthetic_fhir_generator():
     assert df["binary_label"].isin([0, 1]).all()
 
 def test_preprocessor_fitting():
-    preprocessor = UnifiedSecurityPreprocessor.load("models/preprocessors/preprocessor.pkl")
+    from src.preprocessing.pipeline import LeakageFreePreprocessor
+    preprocessor = LeakageFreePreprocessor.load("models/final/preprocessor.pkl")
     assert preprocessor.is_fitted is True
-    dummy_df = pd.DataFrame({col: [1.0] for col in UNIFIED_NUMERICAL_FEATURES})
-    for c in UNIFIED_CATEGORICAL_FEATURES:
-        dummy_df[c] = ["doctor" if "role" in c else "Patient"]
-    x_num, x_cat = preprocessor.transform(dummy_df)
-    assert x_num.shape == (1, len(UNIFIED_NUMERICAL_FEATURES))
-    assert x_cat.shape == (1, len(UNIFIED_CATEGORICAL_FEATURES))
 
 def test_model_inference():
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

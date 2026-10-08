@@ -1,4 +1,0 @@
-partition,class,class_name,count,percentage
-Train,0,Normal,8729,7.126
-Train,1,Attack,113770,92.874
-Train,-1,Total,122499,100.0

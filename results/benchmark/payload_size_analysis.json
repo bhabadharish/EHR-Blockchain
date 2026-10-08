@@ -1,0 +1,28 @@
+[
+  {
+    "Resource_Type": "Observation (Vital Signs)",
+    "Plaintext_Size_Bytes": 489,
+    "Ciphertext_AES256GCM_Bytes": 517,
+    "Encryption_Overhead_Bytes": 28,
+    "Encryption_Overhead_Pct": 5.73,
+    "ML_KEM_Ciphertext_Bytes": 1088,
+    "ML_DSA_Signature_Bytes": 3309,
+    "Signature_Overhead_Pct": 676.69,
+    "Blockchain_Anchor_Metadata_Bytes": 160,
+    "Total_Secure_Footprint_Bytes": 5074,
+    "Total_Communication_Overhead_Pct": 937.63
+  },
+  {
+    "Resource_Type": "DiagnosticReport (Multi-panel Lab)",
+    "Plaintext_Size_Bytes": 715,
+    "Ciphertext_AES256GCM_Bytes": 743,
+    "Encryption_Overhead_Bytes": 28,
+    "Encryption_Overhead_Pct": 3.92,
+    "ML_KEM_Ciphertext_Bytes": 1088,
+    "ML_DSA_Signature_Bytes": 3309,
+    "Signature_Overhead_Pct": 462.8,
+    "Blockchain_Anchor_Metadata_Bytes": 160,
+    "Total_Secure_Footprint_Bytes": 5300,
+    "Total_Communication_Overhead_Pct": 641.26
+  }
+]

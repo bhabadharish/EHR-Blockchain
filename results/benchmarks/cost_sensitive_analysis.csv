@@ -1,0 +1,55 @@
+Model,FN_Cost_Weight,FP_Cost_Weight,FN_Count,FP_Count,Total_Healthcare_Loss
+Logistic_Regression,1.0,1.0,0,3239,3239.0
+Logistic_Regression,2.0,1.0,0,3239,3239.0
+Logistic_Regression,5.0,1.0,0,3239,3239.0
+Logistic_Regression,10.0,1.0,0,3239,3239.0
+Logistic_Regression,20.0,1.0,0,3239,3239.0
+Logistic_Regression,50.0,1.0,0,3239,3239.0
+Decision_Tree,1.0,1.0,0,7,7.0
+Decision_Tree,2.0,1.0,0,7,7.0
+Decision_Tree,5.0,1.0,0,7,7.0
+Decision_Tree,10.0,1.0,0,7,7.0
+Decision_Tree,20.0,1.0,0,7,7.0
+Decision_Tree,50.0,1.0,0,7,7.0
+Random_Forest,1.0,1.0,0,7,7.0
+Random_Forest,2.0,1.0,0,7,7.0
+Random_Forest,5.0,1.0,0,7,7.0
+Random_Forest,10.0,1.0,0,7,7.0
+Random_Forest,20.0,1.0,0,7,7.0
+Random_Forest,50.0,1.0,0,7,7.0
+Extra_Trees,1.0,1.0,0,1797,1797.0
+Extra_Trees,2.0,1.0,0,1797,1797.0
+Extra_Trees,5.0,1.0,0,1797,1797.0
+Extra_Trees,10.0,1.0,0,1797,1797.0
+Extra_Trees,20.0,1.0,0,1797,1797.0
+Extra_Trees,50.0,1.0,0,1797,1797.0
+MLP,1.0,1.0,14,2544,2558.0
+MLP,2.0,1.0,14,2544,2572.0
+MLP,5.0,1.0,14,2544,2614.0
+MLP,10.0,1.0,14,2544,2684.0
+MLP,20.0,1.0,14,2544,2824.0
+MLP,50.0,1.0,14,2544,3244.0
+HAB-IDS (Proposed),1.0,1.0,2,7,9.0
+HAB-IDS (Proposed),2.0,1.0,2,7,11.0
+HAB-IDS (Proposed),5.0,1.0,2,7,17.0
+HAB-IDS (Proposed),10.0,1.0,2,7,27.0
+HAB-IDS (Proposed),20.0,1.0,2,7,47.0
+HAB-IDS (Proposed),50.0,1.0,2,7,107.0
+XGBoost,1.0,1.0,3,7,10.0
+XGBoost,2.0,1.0,3,7,13.0
+XGBoost,5.0,1.0,3,7,22.0
+XGBoost,10.0,1.0,3,7,37.0
+XGBoost,20.0,1.0,3,7,67.0
+XGBoost,50.0,1.0,3,7,157.0
+LightGBM,1.0,1.0,0,7,7.0
+LightGBM,2.0,1.0,0,7,7.0
+LightGBM,5.0,1.0,0,7,7.0
+LightGBM,10.0,1.0,0,7,7.0
+LightGBM,20.0,1.0,0,7,7.0
+LightGBM,50.0,1.0,0,7,7.0
+CatBoost,1.0,1.0,0,7,7.0
+CatBoost,2.0,1.0,0,7,7.0
+CatBoost,5.0,1.0,0,7,7.0
+CatBoost,10.0,1.0,0,7,7.0
+CatBoost,20.0,1.0,0,7,7.0
+CatBoost,50.0,1.0,0,7,7.0

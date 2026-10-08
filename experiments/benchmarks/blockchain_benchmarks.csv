@@ -1,5 +1,0 @@
-Transaction_Phase,Ledger_Environment,Mean_Latency_ms,Median_P50_ms,P95_ms,P99_ms,Throughput_TPS
-1. Transaction Endorsement & Audit,Hyperledger Fabric (Local Client Simulation),0.009,0.008,0.01,0.017,113560.2
-2. State Commit & Hash Anchor,Hyperledger Fabric (Local Client Simulation),0.009,0.008,0.012,0.013,110487.7
-3. Ledger Query & Cryptographic Verification,Hyperledger Fabric (Local Client Simulation),0.001,0.001,0.002,0.002,783330.5
-4. Complete Ledger Anchor Lifecycle,Hyperledger Fabric (Local Client Simulation),0.097,0.08,0.229,0.279,10274.6

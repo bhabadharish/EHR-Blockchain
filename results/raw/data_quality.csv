@@ -1,0 +1,4 @@
+dataset,total_rows,total_cols,numerical_cols,categorical_cols,nan_values,infinite_values,duplicate_rows,duplicate_feature_vectors,constant_columns,near_constant_columns,imbalance_ratio
+Edge-IIoTset,157800,63,43,20,0,0,814,814,8,21,5.49
+Synthetic-FHIR,50000,26,15,11,0,0,0,0,2,3,1.86
+CICIoT2023-Train,350000,47,46,1,0,0,17817,17817,6,15,4174.0

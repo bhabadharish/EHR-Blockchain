@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\caption{Permissioned Blockchain Performance Across 10 Standardized Healthcare EHR Workloads}
+\label{tab:blockchain_benchmark}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{llccccccc}
+\hline
+\textbf{Code} & \textbf{EHR Workload Operation} & \textbf{Type} & \textbf{Success (\%)} & \textbf{Throughput (TPS)} & \textbf{P50 (ms)} & \textbf{P95 (ms)} & \textbf{P99 (ms)} & \textbf{Mean (ms)} \\
+\hline
+A & CREATE EHR RECORD & Write / Commit & 100.0 & 9,223.1 & 0.1024 & 0.1335 & 0.2502 & 0.1083 \\
+B & READ EHR METADATA & Read / Query & 100.0 & 285,578.8 & 0.0034 & 0.0036 & 0.0038 & 0.0034 \\
+C & UPDATE EHR RECORD & Write / Commit & 100.0 & 12,055.3 & 0.0808 & 0.1030 & 0.1216 & 0.0829 \\
+D & CONSENT GRANT & Write / Commit & 100.0 & 101,617.4 & 0.0095 & 0.0113 & 0.0128 & 0.0098 \\
+E & CONSENT REVOCATION & Write / Commit & 100.0 & 107,729.6 & 0.0092 & 0.0102 & 0.0110 & 0.0092 \\
+F & ACCESS AUTHORIZATION & Read / Query & 100.0 & 303,681.8 & 0.0031 & 0.0052 & 0.0053 & 0.0032 \\
+G & AUDIT LOG WRITE & Write / Commit & 100.0 & 103,604.5 & 0.0088 & 0.0105 & 0.0129 & 0.0096 \\
+H & EHR EXCHANGE & Write / Commit & 100.0 & 9,490.0 & 0.1011 & 0.1198 & 0.2389 & 0.1053 \\
+I & KEY METADATA UPDATE & Write / Commit & 100.0 & 68,325.4 & 0.0106 & 0.0385 & 0.0842 & 0.0145 \\
+J & EMERGENCY ACCESS & Write / Commit & 100.0 & 51,871.7 & 0.0187 & 0.0224 & 0.0244 & 0.0192 \\
+\hline
+\end{tabular}
+}
+\end{table*}

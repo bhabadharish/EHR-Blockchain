@@ -1,0 +1,35 @@
+thresholding:
+  target_fpr_max: 0.01   # FPR <= 1%
+  target_fnr_max: 0.01   # FNR <= 1%
+  secondary_fpr_max: 0.005 # 0.5%
+  secondary_fnr_max: 0.005 # 0.5%
+  step_size: 0.005
+  search_range: [0.01, 0.99]
+
+calibration:
+  methods:
+    - "isotonic"
+    - "platt"
+  metrics:
+    - "brier_score"
+    - "ece"
+
+cost_ratios:
+  - fn_cost: 1.0
+    fp_cost: 1.0
+  - fn_cost: 2.0
+    fp_cost: 1.0
+  - fn_cost: 5.0
+    fp_cost: 1.0
+  - fn_cost: 10.0
+    fp_cost: 1.0
+
+latency_benchmark:
+  warmup_runs: 50
+  num_iterations: 1000
+  batch_sizes: [1, 32, 128]
+
+statistical_validation:
+  mcnemar: true
+  bootstrap_iterations: 1000
+  confidence_level: 0.95

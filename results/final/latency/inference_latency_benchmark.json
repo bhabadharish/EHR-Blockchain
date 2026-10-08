@@ -1,0 +1,17 @@
+{
+  "hardware_environment": {
+    "platform": "macOS",
+    "cpu_cores": 8,
+    "architecture": "ARM64"
+  },
+  "single_sample_latency_ms": {
+    "mean": 0.7065,
+    "p50": 0.6487,
+    "p95": 0.923,
+    "p99": 0.9769
+  },
+  "throughput_single_sample_inferences_per_sec": 1415.5,
+  "batch_32_throughput_inferences_per_sec": 28036.4,
+  "total_model_ensemble_size_mb": 1.89,
+  "iterations_evaluated": 1000
+}

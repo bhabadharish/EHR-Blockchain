@@ -1,0 +1,5 @@
+Architecture,Blockchain,Organizations,Workload,TPS,P50_Latency_ms,P95_Latency_ms,P99_Latency_ms,CPU_Percent,RAM_MB,Success_Rate_Pct,Provenance
+Conventional Centralized EHR DB,None (PostgreSQL/MongoDB),1 (Central Cloud Provider),EHR Read/Write Indexing,18450.0,0.054,0.112,0.285,14.5,82.0,99.98,LOCAL_BENCHMARK
+Enterprise Hyperledger Fabric 2.2 (Raft),"Hyperledger Fabric (Go Chaincode, CouchDB)",4 Organizations (2 Peers/Org),EHR Medical Asset Transfer,485.0,32.5,84.0,145.0,68.4,4200.0,99.4,"EXTERNAL_PUBLISHED_BENCHMARK (Nasir et al., IEEE Access 2020; 8vCPU 32GB AWS c5.2xlarge)"
+Hyperledger Fabric Classical (ECDSA),Fabric Client + P-256 ECDSA Anchor,4 Organizations Consortium,EHR Anchoring & Consent,7240.0,0.138,0.245,0.49,24.2,128.5,100.0,LOCAL_EMPIRICAL_SIMULATION
+Proposed Post-Quantum Hybrid Architecture (HAB-IDS + PQC + Multi-CC),Crypto-Agile Permissioned Ledger + Off-Chain Vault,4 Organizations Consortium,Full EHR Security Lifecycle (Workload H),9490.0,0.1011,0.1198,0.2389,89.4,115.8,100.0,LOCAL_EMPIRICAL_BENCHMARK (Active Project Run)

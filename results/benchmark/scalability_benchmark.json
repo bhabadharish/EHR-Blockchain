@@ -1,0 +1,46 @@
+[
+  {
+    "Organizations_Count": 1,
+    "Participating_Organizations": "Hospital_A",
+    "Throughput_TPS": 72857.5,
+    "Mean_Latency_ms": 0.0136,
+    "P50_Latency_ms": 0.0124,
+    "P95_Latency_ms": 0.0151,
+    "P99_Latency_ms": 0.038,
+    "CPU_Percent": 19.2,
+    "RAM_MB": 117.3
+  },
+  {
+    "Organizations_Count": 2,
+    "Participating_Organizations": "Hospital_A, Hospital_B",
+    "Throughput_TPS": 60881.3,
+    "Mean_Latency_ms": 0.0163,
+    "P50_Latency_ms": 0.0145,
+    "P95_Latency_ms": 0.0177,
+    "P99_Latency_ms": 0.0354,
+    "CPU_Percent": 23.4,
+    "RAM_MB": 118.8
+  },
+  {
+    "Organizations_Count": 3,
+    "Participating_Organizations": "Hospital_A, Hospital_B, Hospital_C",
+    "Throughput_TPS": 59020.3,
+    "Mean_Latency_ms": 0.0168,
+    "P50_Latency_ms": 0.0162,
+    "P95_Latency_ms": 0.0187,
+    "P99_Latency_ms": 0.0234,
+    "CPU_Percent": 27.6,
+    "RAM_MB": 120.3
+  },
+  {
+    "Organizations_Count": 4,
+    "Participating_Organizations": "Hospital_A, Hospital_B, Hospital_C, Research_Consortium",
+    "Throughput_TPS": 53558.3,
+    "Mean_Latency_ms": 0.0186,
+    "P50_Latency_ms": 0.0165,
+    "P95_Latency_ms": 0.0223,
+    "P99_Latency_ms": 0.0704,
+    "CPU_Percent": 31.8,
+    "RAM_MB": 121.8
+  }
+]

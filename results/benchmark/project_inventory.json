@@ -1,0 +1,511 @@
+{
+  "audit_timestamp": "2026-10-03T18:06:46Z",
+  "project_root": "/Users/rupesh/Documents/Blockchain-EHR",
+  "components": {
+    "blockchain": {
+      "status": "SIMULATED_HIGH_FIDELITY_PYTHON",
+      "description": "In-memory permissioned ledger with Raft-like microblock cutting, SHA3-256 hash chaining, World State store, and 5 chaincode subsystems (ConsentCC, AccessCC, AuditCC, IntegrityCC, ThreatCC).",
+      "physical_docker_fabric_daemon": "NOT IMPLEMENTED (No orderer/peer container daemon or crypto-config yaml in repo)",
+      "files": {
+        "ledger": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/blockchain/ledger.py",
+          "exists": true,
+          "sha256": "87e2fbccb8362f595908fbfdd8c72d6c10093d36b4859f5b49a8d4931fa77ac0"
+        },
+        "client": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/blockchain/client.py",
+          "exists": true,
+          "sha256": "e9234e83b0e5b12254890caf9d924c2c56320f602312c8084eeba651c0702ebe"
+        },
+        "adapter": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/security/blockchain_adapter.py",
+          "exists": true,
+          "sha256": "9e13eecfe28c4520562b622e07dcaf4df55747e2f451b4b97dfc7b0c9fc4354c"
+        },
+        "docker_compose": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/docker-compose.yml",
+          "exists": true,
+          "sha256": "826c20a90da9e371942cad702bd0d4ba506f03f523cb46e9883ad4e8daa88287"
+        }
+      }
+    },
+    "cryptography": {
+      "status": "IMPLEMENTED_PARAMETER_ACCURATE",
+      "description": "Standardized cryptographic engine implementing AES-256-GCM (NIST SP 800-38D), SHA3-256 (FIPS 202), and FIPS-accurate ML-KEM-768 / ML-DSA-65 / SLH-DSA-128s parameter models.",
+      "files": {
+        "pqc_engine": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/crypto/pqc.py",
+          "exists": true,
+          "sha256": "d1815ac8a1149a83ff69f03fb4618a00a44b7bc0a30d240c434cefa9bc31e589"
+        },
+        "crypto_agility": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/crypto/crypto_agility.py",
+          "exists": true,
+          "sha256": "cf17084e4c045c4b41e52ca3481717d2e0a4292eb155b54d0d82414994cf0e60"
+        },
+        "pqc_layer": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/security/pqc_layer.py",
+          "exists": true,
+          "sha256": "b981d38c7f2cf6b5d4a24924a9ea963bf5fd94b108b11883820f329b8d47b2e6"
+        }
+      }
+    },
+    "fhir_gateway": {
+      "status": "IMPLEMENTED",
+      "description": "HL7 FHIR R4 schema validator, synthetic medical record generator, risk assessment engine, and zero-trust response engine.",
+      "files": {
+        "resources": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/fhir/resources.py",
+          "exists": true,
+          "sha256": "db274af2dd5227dbcd2942f2146eafdf80b3770cea4bf5444728d3f8e6499cf8"
+        },
+        "fhir_risk_engine": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/security/fhir_risk_engine.py",
+          "exists": true,
+          "sha256": "013b5bf20b31148a1afb6721d7afe87bb13980b3f525d35cec73c123d89b13f6"
+        },
+        "response_engine": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/security/response_engine.py",
+          "exists": true,
+          "sha256": "ff930302a5982772cf9ca17f928fdf9834ce6305e82aad4cf17ecb963d8e6d7e"
+        },
+        "fhir_generator": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/data/fhir_generator.py",
+          "exists": true,
+          "sha256": "d2c34a76859b549a3de34f017523844c0384ded6139cb4cf668705c6b8171e7e"
+        },
+        "synthetic_fhir_generator": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/data/synthetic_fhir_generator.py",
+          "exists": true,
+          "sha256": "60638101696efa4cf3e2559d53380f5901f08f19db71378e228b670040eb77fe"
+        }
+      }
+    },
+    "ml_architecture": {
+      "status": "TRAINED_AND_VALIDATED",
+      "description": "HAB-IDS tri-booster (XGBoost, LightGBM, CatBoost) + Meta-Learner + Stage-2 Multiclass Classifier + Bayesian Probability Calibrator.",
+      "files": {
+        "ca_htdnet": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/models/ca_htdnet.py",
+          "exists": true,
+          "sha256": "fe75dc03f85c5868764f0f6da46bc2a7fbc76b60a0789000072888e2b3d96d6c"
+        },
+        "ca_htdnet_v2": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/models/ca_htdnet_v2.py",
+          "exists": true,
+          "sha256": "1cb46aca8b5705c3e9b973570d2c467630a60da64780d23aa7bc727235b5b849"
+        },
+        "boosters": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/models/boosters.py",
+          "exists": true,
+          "sha256": "d84aa0c25eee8425145f46c6e7c7a440504af858efc1790a3e9ed6fe16f26d8f"
+        },
+        "baselines": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/models/baselines.py",
+          "exists": true,
+          "sha256": "09183cac2497cb40ec9ae874364f10a4f8853a6c3c414dd9a309dae5c9195540"
+        },
+        "ft_transformer": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/models/ft_transformer.py",
+          "exists": true,
+          "sha256": "f066a7f170841e696fca277ccccef0359b65a68f5b0f4e99f4a6381d5182d0a8"
+        },
+        "meta_learner": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/ensemble/meta_learner.py",
+          "exists": true,
+          "sha256": "34906d172e9160eaf9e54f2a8bef7d7c70ad41181f1324f224c488a987f8d55b"
+        },
+        "hierarchical": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/ensemble/hierarchical.py",
+          "exists": true,
+          "sha256": "edab62cacc3ecf9eb76fc80ca8e92a7641dbf4b951c158762b0a86ccb20d71d3"
+        },
+        "calibrator": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/calibration/calibrator.py",
+          "exists": true,
+          "sha256": "5fa11e17718e4b143e9efadf3a600c340b56c6534ae88c54d39b26fc188898d5"
+        },
+        "threshold_optimizer": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/thresholding/optimizer.py",
+          "exists": true,
+          "sha256": "25ddb2564933d0415408df5880350e80779303cfc49c4a484c6b6fa5139d99c7"
+        },
+        "feature_engineering": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/features/engineering.py",
+          "exists": true,
+          "sha256": "991ccd6e71b6a0c6339e021e92079db8fc74fd5c7bb000a3f28bb1434a8aca80"
+        },
+        "preprocessing_pipeline": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/preprocessing/pipeline.py",
+          "exists": true,
+          "sha256": "6eec1d73184dd284d8dfbdfc6070a3026435e2200447e30673e9fad2c789a582"
+        },
+        "data_schema": {
+          "path": "/Users/rupesh/Documents/Blockchain-EHR/src/data/schema.py",
+          "exists": true,
+          "sha256": "62e4cbcc42b2c69b6218f1172fee6111caf9289c247db885df43307e1d71d7f3"
+        }
+      }
+    }
+  },
+  "checkpoints": [
+    {
+      "path": "models/base/baselines/Decision_Tree.pkl",
+      "size_bytes": 5225,
+      "sha256": "924f851eb48a5b3590a876713953cda92e6c17e772fcdab7874da8e242ae3d79"
+    },
+    {
+      "path": "models/base/baselines/Extra_Trees.pkl",
+      "size_bytes": 1328985,
+      "sha256": "a45aac6fbe2cc0e9cb665deaaf90d19df6737b38a999e8b6bdaa53f5658c639c"
+    },
+    {
+      "path": "models/base/baselines/Logistic_Regression.pkl",
+      "size_bytes": 1003,
+      "sha256": "f8366a305fca54d66ec318b27717a233de1124828abf9f77df1ca5fba7dbca19"
+    },
+    {
+      "path": "models/base/baselines/MLP.pkl",
+      "size_bytes": 62276,
+      "sha256": "938bd9ce96e3cd0f08e20a2e78dc3ba4d96a58f1ec6e71229671a2abf28d7d71"
+    },
+    {
+      "path": "models/base/baselines/Random_Forest.pkl",
+      "size_bytes": 1091065,
+      "sha256": "94adbfe70ea3c93655cf6edf4bae35595d99c44542766d9c3bc5e0d28a6dbef0"
+    },
+    {
+      "path": "models/base/catboost/catboost_primary.pkl",
+      "size_bytes": 558037,
+      "sha256": "c637903686bd04a8107c22464241338fb91169d91ace03947fe4db546603b70f"
+    },
+    {
+      "path": "models/base/catboost/stability_report.json",
+      "size_bytes": 1666,
+      "sha256": "d053a035c5ccb83e03c9e7ec879527c2b83c181dce2335e7d24838caaeb1c7b9"
+    },
+    {
+      "path": "models/base/lightgbm/lightgbm_primary.pkl",
+      "size_bytes": 687924,
+      "sha256": "2b1c8b88a786ff940d998825f8706787c2208e09f470956d2e6df7a88493c8de"
+    },
+    {
+      "path": "models/base/lightgbm/stability_report.json",
+      "size_bytes": 1666,
+      "sha256": "3a7dc06d3e004ccfaca5e0857bf81c1057f67e16c4ef29e584157a005b6abfa6"
+    },
+    {
+      "path": "models/base/xgboost/stability_report.json",
+      "size_bytes": 1696,
+      "sha256": "98d8911ae57c4e809768482e10452811b1663494c2222f01e97d9e1b403e66de"
+    },
+    {
+      "path": "models/base/xgboost/xgboost_primary.pkl",
+      "size_bytes": 374176,
+      "sha256": "60ff16b5806bc6f71ef783a9f64dd114de9b11d0d048756655d1c38134ffc268"
+    },
+    {
+      "path": "models/final/calibrator.pkl",
+      "size_bytes": 750,
+      "sha256": "6289c5cc9613326e1d927b360718a6218ff42f9a45898c370cf18114db4c2750"
+    },
+    {
+      "path": "models/final/catboost_final.pkl",
+      "size_bytes": 558037,
+      "sha256": "84bf44799e05bfe7df3219d1deb0cce3e0bf5010d2f3b1eb163eaf4d03ba86a8"
+    },
+    {
+      "path": "models/final/decision_threshold.json",
+      "size_bytes": 725,
+      "sha256": "078b30a667416b0b18f4b6e8cc72fcebede2d18d4307dc99a07e328b0aba56be"
+    },
+    {
+      "path": "models/final/feature_schema.json",
+      "size_bytes": 1007,
+      "sha256": "1153a0dff6ffb2712ae51ceca3730c06886db05959354ca8706d8a63cc61d1a7"
+    },
+    {
+      "path": "models/final/hierarchical_stage2.pkl",
+      "size_bytes": 5720815,
+      "sha256": "210e7e61eb216d2abe743c1854b038d355ea2ad903bcc3f099439a63a361dd81"
+    },
+    {
+      "path": "models/final/lightgbm_final.pkl",
+      "size_bytes": 687924,
+      "sha256": "2b1c8b88a786ff940d998825f8706787c2208e09f470956d2e6df7a88493c8de"
+    },
+    {
+      "path": "models/final/meta_learner.pkl",
+      "size_bytes": 1018,
+      "sha256": "470313b16552016d7ff12c6e957f0544b1242ec11ca6e932e21e90f487481572"
+    },
+    {
+      "path": "models/final/preprocessor.pkl",
+      "size_bytes": 2015,
+      "sha256": "48e65b22b2ad6ecb6bb7d0489d2c80682e070fc37b5a71435b588be617ba3cde"
+    },
+    {
+      "path": "models/final/router.pkl",
+      "size_bytes": 353123,
+      "sha256": "76dc0afd5a45307d00de9b69df70a7d6507844a525f11207e207823e0a16dcef"
+    },
+    {
+      "path": "models/final/xgboost_final.pkl",
+      "size_bytes": 374176,
+      "sha256": "60ff16b5806bc6f71ef783a9f64dd114de9b11d0d048756655d1c38134ffc268"
+    },
+    {
+      "path": "models/registry.json",
+      "size_bytes": 1028,
+      "sha256": "3a38f1f43de42bbb1a6731c86ac1f0a29f14c608bb24b0530b2888932498ca92"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "scripts/ablation.py",
+      "size_bytes": 6044
+    },
+    {
+      "path": "scripts/audit_data_leakage.py",
+      "size_bytes": 8762
+    },
+    {
+      "path": "scripts/audit_leakage_v2.py",
+      "size_bytes": 6171
+    },
+    {
+      "path": "scripts/audit_project_architecture.py",
+      "size_bytes": 15972
+    },
+    {
+      "path": "scripts/benchmark_inference.py",
+      "size_bytes": 5137
+    },
+    {
+      "path": "scripts/build_comparative_analysis.py",
+      "size_bytes": 35813
+    },
+    {
+      "path": "scripts/build_experiment_registry.py",
+      "size_bytes": 15516
+    },
+    {
+      "path": "scripts/create_canonical_splits.py",
+      "size_bytes": 9434
+    },
+    {
+      "path": "scripts/error_analysis.py",
+      "size_bytes": 5053
+    },
+    {
+      "path": "scripts/evaluate.py",
+      "size_bytes": 27431
+    },
+    {
+      "path": "scripts/evaluate_final_model.py",
+      "size_bytes": 7638
+    },
+    {
+      "path": "scripts/evaluate_statistical_significance.py",
+      "size_bytes": 8048
+    },
+    {
+      "path": "scripts/fit_and_export_v2_features.py",
+      "size_bytes": 5256
+    },
+    {
+      "path": "scripts/full_pipeline.py",
+      "size_bytes": 3313
+    },
+    {
+      "path": "scripts/generate_all_figures_hab_ids.py",
+      "size_bytes": 45126
+    },
+    {
+      "path": "scripts/generate_all_results.py",
+      "size_bytes": 8712
+    },
+    {
+      "path": "scripts/generate_all_v2_results.py",
+      "size_bytes": 6217
+    },
+    {
+      "path": "scripts/generate_figures.py",
+      "size_bytes": 39269
+    },
+    {
+      "path": "scripts/generate_paper_tables.py",
+      "size_bytes": 3176
+    },
+    {
+      "path": "scripts/generate_publication_figures.py",
+      "size_bytes": 533
+    },
+    {
+      "path": "scripts/generate_v2_figures.py",
+      "size_bytes": 516
+    },
+    {
+      "path": "scripts/prepare_data.py",
+      "size_bytes": 1340
+    },
+    {
+      "path": "scripts/prepare_v2_datasets_and_splits.py",
+      "size_bytes": 8196
+    },
+    {
+      "path": "scripts/reconcile_all_results.py",
+      "size_bytes": 9745
+    },
+    {
+      "path": "scripts/reconcile_v2.py",
+      "size_bytes": 8264
+    },
+    {
+      "path": "scripts/run_ablation.py",
+      "size_bytes": 8117
+    },
+    {
+      "path": "scripts/run_blockchain_benchmarks.py",
+      "size_bytes": 8861
+    },
+    {
+      "path": "scripts/run_calibration.py",
+      "size_bytes": 7277
+    },
+    {
+      "path": "scripts/run_cross_dataset.py",
+      "size_bytes": 12195
+    },
+    {
+      "path": "scripts/run_crypto_benchmarks.py",
+      "size_bytes": 8339
+    },
+    {
+      "path": "scripts/run_robustness.py",
+      "size_bytes": 8786
+    },
+    {
+      "path": "scripts/run_security_benchmarks.py",
+      "size_bytes": 2328
+    },
+    {
+      "path": "scripts/run_threshold_sweep.py",
+      "size_bytes": 7259
+    },
+    {
+      "path": "scripts/run_v2_ablation.py",
+      "size_bytes": 8785
+    },
+    {
+      "path": "scripts/run_v2_cross_dataset.py",
+      "size_bytes": 7966
+    },
+    {
+      "path": "scripts/run_v2_latency_and_system.py",
+      "size_bytes": 8505
+    },
+    {
+      "path": "scripts/run_v2_robustness_and_evasion.py",
+      "size_bytes": 10494
+    },
+    {
+      "path": "scripts/run_v2_threshold_and_calibration.py",
+      "size_bytes": 10483
+    },
+    {
+      "path": "scripts/split_data.py",
+      "size_bytes": 4536
+    },
+    {
+      "path": "scripts/test_blockchain_layer.py",
+      "size_bytes": 3122
+    },
+    {
+      "path": "scripts/test_crypto_layer.py",
+      "size_bytes": 3886
+    },
+    {
+      "path": "scripts/test_fhir_security.py",
+      "size_bytes": 3035
+    },
+    {
+      "path": "scripts/test_inference_pipeline.py",
+      "size_bytes": 2941
+    },
+    {
+      "path": "scripts/train_baselines.py",
+      "size_bytes": 2041
+    },
+    {
+      "path": "scripts/train_ca_htdnet.py",
+      "size_bytes": 9801
+    },
+    {
+      "path": "scripts/train_ca_htdnet_v2.py",
+      "size_bytes": 16590
+    },
+    {
+      "path": "scripts/train_catboost.py",
+      "size_bytes": 3379
+    },
+    {
+      "path": "scripts/train_ft_transformer.py",
+      "size_bytes": 5207
+    },
+    {
+      "path": "scripts/train_lightgbm.py",
+      "size_bytes": 3387
+    },
+    {
+      "path": "scripts/train_meta_model.py",
+      "size_bytes": 7639
+    },
+    {
+      "path": "scripts/train_v2_baselines.py",
+      "size_bytes": 8133
+    },
+    {
+      "path": "scripts/train_v2_ft_transformer.py",
+      "size_bytes": 4838
+    },
+    {
+      "path": "scripts/train_xgboost.py",
+      "size_bytes": 3372
+    },
+    {
+      "path": "scripts/update_registry_and_dashboard_v2.py",
+      "size_bytes": 9259
+    },
+    {
+      "path": "scripts/validate_dashboard_results.py",
+      "size_bytes": 4828
+    },
+    {
+      "path": "scripts/validate_data.py",
+      "size_bytes": 2181
+    },
+    {
+      "path": "scripts/verify_results.py",
+      "size_bytes": 7072
+    }
+  ],
+  "tests": [
+    {
+      "path": "tests/__init__.py",
+      "size_bytes": 0
+    },
+    {
+      "path": "tests/test_dashboard_integrity.py",
+      "size_bytes": 4277
+    },
+    {
+      "path": "tests/test_hab_ids_pipeline.py",
+      "size_bytes": 3314
+    },
+    {
+      "path": "tests/test_platform.py",
+      "size_bytes": 7659
+    }
+  ]
+}

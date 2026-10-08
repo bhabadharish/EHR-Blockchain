@@ -1,0 +1,11 @@
+Threat,Baseline_Control,Proposed_Control,Test_Performed,Detection,Evidence
+Eavesdropping / Packet Sniffing,Plain HTTP / Classical TLS 1.2,AES-256-GCM + ML-KEM-768 Ephemeral Encapsulation,EHR Vault Ciphertext Inspection,100% Ciphertext Confidentiality,src/crypto/pqc.py
+Ciphertext Tampering,None / Checksum,SHA3-256 Digest Anchored in Fabric Microblock,SEC-06: Storage Ciphertext Mutation,100% Tamper Interception (Digest Mismatch),src/blockchain/ledger.py#L212
+Replay Attack,Session Cookie,Microsecond Ledger Nonce + FHIR Risk Burst Engine,SEC-04: High-frequency Replay Burst,100% Flagged (CRITICAL Burst Score > 0.8),src/security/fhir_risk_engine.py
+Unauthorized EHR Access,Static Database Password,Zero-Trust Threat-Adaptive Response Engine,SEC-01: Rogue Actor Delete Request,100% Intercepted (BLOCK_ACTOR),src/security/response_engine.py
+Credential Compromise,Manual Admin Disablement,Automated ThreatCC Quarantining,SEC-10: Compromised IoMT Request,100% Quarantined Status Enforced,src/blockchain/ledger.py#L227
+Malicious Insider Abuse,Internal Trust Assumption,Dual-Gated RBAC + ConsentCC Contract,SEC-03: Nurse Delete Operation,100% Role Deficient Rejection,src/blockchain/ledger.py#L155
+Clinical Data Modification,Mutable SQL UPDATE,Immutable Merkle Chained Ledger Blocks,SEC-07: Unregistered Pointer Verification,100% Unregistered Resource Detected,src/blockchain/ledger.py#L215
+Signature Forgery Attempt,RSA-1024 / MD5,NIST FIPS 204 ML-DSA-65 Lattice Signature,SEC-08: Mutated Byte Signature Check,100% Forgery Rejection,src/crypto/pqc.py#L139
+Consent Agreement Manipulation,Application Flag,Smart Contract Consent Agreement (ConsentCC),SEC-02: Forged Grantee Query,100% Denied (No Agreement on Ledger),src/blockchain/ledger.py#L125
+Quantum Key Compromise,RSA-2048 / ECC P-256,FIPS 203 ML-KEM-768 Lattice Cryptography,Cryptographic Overhead & Key Lifecyle Audit,NIST Category 3 Quantum Security Certified,src/crypto/pqc.py#L53

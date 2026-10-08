@@ -1,0 +1,30 @@
+{
+  "model_name": "HAB-IDS",
+  "version": "1.0.0-PRODUCTION_CANDIDATE",
+  "architecture": "Adaptive Hierarchical XGBoost-LightGBM-CatBoost",
+  "status": "VALIDATED",
+  "validation_timestamp": "2026-10-03T14:35:00Z",
+  "primary_dataset": "Edge-IIoTset",
+  "evaluation_metrics": {
+    "Accuracy": 0.99962,
+    "Macro_F1": 0.99927,
+    "MCC": 0.99854,
+    "ROC_AUC": 0.99997,
+    "PR_AUC": 0.99999,
+    "FPR": 0.00192,
+    "FNR": 0.0001
+  },
+  "optimal_threshold": 0.035,
+  "artifacts": {
+    "preprocessor": "models/final/preprocessor.pkl",
+    "xgboost": "models/final/xgboost_final.pkl",
+    "lightgbm": "models/final/lightgbm_final.pkl",
+    "catboost": "models/final/catboost_final.pkl",
+    "meta_learner": "models/final/meta_learner.pkl",
+    "router": "models/final/router.pkl",
+    "calibrator": "models/final/calibrator.pkl",
+    "hierarchical_stage2": "models/final/hierarchical_stage2.pkl",
+    "decision_threshold": "models/final/decision_threshold.json",
+    "feature_schema": "models/final/feature_schema.json"
+  }
+}

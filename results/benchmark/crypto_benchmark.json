@@ -1,0 +1,134 @@
+[
+  {
+    "Category": "Post-Quantum KEM",
+    "Algorithm": "ML-KEM-768 (FIPS 203)",
+    "Operation": "Key Generation",
+    "Mean_Latency_ms": 0.012,
+    "Median_P50_ms": 0.0117,
+    "P90_ms": 0.0122,
+    "P95_ms": 0.0125,
+    "P99_ms": 0.0157,
+    "Throughput_ops_sec": 82903.0
+  },
+  {
+    "Category": "Post-Quantum KEM",
+    "Algorithm": "ML-KEM-768 (FIPS 203)",
+    "Operation": "Encapsulation",
+    "Mean_Latency_ms": 0.0121,
+    "Median_P50_ms": 0.0115,
+    "P90_ms": 0.0125,
+    "P95_ms": 0.014,
+    "P99_ms": 0.0224,
+    "Throughput_ops_sec": 82180.5
+  },
+  {
+    "Category": "Post-Quantum KEM",
+    "Algorithm": "ML-KEM-768 (FIPS 203)",
+    "Operation": "Decapsulation",
+    "Mean_Latency_ms": 0.0061,
+    "Median_P50_ms": 0.0059,
+    "P90_ms": 0.0064,
+    "P95_ms": 0.0079,
+    "P99_ms": 0.0081,
+    "Throughput_ops_sec": 162458.6
+  },
+  {
+    "Category": "Post-Quantum Signature",
+    "Algorithm": "ML-DSA-65 (FIPS 204)",
+    "Operation": "Key Generation",
+    "Mean_Latency_ms": 0.0164,
+    "Median_P50_ms": 0.0161,
+    "P90_ms": 0.0168,
+    "P95_ms": 0.0186,
+    "P99_ms": 0.0212,
+    "Throughput_ops_sec": 60684.2
+  },
+  {
+    "Category": "Post-Quantum Signature",
+    "Algorithm": "ML-DSA-65 (FIPS 204)",
+    "Operation": "Digital Signing",
+    "Mean_Latency_ms": 0.0137,
+    "Median_P50_ms": 0.0134,
+    "P90_ms": 0.0143,
+    "P95_ms": 0.0163,
+    "P99_ms": 0.0182,
+    "Throughput_ops_sec": 72588.7
+  },
+  {
+    "Category": "Post-Quantum Signature",
+    "Algorithm": "ML-DSA-65 (FIPS 204)",
+    "Operation": "Signature Verification",
+    "Mean_Latency_ms": 0.0001,
+    "Median_P50_ms": 0.0001,
+    "P90_ms": 0.0002,
+    "P95_ms": 0.0002,
+    "P99_ms": 0.0003,
+    "Throughput_ops_sec": 4953561.9
+  },
+  {
+    "Category": "Classical Signature Baseline",
+    "Algorithm": "ECDSA NIST P-256",
+    "Operation": "Key Generation",
+    "Mean_Latency_ms": 0.0118,
+    "Median_P50_ms": 0.0113,
+    "P90_ms": 0.0123,
+    "P95_ms": 0.013,
+    "P99_ms": 0.017,
+    "Throughput_ops_sec": 84441.6
+  },
+  {
+    "Category": "Classical Signature Baseline",
+    "Algorithm": "ECDSA NIST P-256",
+    "Operation": "Digital Signing",
+    "Mean_Latency_ms": 0.0195,
+    "Median_P50_ms": 0.0193,
+    "P90_ms": 0.0201,
+    "P95_ms": 0.0203,
+    "P99_ms": 0.0231,
+    "Throughput_ops_sec": 51116.6
+  },
+  {
+    "Category": "Classical Signature Baseline",
+    "Algorithm": "ECDSA NIST P-256",
+    "Operation": "Signature Verification",
+    "Mean_Latency_ms": 0.053,
+    "Median_P50_ms": 0.0524,
+    "P90_ms": 0.0566,
+    "P95_ms": 0.0595,
+    "P99_ms": 0.0693,
+    "Throughput_ops_sec": 18860.7
+  },
+  {
+    "Category": "Symmetric AEAD",
+    "Algorithm": "AES-256-GCM (SP 800-38D)",
+    "Operation": "Authenticated Encryption",
+    "Mean_Latency_ms": 0.0027,
+    "Median_P50_ms": 0.0024,
+    "P90_ms": 0.0033,
+    "P95_ms": 0.0033,
+    "P99_ms": 0.0036,
+    "Throughput_ops_sec": 357275.6
+  },
+  {
+    "Category": "Symmetric AEAD",
+    "Algorithm": "AES-256-GCM (SP 800-38D)",
+    "Operation": "Authenticated Decryption",
+    "Mean_Latency_ms": 0.0016,
+    "Median_P50_ms": 0.0014,
+    "P90_ms": 0.0019,
+    "P95_ms": 0.002,
+    "P99_ms": 0.002,
+    "Throughput_ops_sec": 610841.8
+  },
+  {
+    "Category": "Cryptographic Hash",
+    "Algorithm": "SHA3-256 (FIPS 202)",
+    "Operation": "Digest Computation",
+    "Mean_Latency_ms": 0.0013,
+    "Median_P50_ms": 0.0013,
+    "P90_ms": 0.0015,
+    "P95_ms": 0.0015,
+    "P99_ms": 0.0015,
+    "Throughput_ops_sec": 756979.3
+  }
+]

@@ -1,0 +1,62 @@
+xgboost:
+  n_estimators: 300
+  max_depth: 6
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  min_child_weight: 3
+  gamma: 0.1
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  tree_method: "hist"
+  n_jobs: -1
+  early_stopping_rounds: 25
+
+lightgbm:
+  n_estimators: 350
+  num_leaves: 45
+  max_depth: 7
+  learning_rate: 0.04
+  subsample: 0.8
+  colsample_bytree: 0.8
+  min_child_samples: 25
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  n_jobs: -1
+  verbose: -1
+  early_stopping_round: 25
+
+catboost:
+  iterations: 350
+  depth: 6
+  learning_rate: 0.05
+  l2_leaf_reg: 3.0
+  random_strength: 0.1
+  verbose: 0
+  early_stopping_rounds: 25
+
+meta_learner:
+  type: "logistic_regression"  # candidate: logistic_regression or lightgbm
+  C: 1.0
+  max_iter: 1000
+  solver: "lbfgs"
+
+disagreement_routing:
+  percentile_threshold: 85  # samples with top 15% disagreement routed to secondary specialist
+
+baselines:
+  logistic_regression:
+    C: 1.0
+    max_iter: 500
+  random_forest:
+    n_estimators: 150
+    max_depth: 12
+    n_jobs: -1
+  extra_trees:
+    n_estimators: 150
+    max_depth: 12
+    n_jobs: -1
+  mlp:
+    hidden_layer_sizes: [64, 32]
+    max_iter: 200
+    early_stopping: true

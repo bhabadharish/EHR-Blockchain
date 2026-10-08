@@ -1,0 +1,5 @@
+Resource,Minimum,Mean,P95,Maximum
+CPU Utilization (%),5.2,89.37,100.0,100.0
+RAM Utilization (MB),98.43,115.8,116.08,116.12
+Storage Growth Rate (KB/100 tx),47.66,47.66,47.66,47.66
+Ledger Total Footprint (KB),50.0,635.73,635.73,635.73

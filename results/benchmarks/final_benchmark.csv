@@ -1,0 +1,16 @@
+Model,Dataset,Task,Accuracy,Macro_Precision,Macro_Recall,Macro_F1,Weighted_F1,MCC,ROC_AUC,PR_AUC,FPR,FNR,P50_Latency_ms,Model_Size_MB
+Logistic_Regression,Edge-IIoTset,Task C: Binary Intrusion Detection,0.86316,0.93039,0.55569,0.56281,0.81357,0.30964,0.53741,0.88024,0.88861,0.0,0.85,0.26
+Decision_Tree,Edge-IIoTset,Task C: Binary Intrusion Detection,0.9997,0.99983,0.99904,0.99943,0.9997,0.99886,0.99998,0.99999,0.00192,0.0,0.85,0.26
+Random_Forest,Edge-IIoTset,Task C: Binary Intrusion Detection,0.9997,0.99983,0.99904,0.99943,0.9997,0.99886,0.99984,0.99997,0.00192,0.0,0.85,6.65
+Extra_Trees,Edge-IIoTset,Task C: Binary Intrusion Detection,0.92408,0.95883,0.7535,0.81496,0.91329,0.68209,0.99865,0.99961,0.493,0.0,0.85,5.83
+MLP,Edge-IIoTset,Task C: Binary Intrusion Detection,0.89193,0.93733,0.65068,0.70126,0.86642,0.5134,0.64077,0.88432,0.69794,0.0007,0.85,0.26
+XGBoost (Tuned Booster),Edge-IIoTset,Task C: Binary Intrusion Detection,0.99958,0.99941,0.99896,0.99919,0.99958,0.99838,0.99998,0.99999,0.00192,0.00015,0.35,0.37
+LightGBM (Tuned Booster),Edge-IIoTset,Task C: Binary Intrusion Detection,0.9997,0.99983,0.99904,0.99943,0.9997,0.99886,0.99998,0.99999,0.00192,0.0,0.28,0.69
+CatBoost (Tuned Booster),Edge-IIoTset,Task C: Binary Intrusion Detection,0.9997,0.99983,0.99904,0.99943,0.9997,0.99886,0.99998,0.99999,0.00192,0.0,0.41,0.56
+HAB_IDS (Proposed Architecture),Edge-IIoTset,Task C: Binary Intrusion Detection,0.99962,0.99955,0.99899,0.99927,0.99962,0.99854,0.99997,0.99999,0.00192,0.0001,0.649,1.89
+Tuned GBDT (In-Domain),CICIoT2023,Task A: Binary Intrusion Detection,0.99467,0.91051,0.99345,0.94795,0.99491,0.90014,0.99946,0.99999,0.00783,0.00527,0.32,0.55
+Tuned GBDT (Multiclass),CICIoT2023,Task B: Multiclass Attack Families,0.994,0.86987,0.66484,0.68658,0.99377,0.98631,0.0,0.9921,0.0062,0.0051,0.45,0.95
+HAB-IDS Stage-2 Multiclass,Edge-IIoTset,Task D: Multiclass Attack Diagnosis,0.94609,0.85893,0.94969,0.88374,0.94948,0.93346,0.9942,0.9895,0.00192,0.0001,0.72,5.72
+Tuned GBDT (Clinical Telemetry),Synthetic-FHIR,Task F: FHIR Security Event Detection,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.28,0.48
+Cross-Domain Generalization,Edge-IIoT -> CICIoT2023,Task E: Zero-Shot Transfer,0.95675,0.66356,0.88313,0.72387,0.96537,0.50065,0.82377,0.9911,0.19418,0.03957,0.29,0.4
+Cross-Domain Generalization,CICIoT2023 -> Edge-IIoT,Task E: Zero-Shot Transfer,0.65932,0.4877,0.48201,0.47761,0.69081,-0.02975,0.49367,0.85084,0.77421,0.26177,0.29,0.4

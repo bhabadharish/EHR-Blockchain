@@ -1,0 +1,13 @@
+Category,Algorithm,Operation,Mean_Latency_ms,Median_P50_ms,P90_ms,P95_ms,P99_ms,Throughput_ops_sec
+Post-Quantum KEM,ML-KEM-768 (FIPS 203),Key Generation,0.012,0.0117,0.0122,0.0125,0.0157,82903.0
+Post-Quantum KEM,ML-KEM-768 (FIPS 203),Encapsulation,0.0121,0.0115,0.0125,0.014,0.0224,82180.5
+Post-Quantum KEM,ML-KEM-768 (FIPS 203),Decapsulation,0.0061,0.0059,0.0064,0.0079,0.0081,162458.6
+Post-Quantum Signature,ML-DSA-65 (FIPS 204),Key Generation,0.0164,0.0161,0.0168,0.0186,0.0212,60684.2
+Post-Quantum Signature,ML-DSA-65 (FIPS 204),Digital Signing,0.0137,0.0134,0.0143,0.0163,0.0182,72588.7
+Post-Quantum Signature,ML-DSA-65 (FIPS 204),Signature Verification,0.0001,0.0001,0.0002,0.0002,0.0003,4953561.9
+Classical Signature Baseline,ECDSA NIST P-256,Key Generation,0.0118,0.0113,0.0123,0.013,0.017,84441.6
+Classical Signature Baseline,ECDSA NIST P-256,Digital Signing,0.0195,0.0193,0.0201,0.0203,0.0231,51116.6
+Classical Signature Baseline,ECDSA NIST P-256,Signature Verification,0.053,0.0524,0.0566,0.0595,0.0693,18860.7
+Symmetric AEAD,AES-256-GCM (SP 800-38D),Authenticated Encryption,0.0027,0.0024,0.0033,0.0033,0.0036,357275.6
+Symmetric AEAD,AES-256-GCM (SP 800-38D),Authenticated Decryption,0.0016,0.0014,0.0019,0.002,0.002,610841.8
+Cryptographic Hash,SHA3-256 (FIPS 202),Digest Computation,0.0013,0.0013,0.0015,0.0015,0.0015,756979.3

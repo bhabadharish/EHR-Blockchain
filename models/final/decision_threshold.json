@@ -1,0 +1,26 @@
+{
+  "optimal_threshold": 0.035,
+  "constraints_satisfied": true,
+  "target_fpr_max": 0.01,
+  "target_fnr_max": 0.01,
+  "validation_metrics_at_threshold": {
+    "macro_f1": 0.99838,
+    "mcc": 0.99675,
+    "accuracy": 0.99916,
+    "fpr": 0.00521,
+    "fnr": 5e-05,
+    "confusion_matrix": {
+      "TN": 3626,
+      "FP": 19,
+      "FN": 1,
+      "TP": 20024
+    },
+    "costs": {
+      "cost_1_1": 20.0,
+      "cost_2_1": 21.0,
+      "cost_5_1": 24.0,
+      "cost_10_1": 29.0
+    }
+  },
+  "cost_analysis_rationale": "In healthcare environments, a False Negative (undetected intrusion, compromised EHR/patient monitoring) carries severe patient safety and data breach liability, requiring asymmetric weighting (2:1 to 10:1)."
+}

@@ -1,0 +1,8 @@
+{
+  "Total_Transactions": 500,
+  "Throughput_TPS": 13831.2,
+  "Commit_Latency_Mean_ms": 0.072,
+  "Commit_Latency_P95_ms": 0.108,
+  "Audit_Verification_Time_per_Block_ms": 0.0033,
+  "OnChain_Block_Count": 501
+}

@@ -1,0 +1,22 @@
+{
+  "ML_KEM_768": {
+    "KeyGen_Latency_ms": 0.0085,
+    "Encaps_Latency_ms": 0.0072,
+    "Decaps_Latency_ms": 0.0025,
+    "PublicKey_Size_Bytes": 1184,
+    "Ciphertext_Size_Bytes": 1088,
+    "SharedSecret_Size_Bytes": 32
+  },
+  "ML_DSA_65": {
+    "KeyGen_Latency_ms": 0.0113,
+    "Sign_Latency_ms": 0.006,
+    "Verify_Latency_ms": 0.0011,
+    "PublicKey_Size_Bytes": 1952,
+    "Signature_Size_Bytes": 3309
+  },
+  "AES_256_GCM": {
+    "Encrypt_Latency_ms": 0.035,
+    "Decrypt_Latency_ms": 0.0013,
+    "Ciphertext_Overhead_Bytes": 28
+  }
+}

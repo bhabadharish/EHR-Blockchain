@@ -1,0 +1,7 @@
+Stage,Accuracy,Macro_F1,MCC,FPR,FNR,Model_Size_MB
+1. Base Booster (XGBoost Only),0.99958,0.99919,0.99838,0.00192,0.00015,0.37
+2. Tri-Booster Blend (Simple Average),0.99966,0.99935,0.9987,0.00192,0.0001,1.62
+3. Tri-Fusion Ensemble (Fixed Weights),0.99966,0.99935,0.9987,0.00192,0.0001,1.62
+4. Adaptive Meta-Learner (Ridge),0.99962,0.99927,0.99854,0.00192,0.0001,1.88
+5. Meta-Learner + Beta Calibration,0.99962,0.99927,0.99854,0.00192,0.0001,1.89
+6. Full HAB-IDS (Calibrated + Cost-Sensitive),0.99962,0.99927,0.99854,0.00192,0.0001,1.89

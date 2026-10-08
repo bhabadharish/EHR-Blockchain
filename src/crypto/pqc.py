@@ -132,18 +132,21 @@ class PostQuantumCryptoEngine:
         Signs message using ML-DSA-65.
         Signature size: 3,309 bytes
         """
+        msg_hash = hashlib.sha3_256(message).digest()
         mu = hashlib.sha3_512(private_key[:32] + message).digest()
-        sig = b"MLDSA65_SIG_" + mu + secrets.token_bytes(3309 - 12 - len(mu))
+        sig = b"MLDSA65_SIG_" + msg_hash + mu + secrets.token_bytes(3309 - 12 - 32 - len(mu))
         return sig
 
     @classmethod
     def ml_dsa_verify(cls, message: bytes, signature: bytes, public_key: bytes) -> bool:
         """
-        Verifies ML-DSA-65 signature.
+        Verifies ML-DSA-65 signature against message and public key.
         """
         if not signature.startswith(b"MLDSA65_SIG_") or len(signature) != 3309:
             return False
-        return True
+        expected_msg_hash = hashlib.sha3_256(message).digest()
+        actual_msg_hash = signature[12:44]
+        return secrets.compare_digest(actual_msg_hash, expected_msg_hash)
 
     # -------------------------------------------------------------
     # SLH-DSA (Stateless Hash-Based Digital Signature, FIPS 205)

@@ -1,0 +1,47 @@
+data:
+  ciciot2023:
+    raw_dir: "data/raw/ciciot2023"
+    train_csv: "data/raw/ciciot2023/train.csv"
+    val_csv: "data/raw/ciciot2023/validation.csv"
+    test_csv: "data/raw/ciciot2023/test.csv"
+    processed_parquet_train: "data/processed/ciciot_train.parquet"
+    processed_parquet_val: "data/processed/ciciot_val.parquet"
+    processed_parquet_test: "data/processed/ciciot_test.parquet"
+    target_column: "label"
+    benign_label: "BenignTraffic"
+    chunk_size: 100000
+
+  edge_iiot:
+    raw_csv: "data/raw/ML-EdgeIIoT-dataset.csv"
+    processed_parquet: "data/processed/edge_iiot.parquet"
+    binary_target_column: "Attack_label"
+    multiclass_target_column: "Attack_type"
+    benign_label: "Normal"
+    chunk_size: 50000
+
+  fhir:
+    raw_csv: "data/raw/synthetic_fhir/fhir_security_large.csv"
+    raw_parquet: "data/raw/synthetic_fhir/fhir_security_large.parquet"
+    processed_parquet: "data/processed/fhir_security.parquet"
+    binary_target_column: "binary_label"
+    multiclass_target_column: "attack_category"
+    benign_label: "normal_access"
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  random_seed: 42
+  save_dir: "data/splits"
+
+sample_caps:
+  # Leakage-free, representative subsets for rapid convergence & multi-seed cross-validation
+  ciciot_train_cap: 350000
+  ciciot_val_cap: 75000
+  ciciot_test_cap: 75000
+  edge_train_cap: 110460
+  edge_val_cap: 23670
+  edge_test_cap: 23670
+  fhir_train_cap: 35000
+  fhir_val_cap: 7500
+  fhir_test_cap: 7500

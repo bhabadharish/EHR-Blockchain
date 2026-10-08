@@ -1,0 +1,82 @@
+{
+  "model": "CatBoost",
+  "seeds": [
+    42,
+    123,
+    999
+  ],
+  "macro_f1_mean": 0.99943,
+  "macro_f1_std": 0.0,
+  "macro_f1_min": 0.99943,
+  "macro_f1_max": 0.99943,
+  "accuracy_mean": 0.9997,
+  "accuracy_std": 0.0,
+  "per_seed_metrics": [
+    {
+      "Accuracy": 0.9997,
+      "Macro_Precision": 0.99983,
+      "Macro_Recall": 0.99904,
+      "Macro_F1": 0.99943,
+      "Weighted_F1": 0.9997,
+      "MCC": 0.99886,
+      "ROC_AUC": 0.99998,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00192,
+      "FNR": 0.0,
+      "TPR": 1.0,
+      "TNR": 0.99808,
+      "Confusion_Matrix": {
+        "TN": 3638,
+        "FP": 7,
+        "FN": 0,
+        "TP": 20025
+      },
+      "Total_Samples": 23670,
+      "Seed": 42
+    },
+    {
+      "Accuracy": 0.9997,
+      "Macro_Precision": 0.99983,
+      "Macro_Recall": 0.99904,
+      "Macro_F1": 0.99943,
+      "Weighted_F1": 0.9997,
+      "MCC": 0.99886,
+      "ROC_AUC": 0.99998,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00192,
+      "FNR": 0.0,
+      "TPR": 1.0,
+      "TNR": 0.99808,
+      "Confusion_Matrix": {
+        "TN": 3638,
+        "FP": 7,
+        "FN": 0,
+        "TP": 20025
+      },
+      "Total_Samples": 23670,
+      "Seed": 123
+    },
+    {
+      "Accuracy": 0.9997,
+      "Macro_Precision": 0.99983,
+      "Macro_Recall": 0.99904,
+      "Macro_F1": 0.99943,
+      "Weighted_F1": 0.9997,
+      "MCC": 0.99886,
+      "ROC_AUC": 0.99998,
+      "PR_AUC": 0.99999,
+      "FPR": 0.00192,
+      "FNR": 0.0,
+      "TPR": 1.0,
+      "TNR": 0.99808,
+      "Confusion_Matrix": {
+        "TN": 3638,
+        "FP": 7,
+        "FN": 0,
+        "TP": 20025
+      },
+      "Total_Samples": 23670,
+      "Seed": 999
+    }
+  ]
+}

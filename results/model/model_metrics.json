@@ -1,0 +1,56 @@
+{
+  "Architecture": "HAB-IDS (Hybrid Adaptive Booster Intrusion Detection System)",
+  "Version": "1.0.0-PRODUCTION_CANDIDATE",
+  "Component_Models": [
+    "XGBoost",
+    "LightGBM",
+    "CatBoost",
+    "Ridge Meta-Learner",
+    "Beta Calibrator"
+  ],
+  "Total_Ensemble_Size_MB": 7.0,
+  "Submodel_Sizes_Bytes": {
+    "XGBoost": 374176,
+    "LightGBM": 687924,
+    "CatBoost": 558037,
+    "Meta_Learner": 1018,
+    "Calibrator": 750,
+    "Stage2_Multiclass": 5720815,
+    "Preprocessor": 2015
+  },
+  "Total_Features": 30,
+  "Optimal_Decision_Threshold": 0.035,
+  "Performance_Metrics": {
+    "Accuracy": 0.99962,
+    "Macro_Precision": 0.99955,
+    "Macro_Recall": 0.99899,
+    "Macro_F1": 0.99927,
+    "Weighted_F1": 0.99962,
+    "MCC": 0.99854,
+    "ROC_AUC": 0.99997,
+    "PR_AUC": 0.99999,
+    "FPR": 0.00192,
+    "FNR": 0.0001,
+    "TPR": 0.9999,
+    "TNR": 0.99808,
+    "Confusion_Matrix": {
+      "TN": 3638,
+      "FP": 7,
+      "FN": 2,
+      "TP": 20023
+    },
+    "Total_Test_Samples": 23670
+  },
+  "Inference_Latency": {
+    "Mean_ms": 0.7065,
+    "P50_ms": 0.6487,
+    "P95_ms": 0.923,
+    "P99_ms": 0.9769,
+    "Single_Sample_Throughput_inf_s": 1415.5,
+    "Batch_32_Throughput_inf_s": 28036.4
+  },
+  "Cross_Dataset_Zero_Shot_Transfer": {
+    "EdgeIIoT_to_CICIoT2023_F1": 0.72387,
+    "CICIoT2023_to_EdgeIIoT_F1": 0.47761
+  }
+}

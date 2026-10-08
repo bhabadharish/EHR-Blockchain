@@ -64,12 +64,21 @@ class FabricPermissionedLedger:
         self.chain.append(genesis_block)
         self.block_height = 1
 
-    def commit_transaction(self, tx: Dict[str, Any]) -> str:
+    def commit_transaction(self, tx: Dict[str, Any], endorsing_orgs: Optional[List[str]] = None) -> str:
         """
         Commits endorsed transaction to ledger and updates World State.
+        Simulates Fabric endorsement policy across specified consortium organizations.
         """
-        tx["timestamp"] = tx.get("timestamp", time.time())
-        tx["tx_id"] = hashlib.sha3_256(f"{tx['type']}_{time.time()}_{len(self.chain)}".encode()).hexdigest()[:32]
+        t_sub = time.time()
+        tx["timestamp"] = tx.get("timestamp", t_sub)
+        tx["tx_id"] = hashlib.sha3_256(f"{tx['type']}_{t_sub}_{len(self.chain)}".encode()).hexdigest()[:32]
+        
+        # Collect and record organization endorsements
+        orgs = endorsing_orgs or [self.ORGANIZATIONS[0]]
+        tx["endorsements"] = [
+            {"org": org, "signature": hashlib.sha3_256(f"{tx['tx_id']}_{org}".encode()).hexdigest()[:16]}
+            for org in orgs
+        ]
         
         # Update World State
         if "state_key" in tx and "state_value" in tx:
@@ -240,3 +249,51 @@ class FabricPermissionedLedger:
             "state_key": state_key,
             "state_value": state_value
         })
+
+    # -------------------------------------------------------------
+    # 6. Key Management Chaincode (Workload I)
+    # -------------------------------------------------------------
+    def update_key_metadata(self, key_id: str, algorithm: str, fingerprint: str, valid_until: float) -> str:
+        state_key = f"keymeta:{key_id}"
+        state_value = {
+            "key_id": key_id,
+            "algorithm": algorithm,
+            "fingerprint": fingerprint,
+            "valid_until": valid_until,
+            "status": "ACTIVE",
+            "updated_at": time.time()
+        }
+        return self.commit_transaction({
+            "chaincode": "KeyMetadataCC",
+            "type": "updateKeyMetadata",
+            "state_key": state_key,
+            "state_value": state_value
+        })
+
+    # -------------------------------------------------------------
+    # 7. Emergency Access Chaincode (Workload J - Break-Glass)
+    # -------------------------------------------------------------
+    def emergency_access(self, actor_id: str, patient_id: str, justification: str) -> Tuple[bool, str, str]:
+        state_key = f"emergency:{patient_id}:{actor_id}"
+        state_value = {
+            "actor_id": actor_id,
+            "patient_id": patient_id,
+            "justification": justification,
+            "timestamp": time.time(),
+            "status": "BREAK_GLASS_GRANTED"
+        }
+        tx_id = self.commit_transaction({
+            "chaincode": "EmergencyCC",
+            "type": "emergencyAccess",
+            "state_key": state_key,
+            "state_value": state_value
+        })
+        # Emits mandatory high-priority audit record
+        audit_tx = self.record_audit_event(
+            actor_id=actor_id,
+            action="EMERGENCY_BREAK_GLASS_OVERRIDE",
+            resource_id=patient_id,
+            outcome="GRANTED",
+            threat_score=0.45
+        )
+        return True, tx_id, audit_tx

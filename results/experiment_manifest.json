@@ -1,0 +1,48 @@
+{
+  "experiment_id": "EXP_PQC_BLOCKCHAIN_HAB_IDS_2026_V1",
+  "timestamp": "2026-10-03T18:16:14Z",
+  "git_commit": "d2410a7dfcc0a5a89fdea1a61d36a6891157db96",
+  "hardware": {
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "machine": "arm64",
+    "system": "Darwin",
+    "python_version": "3.14.7"
+  },
+  "software_versions": {
+    "python": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "cryptography": "50.0.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "sklearn": "1.9.1",
+    "torch": "2.14.0",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "psutil": "7.2.2",
+    "streamlit": "1.64.0"
+  },
+  "configuration": {
+    "pqc_kem": "ML-KEM-768 (FIPS 203)",
+    "pqc_signature": "ML-DSA-65 (FIPS 204)",
+    "symmetric_cipher": "AES-256-GCM (NIST SP 800-38D)",
+    "hash_function": "SHA3-256 (FIPS 202)",
+    "blockchain_simulation": "Hyperledger Fabric 4-Org Permissioned Ledger",
+    "random_seed": 42
+  },
+  "dataset_hashes": {
+    "edge_train": "ef07c8f97ba9a00ac63d4d34c83d4fb3248b44dfcd8dcfd30e99b1a7442ce243",
+    "edge_val": "8490432fbacc52bb13771968b92723c306e615f303be5d79bd6b7fc063f6dbc1",
+    "edge_test": "6d6a21ded18cadfc808e6d93e0cb03001298aea44e669220daf277d3bf54f89f",
+    "ciciot_test": "8c17abe2c0dc4dd93beaa968451546b1c6273c16c59145b6515b65381ac36e37",
+    "fhir_test": "922ad43f640cfe57ce78cc4bc8d47460d777b87c6a8ac917630e04331436170c"
+  },
+  "model_hashes": {
+    "xgboost": "60ff16b5806bc6f71ef783a9f64dd114de9b11d0d048756655d1c38134ffc268",
+    "lightgbm": "2b1c8b88a786ff940d998825f8706787c2208e09f470956d2e6df7a88493c8de",
+    "catboost": "84bf44799e05bfe7df3219d1deb0cce3e0bf5010d2f3b1eb163eaf4d03ba86a8",
+    "meta_learner": "470313b16552016d7ff12c6e957f0544b1242ec11ca6e932e21e90f487481572",
+    "calibrator": "6289c5cc9613326e1d927b360718a6218ff42f9a45898c370cf18114db4c2750",
+    "preprocessor": "48e65b22b2ad6ecb6bb7d0489d2c80682e070fc37b5a71435b588be617ba3cde"
+  }
+}

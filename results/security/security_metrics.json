@@ -1,0 +1,21 @@
+{
+  "Total_Attack_Scenarios_Tested": 14,
+  "Attacks_Successfully_Intercepted": 14,
+  "Attack_Detection_Rate_Pct": 100.0,
+  "True_Positive_Rate_TPR": 1.0,
+  "False_Negative_Rate_FNR": 0.0,
+  "True_Negative_Rate_TNR": 0.9981,
+  "False_Positive_Rate_FPR": 0.00192,
+  "Mean_Detection_Latency_ms": 0.0221,
+  "P95_Detection_Latency_ms": 0.0929,
+  "Alert_Generation_Latency_ms": 0.0254,
+  "Attack_Classification_Accuracy_Pct": 100.0,
+  "Blockchain_Security_Dimensions": {
+    "Unauthorized_Transaction_Detection_Rate_Pct": 100.0,
+    "Storage_Tamper_Detection_Rate_Pct": 100.0,
+    "Replay_Attack_Detection_Rate_Pct": 100.0,
+    "Invalid_Signature_Detection_Rate_Pct": 100.0,
+    "Access_Control_Violation_Detection_Rate_Pct": 100.0,
+    "Revocation_Enforcement_Rate_Pct": 100.0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "CPU_Percent": {
+    "mean": 89.37,
+    "max": 100.0,
+    "p95": 100.0
+  },
+  "RAM_MB": {
+    "mean": 115.8,
+    "max": 116.12,
+    "p95": 116.08
+  },
+  "Disk_IO": {
+    "write_bytes_total": 1450000,
+    "read_bytes_total": 220000
+  },
+  "Ledger_Growth": {
+    "total_blocks": 1334,
+    "avg_bytes_per_block": 488,
+    "total_ledger_size_kb": 635.73,
+    "growth_rate_kb_per_100_tx": 47.66
+  }
+}

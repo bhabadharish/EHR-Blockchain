@@ -1,0 +1,106 @@
+{
+  "pipeline_stages": [
+    {
+      "Stage_Key": "1_FHIR_Validation",
+      "Stage_Name": "1. FHIR Schema Validation",
+      "Mean_ms": 0.0012,
+      "P50_ms": 0.0011,
+      "P90_ms": 0.0018,
+      "P95_ms": 0.002,
+      "P99_ms": 0.0027
+    },
+    {
+      "Stage_Key": "2_Data_Minimization",
+      "Stage_Name": "2. Data Minimization & Redaction",
+      "Mean_ms": 0.0011,
+      "P50_ms": 0.001,
+      "P90_ms": 0.0015,
+      "P95_ms": 0.002,
+      "P99_ms": 0.0022
+    },
+    {
+      "Stage_Key": "3_Feature_Extraction",
+      "Stage_Name": "3. Security Feature Extraction",
+      "Mean_ms": 0.0015,
+      "P50_ms": 0.0013,
+      "P90_ms": 0.0023,
+      "P95_ms": 0.0032,
+      "P99_ms": 0.0035
+    },
+    {
+      "Stage_Key": "4_Threat_Inference",
+      "Stage_Name": "4. Intelligent Threat Inference (HAB-IDS)",
+      "Mean_ms": 0.8945,
+      "P50_ms": 0.8944,
+      "P90_ms": 0.9071,
+      "P95_ms": 0.909,
+      "P99_ms": 0.914
+    },
+    {
+      "Stage_Key": "5_ZeroTrust_Decision",
+      "Stage_Name": "5. Zero-Trust Access Decision",
+      "Mean_ms": 0.0889,
+      "P50_ms": 0.094,
+      "P90_ms": 0.1283,
+      "P95_ms": 0.1346,
+      "P99_ms": 0.1658
+    },
+    {
+      "Stage_Key": "6_Payload_Encryption",
+      "Stage_Name": "6. Authenticated Encryption (AES-256-GCM)",
+      "Mean_ms": 0.0178,
+      "P50_ms": 0.0101,
+      "P90_ms": 0.0194,
+      "P95_ms": 0.0225,
+      "P99_ms": 0.0372
+    },
+    {
+      "Stage_Key": "7_Digital_Signature",
+      "Stage_Name": "7. Digital Signature (ML-DSA-65)",
+      "Mean_ms": 0.0159,
+      "P50_ms": 0.0155,
+      "P90_ms": 0.018,
+      "P95_ms": 0.0183,
+      "P99_ms": 0.0213
+    },
+    {
+      "Stage_Key": "8_OffChain_Storage",
+      "Stage_Name": "8. Encrypted Off-Chain Vault Storage",
+      "Mean_ms": 0.089,
+      "P50_ms": 0.087,
+      "P90_ms": 0.1038,
+      "P95_ms": 0.1172,
+      "P99_ms": 0.1265
+    },
+    {
+      "Stage_Key": "9_Blockchain_Anchor",
+      "Stage_Name": "9. Permissioned Ledger Hash Anchoring",
+      "Mean_ms": 0.0287,
+      "P50_ms": 0.0249,
+      "P90_ms": 0.0361,
+      "P95_ms": 0.0397,
+      "P99_ms": 0.0511
+    },
+    {
+      "Stage_Key": "10_SmartContract_Auth",
+      "Stage_Name": "10. Smart Contract Hash Verification",
+      "Mean_ms": 0.0017,
+      "P50_ms": 0.0016,
+      "P90_ms": 0.002,
+      "P95_ms": 0.0023,
+      "P99_ms": 0.0035
+    },
+    {
+      "Stage_Key": "11_Decryption_Delivery",
+      "Stage_Name": "11. Decryption & Clinical Delivery",
+      "Mean_ms": 0.0285,
+      "P50_ms": 0.0268,
+      "P90_ms": 0.0325,
+      "P95_ms": 0.0391,
+      "P99_ms": 0.0431
+    }
+  ],
+  "total_end_to_end_mean_ms": 1.1688,
+  "total_end_to_end_p95_ms": 1.2899,
+  "e2e_throughput_exchanges_per_sec": 855.6
+}

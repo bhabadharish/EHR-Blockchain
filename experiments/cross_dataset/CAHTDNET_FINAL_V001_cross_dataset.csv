@@ -1,4 +1,0 @@
-Experiment,Train_Dataset,Test_Dataset,Accuracy,Macro_F1,Macro_Recall,Macro_Precision,ROC_AUC,FPR,FNR,MCC,Accuracy_Str,Macro_F1_Str,FPR_Str,FNR_Str
-Exp A: CICIoT2023 -> Edge-IIoTset,CICIoT2023 (IoT Telemetry),Edge-IIoTset (IIoT Telemetry),0.53233,0.3544,0.42782,0.31207,0.51201,0.9902,0.15416,-0.23293,53.23%,35.44%,99.020%,15.416%
-Exp B: Edge-IIoTset -> CICIoT2023,Edge-IIoTset (IIoT Telemetry),CICIoT2023 (IoT Telemetry),0.02218,0.0217,0.5,0.01109,0.5,0.0,1.0,0.0,2.22%,2.17%,0.000%,100.000%
-Exp C: Combined Multi-Modal -> Synthetic FHIR Healthcare,Combined (CICIoT + Edge-IIoT + FHIR),Held-out Pure Healthcare FHIR,1.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,100.00%,100.00%,0.000%,0.000%
