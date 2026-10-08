@@ -146,6 +146,7 @@ class FrozenModelLoader:
             "confidence": confidence,
             "operating_threshold": thresh,
             "decision": decision,
+            "risk_level": risk_level,
             "threat_risk_score": risk_score,
             "tri_state_probabilities": {
                 "Normal": float(benign_prob),
